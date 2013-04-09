@@ -1,0 +1,42 @@
+欢迎参与建设或者编码设计。
+site:http://www.lomox.hk
+
+lomox.dll V0.4.0.2  （蔡东赟,陈湘跃）
+===============================
+1.资源管理，接口
+LomoX.res.
+	bool registerResource(QString rccFilename);
+	bool unregisterResource(QString rccFilename);
+	bool registerResourceFromRoot(QString rccFilename, QString resourceRoot);
+	bool unregisterResourceFromRoot(QString rccFilename, QString resourceRoot);
+
+
+
+
+lomox.dll V0, 4, 0, 1
+===============================
+1.增加lxoption工具类，提供启动的兼容，兼容旧版的，并支持注册资源启动 （蔡东赟）
+
+	兼容启动项目：
+	 main.lx //资源包默认现在用 qrc:/pack/main.html 后面评估，或者等编辑器出来
+	main.html";
+	lomoxdemo.html
+	index.html
+2. 资源管理简单雏形  陈湘跃 (mailto:291307963@qq.com)
+
+
+
+lomox.dll V0, 3, 0, 1 (蔡东赟)
+=================================
+1.2013-02-28 提交 基础框架源码  build vs2008 qt4.8.4
+  蔡东赟 dongyun_cai@163.com http://weibo.com/caidongyun
+	
+
+
+
+
+QQ 群：41830909
+
+author：lomoxteam
+
+member: 
