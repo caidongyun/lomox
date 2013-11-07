@@ -1,0 +1,1 @@
+rcc -binary main_res.qrc -o main.lx
