@@ -2,3 +2,193 @@
      1>项目“E:\github\lomox\lomox\lomox.vcxproj”在节点 2 上(Build 个目标)。
      1>CustomBuild:
          Moc'ing lxbasewin.h...
+         Moc'ing lxcoreprivate.h...
+         Moc'ing lxwebpluginfactory.h...
+         Moc'ing lxcoreapplication.h...
+         Moc'ing lxdialogoperate.h...
+         Moc'ing lxdialogs.h...
+         Moc'ing lxdir.h...
+         Moc'ing lxfile.h...
+         Moc'ing lxlibmanager.h...
+         Moc'ing lxoperate.h...
+         Moc'ing lxoption.h...
+         Moc'ing lxHttp.h...
+         Moc'ing lxresources.h...
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\GeneratedFiles /IC:\Qt\4.8.5\include /I.\GeneratedFiles\Debug /IC:\Qt\4.8.5\include\qtmain /IC:\Qt\4.8.5\include\QtCore /IC:\Qt\4.8.5\include\QtGui /IC:\Qt\4.8.5\include\QtXml /IC:\Qt\4.8.5\include\QtSql /IC:\Qt\4.8.5\include\QtNetwork /IC:\Qt\4.8.5\include\QtWebKit /IC:\Qt\4.8.5\include\phonon /I.\ /I.\tool /I.\include /Iinclude /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_CORE_LIB /D QT_GUI_LIB /D QT_XML_LIB /D QT_SQL_LIB /D QT_NETWORK_LIB /D QT_WEBKIT_LIB /D QT_PHONON_LIB /D LOMOX_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp lxbasewin.cpp lxcoreprivate.cpp lxwebpage.cpp lxwebpluginfactory.cpp lxcoreapplication.cpp lxdialogoperate.cpp lxdialogs.cpp lxdir.cpp lxfile.cpp lxlibmanager.cpp lxlibrary.cpp lomox.cpp lxoperate.cpp lxsqldatabase.cpp lxsqlquery.cpp GeneratedFiles\Debug\moc_lxbasewin.cpp GeneratedFiles\Debug\moc_lxcoreapplication.cpp GeneratedFiles\Debug\moc_lxcoreprivate.cpp GeneratedFiles\Debug\moc_lxdialogoperate.cpp GeneratedFiles\Debug\moc_lxdialogs.cpp GeneratedFiles\Debug\moc_lxdir.cpp GeneratedFiles\Debug\moc_lxfile.cpp GeneratedFiles\Debug\moc_lxHttp.cpp GeneratedFiles\Debug\moc_lxlibmanager.cpp GeneratedFiles\Debug\moc_lxlibrary.cpp GeneratedFiles\Debug\moc_lxoperate.cpp GeneratedFiles\Debug\moc_lxoption.cpp GeneratedFiles\Debug\moc_lxresources.cpp GeneratedFiles\Debug\moc_lxwebpluginfactory.cpp lxoption.cpp implement\lxhttp.cpp implement\lxresources.cpp lxapi\Lx_api.cpp
+         stdafx.cpp
+         lxbasewin.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxcoreprivate.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxwebpage.cpp
+     1>lxwebpage.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxwebpluginfactory.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxcoreapplication.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxdialogoperate.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxdialogs.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxdir.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxfile.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxlibmanager.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxlibrary.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lomox.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxoperate.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxsqldatabase.cpp
+         lxsqlquery.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxbasewin.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxcoreapplication.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxcoreprivate.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxdialogoperate.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         正在生成代码...
+         正在编译...
+         moc_lxdialogs.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxdir.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxfile.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxHttp.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+         moc_lxlibmanager.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxlibrary.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxoperate.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         moc_lxoption.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+         moc_lxresources.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+         moc_lxwebpluginfactory.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+         lxoption.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxhttp.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         lxresources.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         Lx_api.cpp
+     1>c:\qt\4.8.5\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: “QT_LARGEFILE_SUPPORT”: 宏重定义
+                 命令行参数: 参见前面的“QT_LARGEFILE_SUPPORT”定义
+     1>e:\github\lomox\lomox\lxdefinename.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         正在生成代码...
+     1>e:\github\lomox\lomox\implement\lxresources.cpp(47): warning C4717: “LxResources::unregisterResourceFromRoot”: 如递归所有控件路径，函数将导致运行时堆栈溢出
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\resource.res" resource.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\Debug\lomox.dll" /NOLOGO /LIBPATH:C:\Qt\4.8.5\lib qtmaind.lib QtCored4.lib QtGuid4.lib QtWebKitd4.lib QtXmld4.lib QtSqld4.lib QtNetworkd4.lib phonond4.lib QtScriptd4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Debug\lomox.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Debug\lomox.lib" /MACHINE:X86 /SAFESEH /DLL Debug\resource.res
+         Debug\stdafx.obj
+         Debug\lxbasewin.obj
+         Debug\lxcoreprivate.obj
+         Debug\lxwebpage.obj
+         Debug\lxwebpluginfactory.obj
+         Debug\lxcoreapplication.obj
+         Debug\lxdialogoperate.obj
+         Debug\lxdialogs.obj
+         Debug\lxdir.obj
+         Debug\lxfile.obj
+         Debug\lxlibmanager.obj
+         Debug\lxlibrary.obj
+         Debug\lomox.obj
+         Debug\lxoperate.obj
+         Debug\lxsqldatabase.obj
+         Debug\lxsqlquery.obj
+         Debug\moc_lxbasewin.obj
+         Debug\moc_lxcoreapplication.obj
+         Debug\moc_lxcoreprivate.obj
+         Debug\moc_lxdialogoperate.obj
+         Debug\moc_lxdialogs.obj
+         Debug\moc_lxdir.obj
+         Debug\moc_lxfile.obj
+         Debug\moc_lxHttp.obj
+         Debug\moc_lxlibmanager.obj
+         Debug\moc_lxlibrary.obj
+         Debug\moc_lxoperate.obj
+         Debug\moc_lxoption.obj
+         Debug\moc_lxresources.obj
+         Debug\moc_lxwebpluginfactory.obj
+         Debug\lxoption.obj
+         Debug\lxhttp.obj
+         Debug\lxresources.obj
+         Debug\Lx_api.obj
+            正在创建库 ../Debug\lomox.lib 和对象 ../Debug\lomox.exp
+         lomox.vcxproj -> E:\github\lomox\lomox\../Debug\lomox.dll
+     1>已完成生成项目“E:\github\lomox\lomox\lomox.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:05:17.33
