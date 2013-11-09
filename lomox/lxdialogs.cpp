@@ -4,8 +4,8 @@
 * 文件名称	: lxwindows.cpp
 * 作    者	: 蔡东赟 (mailto:caidongyun19@qq.com)
 * 创建日期	: 2012/2/6
-* 功能描述	: 
-* 备    注	: 
+* 功能描述	:
+* 备    注	:
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxcoreapplication.h"
@@ -24,7 +24,7 @@ LxDialogs::~LxDialogs()
 
 /*******************************************************************************
 * 函数名称	: LxDialogs::item
-* 功能描述	: 
+* 功能描述	:
 * 参　　数	: QVariant varIndex
 * 返 回 值	: QObject*
 * 备　　注	: colin3dmax[2012/4/9]

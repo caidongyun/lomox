@@ -1,11 +1,11 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2010-2013 lomox caidongyun. All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2010-2013 lomox caidongyun. All Rights Reserved.
 *
-* ÎÄ¼şÃû³Æ	: lxoption.cpp
-* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
-* ´´½¨ÈÕÆÚ	: 2013/3/9
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
+* æ–‡ä»¶åç§°	: lxoption.cpp
+* ä½œ    è€…	: è”¡ä¸œèµŸ (mailto:caidongyun19@qq.com)
+* åˆ›å»ºæ—¥æœŸ	: 2013/3/9
+* åŠŸèƒ½æè¿°	: 
+* å¤‡    æ³¨	: 
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxoption.h"
@@ -28,9 +28,9 @@ QString LxOption::getStartResourceFileName()
 	return QCoreApplication::applicationDirPath() + "/Resources/main.lx";
 }
 
-//¼æÈİÆô¶¯ÏîÄ¿
+//å…¼å®¹å¯åŠ¨é¡¹ç›®
 /*
-// main.lx //×ÊÔ´°ü
+// main.lx //èµ„æºåŒ…
 //main.html";
 //lomoxdemo.html
 //index.html
@@ -47,7 +47,7 @@ QString LxOption::getStartUrl()
 	
 	if (QFile::exists(strResCab))
 	{
-		//×¢²á×ÊÔ´£¬·µ»Ømain »òÕßindex½Úµã
+		//æ³¨å†Œèµ„æºï¼Œè¿”å›main æˆ–è€…indexèŠ‚ç‚¹
 		QResource::registerResource(strResCab);
 		return QString::fromLocal8Bit("qrc:/pack/main.html");
 

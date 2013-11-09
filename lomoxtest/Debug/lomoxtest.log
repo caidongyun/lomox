@@ -1,11 +1,11 @@
-﻿生成启动时间为 2013/11/7 9:25:13。
-     1>项目“D:\GameDev2\lomox\lomoxtest\lomoxtest.vcxproj”在节点 2 上(Build 个目标)。
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../../Debug\lomoxstaticlink.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug lomox.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../../Debug\lomoxstaticlink.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../../Debug\lomoxstaticlink.lib" /MACHINE:X86 /SAFESEH Debug\lomoxtest.obj
-         Debug\stdafx.obj
-     1>LINK : fatal error LNK1104: 无法打开文件“lomox.lib”
-     1>已完成生成项目“D:\GameDev2\lomox\lomoxtest\lomoxtest.vcxproj”(Build 个目标)的操作 - 失败。
+﻿生成启动时间为 2013/11/9 15:02:17。
+     1>项目“E:\github\lomox\lomoxtest\lomoxtest.vcxproj”在节点 3 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Qt\4.7.1\include\QtWebKit /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\lomoxstaticlink.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>c1xx : fatal error C1083: 无法打开编译器中间文件:“Debug\lomoxstaticlink.pch”: Invalid argument
+     1>已完成生成项目“E:\github\lomox\lomoxtest\lomoxtest.vcxproj”(Build 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:00.30
+已用时间 00:00:10.61

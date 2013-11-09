@@ -1,12 +1,12 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2011-2012  caidongyun All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2011-2012  caidongyun All Rights Reserved.
 *
-* ÎÄ¼şÃû³Æ	: lxcoreapplication.h
-* ×÷    Õß	: ²Ì¶«ÚS
-* ´´½¨ÈÕÆÚ	: 2012/2/6
-* ¹¦ÄÜÃèÊö	: 
-  add resources ³ÂÏæÔ¾ (mailto:291307963@qq.com)
-* ±¸    ×¢	: 
+* æ–‡ä»¶åç§°	: lxcoreapplication.h
+* ä½œ    è€…	: è”¡ä¸œèµŸ
+* åˆ›å»ºæ—¥æœŸ	: 2012/2/6
+* åŠŸèƒ½æè¿°	: 
+  add resources é™ˆæ¹˜è·ƒ (mailto:291307963@qq.com)
+* å¤‡    æ³¨	: 
 ********************************************************************************/
 #ifndef __LXCOREAPPLICATION_H__
 #define __LXCOREAPPLICATION_H__
@@ -70,8 +70,8 @@ public:
 
 private:
 	QString m_strApiName;
-	QPointer<LxBaseWin> m_ptrCurrentView;//LOMOXÈ«¾Ö ¹ØÁªµ½µÄpage
-	QPointer<QWebPage> m_ptrCurrentWebPage;//LOMOXÈ«¾Ö ¹ØÁªµ½µÄpage
+	QPointer<LxBaseWin> m_ptrCurrentView;//LOMOXå…¨å±€ å…³è”åˆ°çš„page
+	QPointer<QWebPage> m_ptrCurrentWebPage;//LOMOXå…¨å±€ å…³è”åˆ°çš„page
     QPointer<LxLibManager> m_pLibMgr;
     QPointer<LxFile> m_pFile;
     QPointer<LxDir> m_pDir;

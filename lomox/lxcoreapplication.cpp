@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
 * 版权所(C) 2011-2012  caidongyun All Rights Reserved.
 *
 * 文件名称	: lxcoreapplication.cpp
@@ -15,14 +15,14 @@
 #include "lxresources.h"
 
 LxCoreApplication::LxCoreApplication( QObject* object, QWebView* pWebView, QString strApiName /*= QString(LOMOX_API_COREAPP)*/ )
-:LxOperate(object, pWebView, strApiName)
+	:LxOperate(object, pWebView, strApiName)
 {
-    m_pLibMgr = new LxLibManager(this);
-    m_pLibMgr->initialize(m_ptrWebView);
-   
+	m_pLibMgr = new LxLibManager(this);
+	m_pLibMgr->initialize(m_ptrWebView);
+
 	m_pFile = new LxFile(this);
 
-    m_pDir = new LxDir(this);
+	m_pDir = new LxDir(this);
 
 
 }
@@ -39,36 +39,36 @@ QObject* LxCoreApplication::getDialogs() const
 
 QObject* LxCoreApplication::getFile() const
 {
-    if(m_pFile)
+	if(m_pFile)
 		return m_pFile;
-    else 
+	else 
 		return nullptr;
 }
 
 QObject *LxCoreApplication::getDir() const
 {
-    if(m_pDir)
+	if(m_pDir)
 		return m_pDir;
-    else 
+	else 
 		return nullptr;
 }
 
 QObject* LxCoreApplication::getLib()const
 {
-    if(m_pLibMgr)
+	if(m_pLibMgr)
 		return m_pLibMgr;
-    else
+	else
 		return nullptr;
 }
 
 QVariant LxCoreApplication::getVersion() const
 {
-    return QString(LOMOX_VERSION);
+	return QString(LOMOX_VERSION);
 }
 
 QVariant LxCoreApplication::getAppPath() const
 {
-    return QCoreApplication::applicationDirPath();
+	return QCoreApplication::applicationDirPath();
 }
 
 QVariant LxCoreApplication::getArguments() const
@@ -89,7 +89,7 @@ void LxCoreApplication::clearMemoryCaches()
 
 QObject* LxCoreApplication::getHttpTool()
 {
-	 m_pHttp = new LxHttp(this);
+	m_pHttp = new LxHttp(this);
 	return m_pHttp;
 }
 
