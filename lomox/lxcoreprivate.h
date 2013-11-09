@@ -10,14 +10,11 @@
 #ifndef __LXCOREPRIVATE_H__
 #define __LXCOREPRIVATE_H__
 
-#include <qpointer.h>
-
 #include "lxbasewin.h"
 #include "lxoperate.h"
 #include "lxdialogs.h"
 #include "lxcoreapplication.h"
 #include "lxlibmanager.h"
-#include "lxoption.h"
 
 class LxCoreApplication;
 class LxDialogs;
@@ -32,8 +29,7 @@ class LOMOX_EXPORT LxCoreApplicationPrivate : public QObject
 private:
     LxCoreApplicationPrivate()
         :m_pMainWin(nullptr),
-        m_pDialogs(nullptr),
-		m_pOption(nullptr)
+        m_pDialogs(nullptr)
     {
     }
 
@@ -50,8 +46,6 @@ public:
 
     void showMainDialog( QUrl URL /*= ""*/ );
 
-	LxOption* getOption();
-
 public:
     static LxCoreApplicationPrivate* instance()
     {
@@ -62,13 +56,10 @@ public:
         return g_AppSelft;
     }
 
-// private:
-// 	QString 
 protected:
     LxBaseWin* m_pMainWin;
     LxDialogs* m_pDialogs;
     LxDialogBase* m_pDialog;
-	LxOption* m_pOption;
 };
 
 

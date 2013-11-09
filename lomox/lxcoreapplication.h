@@ -1,12 +1,11 @@
-ï»¿/*******************************************************************************
-* ç‰ˆæƒæ‰€æœ‰(C) 2011-2012  caidongyun All Rights Reserved.
+/*******************************************************************************
+* °æÈ¨ËùÓĞ(C) 2011-2012  caidongyun All Rights Reserved.
 *
-* æ–‡ä»¶åç§°	: lxcoreapplication.h
-* ä½œ    è€…	: è”¡ä¸œèµŸ
-* åˆ›å»ºæ—¥æœŸ	: 2012/2/6
-* åŠŸèƒ½æè¿°	: 
-  add resources é™ˆæ¹˜è·ƒ (mailto:291307963@qq.com)
-* å¤‡    æ³¨	: 
+* ÎÄ¼şÃû³Æ	: lxcoreapplication.h
+* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
+* ´´½¨ÈÕÆÚ	: 2012/2/6
+* ¹¦ÄÜÃèÊö	: 
+* ±¸    ×¢	: 
 ********************************************************************************/
 #ifndef __LXCOREAPPLICATION_H__
 #define __LXCOREAPPLICATION_H__
@@ -45,7 +44,6 @@ class LOMOX_EXPORT LxCoreApplication : public LxOperate
 
 	Q_PROPERTY(QObject* net	 READ getHttpTool)
 
-	Q_PROPERTY(QObject* res READ getResources)
 
 public:
     explicit LxCoreApplication(QObject* object, QWebView* pWebView, QString strApiName =  QString(LOMOX_API_COREAPP));
@@ -63,19 +61,16 @@ private slots:
 
 	QObject* getHttpTool();
 
-	QObject* getResources();
-
 public:
 	LxBaseWin* getMainDialog();
 
 private:
 	QString m_strApiName;
-	QPointer<LxBaseWin> m_ptrCurrentView;//LOMOXå…¨å±€ å…³è”åˆ°çš„page
-	QPointer<QWebPage> m_ptrCurrentWebPage;//LOMOXå…¨å±€ å…³è”åˆ°çš„page
+	QPointer<LxBaseWin> m_ptrCurrentView;//LOMOXÈ«¾Ö ¹ØÁªµ½µÄpage
+	QPointer<QWebPage> m_ptrCurrentWebPage;//LOMOXÈ«¾Ö ¹ØÁªµ½µÄpage
     QPointer<LxLibManager> m_pLibMgr;
     QPointer<LxFile> m_pFile;
     QPointer<LxDir> m_pDir;
 	QPointer<QObject> m_pHttp;
-	QPointer<QObject> m_pResource;
 };
 #endif // end of __LXCOREAPPLICATION_H__

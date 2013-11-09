@@ -1,11 +1,11 @@
-ï»¿/*******************************************************************************
-* ç‰ˆæƒæ‰€æœ‰(C) 2011-2011 LomoX. zch.fly All Rights Reserved.
+/*******************************************************************************
+* °æÈ¨ËùÓĞ(C) 2011-2011 LomoX. zch.fly All Rights Reserved.
 *
-* æ–‡ä»¶åç§°	: lxwebpluginfactory.h
-* ä½œ    è€…	: è©¹æ™¨è¾‰ (mailto:zch.fly@gmail.com)
-* åˆ›å»ºæ—¥æœŸ	: 2012/09/17
-* åŠŸèƒ½æè¿°	: 
-* å¤‡    æ³¨	: 
+* ÎÄ¼şÃû³Æ	: lxwebpluginfactory.h
+* ×÷    Õß	: Õ²³¿»Ô (mailto:zch.fly@gmail.com)
+* ´´½¨ÈÕÆÚ	: 2012/09/17
+* ¹¦ÄÜÃèÊö	: 
+* ±¸    ×¢	: 
 ********************************************************************************/
 #ifndef __LXWEBPLUGINFACTORY_H__
 #define __LXWEBPLUGINFACTORY_H__
@@ -36,7 +36,7 @@ public:
 
 	bool supportsExtension(QWebPluginFactory::Extension extension) const{return true;};
 private:
-	// ç”¨äºå°†è½½å…¥çš„æ’ä»¶è®°å½•ä¸‹æ¥
+	// ÓÃÓÚ½«ÔØÈëµÄ²å¼ş¼ÇÂ¼ÏÂÀ´
 	mutable QList<QList<QWebPluginFactory::Plugin>> m_pluginslist;
 	mutable QList<LxWebKitPluginInterface *> m_interfaces;
 };

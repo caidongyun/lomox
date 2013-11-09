@@ -1,4 +1,4 @@
-ï»¿
+
 #include "lxwebpluginfactory.h"
 #include "lxWebKitPluginInterface.h"
 #include "lxdir.h"
@@ -49,12 +49,12 @@ QObject * LxWebPluginFactory::create(const QString &mimeType,
 		{
 			foreach(LxWebPluginFactory::MimeType mt, m_pluginslist[i][j].mimeTypes)
 			{
-				if(mt.name.toUpper() == mimeType.toUpper()) //æŸ¥æ‰¾åˆ°(ä¸åŒºåˆ†å¤§å°å†™)ï¼Œåˆ›å»ºå®ä¾‹
+				if(mt.name.toUpper() == mimeType.toUpper()) //²éÕÒµ½(²»Çø·Ö´óĞ¡Ğ´)£¬´´½¨ÊµÀı
 					return m_interfaces[i]->create( mimeType, url, argumentNames, argumentValues);
 			}
 		}
 	}
-	return NULL; //å¦‚æœæ²¡æœ‰ï¼Œç›´æ¥è¿”å›NULLï¼Œwebkitä¼šè¿›è¡Œå¤„ç†çš„
+	return NULL; //Èç¹ûÃ»ÓĞ£¬Ö±½Ó·µ»ØNULL£¬webkit»á½øĞĞ´¦ÀíµÄ
 }
 
 void LxWebPluginFactory::getPluginsFromPath( QString strPath, QList<QWebPluginFactory::Plugin> &plugins ) const
@@ -64,7 +64,7 @@ void LxWebPluginFactory::getPluginsFromPath( QString strPath, QList<QWebPluginFa
 	QString abspath = dir.absolutePath();
 	qDebug()<<abspath;
 
-	//è·å–æŒ‡å®šç›®å½•ä¸‹çš„æ‰€æœ‰æ’ä»¶ï¼Œlinuxä¸‹æ˜¯æ’ä»¶åº“çš„åç¼€ä¸ºsoï¼Œwindowsä¸‹åˆ™æ˜¯dllï¼Œ
+	//»ñÈ¡Ö¸¶¨Ä¿Â¼ÏÂµÄËùÓĞ²å¼ş£¬linuxÏÂÊÇ²å¼ş¿âµÄºó×ºÎªso£¬windowsÏÂÔòÊÇdll£¬
 #ifdef _WINDOWS_
 	filters<<"*.dll";
 #elif defined LINUX
@@ -82,7 +82,7 @@ void LxWebPluginFactory::getPluginsFromPath( QString strPath, QList<QWebPluginFa
 		QObject * obj = loader.instance();
 		if(obj==0)
 			qDebug()<<"error: "<<loader.errorString();
-		//ä¸‹é¢æ˜¯è½½å…¥è‡ªå®šä¹‰çš„æ¥å£ï¼Œåªæœ‰è¿™æ ·æ‰èƒ½æ”¯æŒåŠ¨æ€æ’ä»¶åˆ›å»ºï¼Œå¦‚æœå›ºå®šæ­»äº†ï¼Œå°†ä¸åˆ©äºæ‰©å±•
+		//ÏÂÃæÊÇÔØÈë×Ô¶¨ÒåµÄ½Ó¿Ú£¬Ö»ÓĞÕâÑù²ÅÄÜÖ§³Ö¶¯Ì¬²å¼ş´´½¨£¬Èç¹û¹Ì¶¨ËÀÁË£¬½«²»ÀûÓÚÀ©Õ¹
 		LxWebKitPluginInterface * interface = qobject_cast<LxWebKitPluginInterface*> (obj);
 		if(nullptr == interface)
 		{

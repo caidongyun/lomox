@@ -12,3 +12,5 @@ You can use css,html and javascript to develop your applications.
 - install QT4.8.5   [http://qt-project.org/downloads](http://qt-project.org/downloads "QT download page")
 - Open lomox/lomox/lomox.vs20xx.sln
 - Build it！
+
+##FQA##

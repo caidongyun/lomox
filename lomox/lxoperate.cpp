@@ -31,5 +31,5 @@ LxOperate::~LxOperate()
 bool LxOperate::setupJsAPIObject()
 {
 	Q_CHECK_PTR(m_ptrWebPage);
-	return LX_UTILITYTOOL::setupApiObject(m_ptrWebPage, m_strApiName, this);
+	return LM_UTILITYTOOL::setupApiObject(m_ptrWebPage, m_strApiName, this);
 }

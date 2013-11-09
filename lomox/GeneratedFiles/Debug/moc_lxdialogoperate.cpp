@@ -1,7 +1,8 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'lxdialogoperate.h'
 **
-** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.5)
+** Created: Sat Nov 9 18:52:22 2013
+**      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -9,8 +10,8 @@
 #include "../../lxdialogoperate.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'lxdialogoperate.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 63
-#error "This file was generated using the moc from 4.8.5. It"
+#elif Q_MOC_OUTPUT_REVISION != 62
+#error "This file was generated using the moc from 4.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -19,7 +20,7 @@ QT_BEGIN_MOC_NAMESPACE
 static const uint qt_meta_data_LxDialogBase[] = {
 
  // content:
-       6,       // revision
+       5,       // revision
        0,       // classname
        0,    0, // classinfo
       32,   14, // methods
@@ -88,68 +89,9 @@ static const char qt_meta_stringdata_LxDialogBase[] = {
     "QObject*\0getCoreDialog()\0"
 };
 
-void LxDialogBase::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
-{
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        Q_ASSERT(staticMetaObject.cast(_o));
-        LxDialogBase *_t = static_cast<LxDialogBase *>(_o);
-        switch (_id) {
-        case 0: _t->move(); break;
-        case 1: _t->move((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 2: _t->showMinimized(); break;
-        case 3: _t->showMaximized(); break;
-        case 4: _t->close(); break;
-        case 5: _t->showNormal(); break;
-        case 6: { bool _r = _t->isMinimized();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 7: { bool _r = _t->isMaximized();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 8: { bool _r = _t->isFullScreen();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 9: { int _r = _t->minimumWidth();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 10: { int _r = _t->minimumHeight();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 11: { int _r = _t->maximumWidth();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 12: { int _r = _t->maximumHeight();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 13: _t->setMinimumSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 14: _t->setMaximumSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 15: _t->setMinimumWidth((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 16: _t->setMinimumHeight((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 17: _t->setMaximumWidth((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 18: _t->setMaximumHeight((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 19: _t->show(); break;
-        case 20: _t->setDialogWH((*reinterpret_cast< QVariant(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2]))); break;
-        case 21: _t->reload(); break;
-        case 22: _t->openUrl((*reinterpret_cast< QVariant(*)>(_a[1]))); break;
-        case 23: { int _r = _t->getTopLeftX();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 24: { int _r = _t->getTopLeftY();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 25: _t->setUrl((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 26: _t->setVisible((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 27: _t->setHidden((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 28: { QVariant _r = _t->eval((*reinterpret_cast< QVariant(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
-        case 29: { QVariant _r = _t->toHTML();
-            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
-        case 30: _t->setHTML((*reinterpret_cast< QVariant(*)>(_a[1]))); break;
-        case 31: { QObject* _r = _t->getCoreDialog();
-            if (_a[0]) *reinterpret_cast< QObject**>(_a[0]) = _r; }  break;
-        default: ;
-        }
-    }
-}
-
-const QMetaObjectExtraData LxDialogBase::staticMetaObjectExtraData = {
-    0,  qt_static_metacall 
-};
-
 const QMetaObject LxDialogBase::staticMetaObject = {
     { &LxOperate::staticMetaObject, qt_meta_stringdata_LxDialogBase,
-      qt_meta_data_LxDialogBase, &staticMetaObjectExtraData }
+      qt_meta_data_LxDialogBase, 0 }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
@@ -175,8 +117,53 @@ int LxDialogBase::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 32)
-            qt_static_metacall(this, _c, _id, _a);
+        switch (_id) {
+        case 0: move(); break;
+        case 1: move((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 2: showMinimized(); break;
+        case 3: showMaximized(); break;
+        case 4: close(); break;
+        case 5: showNormal(); break;
+        case 6: { bool _r = isMinimized();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 7: { bool _r = isMaximized();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 8: { bool _r = isFullScreen();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 9: { int _r = minimumWidth();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 10: { int _r = minimumHeight();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 11: { int _r = maximumWidth();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 12: { int _r = maximumHeight();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 13: setMinimumSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 14: setMaximumSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 15: setMinimumWidth((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: setMinimumHeight((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: setMaximumWidth((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: setMaximumHeight((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: show(); break;
+        case 20: setDialogWH((*reinterpret_cast< QVariant(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2]))); break;
+        case 21: reload(); break;
+        case 22: openUrl((*reinterpret_cast< QVariant(*)>(_a[1]))); break;
+        case 23: { int _r = getTopLeftX();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 24: { int _r = getTopLeftY();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 25: setUrl((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 26: setVisible((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 27: setHidden((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 28: { QVariant _r = eval((*reinterpret_cast< QVariant(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
+        case 29: { QVariant _r = toHTML();
+            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
+        case 30: setHTML((*reinterpret_cast< QVariant(*)>(_a[1]))); break;
+        case 31: { QObject* _r = getCoreDialog();
+            if (_a[0]) *reinterpret_cast< QObject**>(_a[0]) = _r; }  break;
+        default: ;
+        }
         _id -= 32;
     }
     return _id;

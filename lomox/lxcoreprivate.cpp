@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
 * 版权所有(C) 2011-2012www.LomoX.hk All Rights Follow Lomox licence.
 *
 * 文件名称	: lxcoreprivate.cpp
@@ -19,45 +19,42 @@ LxCoreApplicationPrivate::~LxCoreApplicationPrivate()
 	if (m_pMainWin)
 		m_pMainWin->deleteLater();
 
-	if (m_pDialogs)
-		m_pDialogs->deleteLater();
-
-	if (m_pOption)
-		m_pOption->deleteLater();
+    if (m_pDialogs)
+        m_pDialogs->deleteLater();
 }
 
 void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
 {
-	qDebug(" LxCoreApplicationPrivate::showMainDialog()");
+    qDebug(" LxCoreApplicationPrivate::showMainDialog()");
 	if (!m_pMainWin)
 		m_pMainWin = new LxBaseWin();
 
 	m_pMainWin->setUrl(URL);
 	m_pMainWin->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::WindowStaysOnTopHint);
 
-	m_pDialog = new LxDialogBase(m_pMainWin, m_pMainWin, "LxDialog");
+    m_pDialog = new LxDialogBase(m_pMainWin, m_pMainWin, "LxDialog");
 
-	if (lxCoreApp->getDialogs())
-	{
+    if (lxCoreApp->getDialogs())
+    {
 		m_pDialogs->append(QString("LomoX-Main"),m_pDialog);
-	}
+    }
 
 	new LxCoreApplication((QObject*)m_pMainWin, m_pMainWin,QString(LOMOX_API_COREAPP));
 
 	m_pMainWin->show();
 
-	qDebug("LomoX.dialogs.count=%d",m_pDialogs->count().toInt());
+    qDebug("LomoX.dialogs.count=%d",m_pDialogs->count().toInt());
 }
 
 
 LxDialogs* LxCoreApplicationPrivate::getDialogs()
 {
-	qDebug(" LxCoreApplicationPrivate::getDialogs()");
-	if (!m_pDialogs)
-	{
-		m_pDialogs = new LxDialogs(this);
-		m_pDialogs->append(QString("start"),m_pDialog);
-	}
+    qDebug(" LxCoreApplicationPrivate::getDialogs()");
+    if (!m_pDialogs)
+    {
+        m_pDialogs = new LxDialogs(this);
+        m_pDialogs->append(QString("start"),m_pDialog);
+    }
 	return m_pDialogs;
 }
 
@@ -92,43 +89,14 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 
 	QString strStoragePath = QCoreApplication::applicationDirPath() + QDir::separator() + QString("Storage\\");
 	QWebSettings::globalSettings()->enablePersistentStorage(strStoragePath);
-
-	QString strUrl;
-	LxOption* pOtion = getOption();
-	if (pOtion)
-	{
-		strUrl = pOtion->getStartUrl();
-	}
-	else
-		Q_ASSERT(pOtion == nullptr);
-
-	if (!strUrl.isEmpty())
-	{
-		lxCoreApp->showMainDialog(QUrl(strUrl));
-	}
-	else
-	{
-		Q_ASSERT(!strUrl.isEmpty());
-		return ;
-	}
-	// //QString strFile = QCoreApplication::applicationDirPath() + "/Resources/main.html";
-
+    QString strFile = QCoreApplication::applicationDirPath() + "/Resources/main.html";
+    lxCoreApp->showMainDialog(QUrl(strFile));
 	a.exec();
 }
 
 void LxCoreApplicationPrivate::quit()
 {
-	qApp->quit();
-}
-
-LxOption* LxCoreApplicationPrivate::getOption()
-{
-	if (!m_pOption)
-	{
-		m_pOption = new LxOption(this);
-	}
-
-	return m_pOption;
+    qApp->quit();
 }
 
 

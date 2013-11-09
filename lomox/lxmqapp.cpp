@@ -1,4 +1,4 @@
-﻿#include "lxmqapp.h"
+#include "lxmqapp.h"
 
 #include <QTimer>
 #include <QStringList>

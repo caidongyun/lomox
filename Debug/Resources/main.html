@@ -7,45 +7,9 @@
 	<script type="text/javascript" src="js/stdlib/LxExt-1.0.min.js"></script>
 	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen"/>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script>
-var PLUGIN = null;//that dosent like Chrome
-
-
-function init()
-{
-
-alert(0);
-	var vares = LomoX.res.registerResource('shuru ceshi ');
-	alert(vares);
-};
-	
-function SumAll()
-{
-	try
-	{	
-		var a1 = document.getElementById("f1").value;
-		var a2 = document.getElementById("f2").value;
-		var a3 = document.getElementById("f3").value;
-		var res = plugin.AddNum(a1,a2,a3);
-		alert( "Plugin adds all. Result is: " + res );
-	}
-	catch (err) { alert(err); }
-};
-</script>
-
 </head>
-<body onload="init();">
+<body>
 <div id="MyWindow">
-<div id="MyTitle">lxlomoxPluginTest
-	<div class="DragTitileBar"></div>
-	<div id="MyBody">
-			<span id="BtnExit" title="退出演示程序"></span>
-			<span id="BtnMin" title="最小化"></span>
-			<div id="conmentid" ></div>
-			<iframe width=100% height=100% name=tagframe frameborder=0 src="plugin.html" onload='parent.init();'>	</iframe>
-	</div>
-
-</div>
 </div>
 </body>
 </html>
