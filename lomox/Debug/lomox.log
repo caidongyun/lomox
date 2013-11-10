@@ -1,10 +1,8 @@
-﻿生成启动时间为 2013/11/10 15:48:23。
+﻿生成启动时间为 2013/11/10 21:38:48。
      1>项目“E:\github\lomox\lomox\lomox.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\GeneratedFiles /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\qtmain /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtXml /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtSql /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtNetwork /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWebKit /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\phonon /I.\ /I.\tool /I.\include /Iinclude /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_CORE_LIB /D QT_GUI_LIB /D QT_XML_LIB /D QT_SQL_LIB /D QT_NETWORK_LIB /D QT_WEBKIT_LIB /D QT_PHONON_LIB /D LOMOX_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt lxdir.cpp lxfile.cpp
-         lxdir.cpp
-         lxfile.cpp
-         正在生成代码...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\GeneratedFiles /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\qtmain /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtXml /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtSql /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtNetwork /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWebKit /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\phonon /I.\ /I.\tool /I.\include /Iinclude /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_CORE_LIB /D QT_GUI_LIB /D QT_XML_LIB /D QT_SQL_LIB /D QT_NETWORK_LIB /D QT_WEBKIT_LIB /D QT_PHONON_LIB /D LOMOX_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt lxcoreprivate.cpp
+         lxcoreprivate.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\Debug\lomox.dll" /NOLOGO /LIBPATH:C:\Qt\Qt5.1.1\5.1.1\msvc2012\lib Qt5Cored.lib Qt5Guid.lib Qt5WebKitd.lib Qt5Xmld.lib Qt5Sqld.lib Qt5Networkd.lib Qt5Scriptd.lib Qt5WebKitWidgetsd.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Debug\lomox.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Debug\lomox.lib" /MACHINE:X86 /SAFESEH /DLL Debug\resource.res
          Debug\stdafx.obj
@@ -37,9 +35,9 @@
          Debug\moc_lxwebpluginfactory.obj
          Debug\lxhttp.obj
          Debug\Lx_api.obj
-     1>LINK : fatal error LNK1201: 写入程序数据库“E:\github\lomox\Debug\lomox.pdb”时出错；请检查是否是磁盘空间不足、路径无效或权限不够
-     1>已完成生成项目“E:\github\lomox\lomox\lomox.vcxproj”(Build 个目标)的操作 - 失败。
+         lomox.vcxproj -> E:\github\lomox\lomox\../Debug\lomox.dll
+     1>已完成生成项目“E:\github\lomox\lomox\lomox.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:24.69
+已用时间 00:00:09.57

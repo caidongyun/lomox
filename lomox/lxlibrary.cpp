@@ -60,7 +60,7 @@ QVariant LxLibrary::exec(QString functionName, QVariant param,QString encode)
 
         char * result = ((char *(*)(char *))fun)(param.toString().toLocal8Bit().data());
         qDebug(result);
-        QString str(result);
+        QString str(QString::fromLocal8Bit(result));
         //借用Webkit 转换JSON格式
         QVariant myVal( m_webView->page()->mainFrame()->evaluateJavaScript( "("+str+")" ));
         if(myVal.isValid())

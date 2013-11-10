@@ -1,4 +1,4 @@
-#include "lomox.h"
+﻿#include "lomox.h"
 
 lomox::lomox()
 {

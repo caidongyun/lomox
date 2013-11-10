@@ -28,9 +28,9 @@ void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
     qDebug(" LxCoreApplicationPrivate::showMainDialog()");
 	if (!m_pMainWin)
 		m_pMainWin = new LxBaseWin();
-
 	m_pMainWin->setUrl(URL);
 	m_pMainWin->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::WindowStaysOnTopHint);
+	//m_pMainWin->setWindowFlags( Qt::Dialog | Qt::WindowStaysOnTopHint);
 
     m_pDialog = new LxDialogBase(m_pMainWin, m_pMainWin, "LxDialog");
 
@@ -85,13 +85,16 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::LinksIncludedInFocusChain,true);
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::PrintElementBackgrounds, true);
 
+	QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
+
+
 	//QWebSettings::globalSettings()->setObjectCacheCapacities(0,0,0); 降低内存用的，但是速度回变低
 
 	QString strStoragePath = QCoreApplication::applicationDirPath() + QDir::separator() + QString("Storage\\");
 	QWebSettings::globalSettings()->enablePersistentStorage(strStoragePath);
-    QString strFile = QCoreApplication::applicationDirPath() + "/Resources/main.html";
+    QString strFile = "file:///"+QCoreApplication::applicationDirPath() + "/Resources/main.html";
 	qDebug() << strFile.toLatin1();
-    lxCoreApp->showMainDialog(QUrl(strFile));
+    lxCoreApp->showMainDialog(strFile);
 	a.exec();
 }
 

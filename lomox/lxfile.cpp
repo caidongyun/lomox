@@ -39,7 +39,7 @@ QVariant LxFile::readFileData( QVariant varFilename,QString encode )
 		{
             return QVariant(false);
         }
-        return QVariant(file.readAll());
+        return QVariant(QString::fromLocal8Bit(file.readAll()));
     }
     return QVariant(false);
 }
