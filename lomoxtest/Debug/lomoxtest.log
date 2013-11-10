@@ -1,13 +1,12 @@
-﻿生成启动时间为 2013/11/9 19:50:19。
-     1>项目“E:\github\lomox-svn\branches\lomox_IDE_20130301\lomoxtest\lomoxtest.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2013/11/10 15:15:43。
+     1>项目“E:\github\lomox\lomoxtest\lomoxtest.vcxproj”在节点 2 上(Build 个目标)。
      1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Debug\lomoxstaticlink.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug lomox.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Debug\lomoxstaticlink.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Debug\lomoxstaticlink.lib" /MACHINE:X86 /SAFESEH Debug\lomoxtest.obj
          Debug\stdafx.obj
-         LINK : 没有找到 ../Debug\lomoxstaticlink.exe 或上一个增量链接没有生成它；正在执行完全链接
      1>lomoxtest.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
-         lomoxtest.vcxproj -> E:\github\lomox-svn\branches\lomox_IDE_20130301\lomoxtest\../Debug\lomoxstaticlink.exe
-     1>已完成生成项目“E:\github\lomox-svn\branches\lomox_IDE_20130301\lomoxtest\lomoxtest.vcxproj”(Build 个目标)的操作。
+         lomoxtest.vcxproj -> E:\github\lomox\lomoxtest\../Debug\lomoxstaticlink.exe
+     1>已完成生成项目“E:\github\lomox\lomoxtest\lomoxtest.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:03.40
+已用时间 00:00:04.20

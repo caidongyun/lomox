@@ -1,17 +1,18 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2010-2012 LomoX. All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2010-2012 LomoX. All Rights Reserved.
 *
-* ÎÄ¼şÃû³Æ	: lxHttp.h
-* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
-* ´´½¨ÈÕÆÚ	: 2012/10/19
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
+* æ–‡ä»¶åç§°	: lxHttp.h
+* ä½œ    è€…	: è”¡ä¸œèµŸ (mailto:caidongyun19@qq.com)
+* åˆ›å»ºæ—¥æœŸ	: 2012/10/19
+* åŠŸèƒ½æè¿°	: 
+* å¤‡    æ³¨	: 
 ********************************************************************************/
 #ifndef __LXHTTP_H__
 #define __LXHTTP_H__
-
-#include <QHttp>
-#include <QtNetwork/QHttp>
+#include <QNetworkAccessManager>
+//QT5.0 remove QHttp and QFtp
+//#include <QHttp>
+//#include <QtNetwork/QHttp>
 #include <QtScript/QScriptValue>
 #include <QtScript/QScriptContext>
 #include <QtScript/QScriptEngine>
@@ -27,34 +28,34 @@ public:
 public slots:
 	
 /*******************************************************************************
-* º¯ÊıÃû³Æ	: httpRequest
-* ¹¦ÄÜÃèÊö	: 
-* ²Î¡¡¡¡Êı	: QVariant varMethod
+* å‡½æ•°åç§°	: httpRequest
+* åŠŸèƒ½æè¿°	: 
+* å‚ã€€ã€€æ•°	: QVariant varMethod
 						'post' or 'get'
-* ²Î¡¡¡¡Êı	: QVariant varUrl
-* ²Î¡¡¡¡Êı	: QVariant varPostData  
+* å‚ã€€ã€€æ•°	: QVariant varUrl
+* å‚ã€€ã€€æ•°	: QVariant varPostData  
 							for post method
-* ·µ »Ø Öµ	: QVariant 
-* ±¸¡¡¡¡×¢	: ²Ì¶«ÚS[2012-12-19]
+* è¿” å› å€¼	: QVariant 
+* å¤‡ã€€ã€€æ³¨	: è”¡ä¸œèµŸ[2012-12-19]
 *******************************************************************************/
 	QVariant  httpRequest(QVariant varMethod,  QVariant varUrl,  QVariant varPostData); //
 
 /*******************************************************************************
-* º¯ÊıÃû³Æ	: httpRequestWithEncode
-* ¹¦ÄÜÃèÊö	: 
-* ²Î¡¡¡¡Êı	: QVariant varMethod  'post' or 'get'
-* ²Î¡¡¡¡Êı	: QVariant varUrl		url
-* ²Î¡¡¡¡Êı	: QVariant varPostData  
+* å‡½æ•°åç§°	: httpRequestWithEncode
+* åŠŸèƒ½æè¿°	: 
+* å‚ã€€ã€€æ•°	: QVariant varMethod  'post' or 'get'
+* å‚ã€€ã€€æ•°	: QVariant varUrl		url
+* å‚ã€€ã€€æ•°	: QVariant varPostData  
 							if is post method,Then usr this.
 							if no, use ''
 
-* ²Î¡¡¡¡Êı	: QVariant varEncode
+* å‚ã€€ã€€æ•°	: QVariant varEncode
 						 if is not utf-8 use this param
-						 eg£º 'unicode'
-* ·µ »Ø Öµ	: QVariant  
+						 egï¼š 'unicode'
+* è¿” å› å€¼	: QVariant  
 							return the requestdata  else 0 is failed
 
-* ±¸¡¡¡¡×¢	: ²Ì¶«ÚS[2012-12-19]
+* å¤‡ã€€ã€€æ³¨	: è”¡ä¸œèµŸ[2012-12-19]
 *******************************************************************************/
 	QVariant  httpRequestWithEncode(QVariant varMethod,  QVariant varUrl ,  QVariant varPostData, QVariant varEncode);
 };

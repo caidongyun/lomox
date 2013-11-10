@@ -23,8 +23,10 @@
 #include "stdafx.h"
 
 #include <QtGui>
+#include <QtWidgets/QApplication>
 #include <QtCore>
 #include <QtWebKit>
+#include <QtWebKitWidgets/QWebView>
 #include <QDir>
 #include <QVector>
 #include <iostream>

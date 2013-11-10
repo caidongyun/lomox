@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
 * 版权所(C) 2011-2012  caidongyun All Rights Reserved.
 *
 * 文件名称	: lxcoreapplication.cpp
@@ -11,7 +11,7 @@
 #include "lomox_global.h"
 #include "lxcoreapplication.h"
 //#include <QtScript>
-#include "lxHttp.h"
+#include "include/lxHttp.h"
 
 
 LxCoreApplication::LxCoreApplication( QObject* object, QWebView* pWebView, QString strApiName /*= QString(LOMOX_API_COREAPP)*/ )

@@ -21,7 +21,9 @@ HEADERS += ./stdafx.h \
     ./lxdir.h \
     ./tool/check.h \
     ./tool/utillites.h \
-    ./lxlibmanager.h
+    ./lxlibmanager.h  \
+    ./lxwebpluginfactory.h \
+    ./include/lxhttp.h
 SOURCES += ./stdafx.cpp \
     ./lxbasewin.cpp \
     ./lxcoreprivate.cpp \
@@ -36,4 +38,6 @@ SOURCES += ./stdafx.cpp \
     ./lxsqldatabase.cpp \
     ./lxsqlquery.cpp \
     ./lxdir.cpp \
-    ./lxlibmanager.cpp
+    ./lxlibmanager.cpp \
+    ./lxwebpluginfactory.cpp \
+    ./implement/lxhttp.cpp

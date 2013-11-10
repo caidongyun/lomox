@@ -1,26 +1,53 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'lxHttp.h'
 **
-** Created: Sat Nov 9 18:52:45 2013
-**      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.1.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
 #include "../../include/lxHttp.h"
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'lxHttp.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 62
-#error "This file was generated using the moc from 4.7.1. It"
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.1.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
+struct qt_meta_stringdata_LxHttp_t {
+    QByteArrayData data[8];
+    char stringdata[82];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    offsetof(qt_meta_stringdata_LxHttp_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData) \
+    )
+static const qt_meta_stringdata_LxHttp_t qt_meta_stringdata_LxHttp = {
+    {
+QT_MOC_LITERAL(0, 0, 6),
+QT_MOC_LITERAL(1, 7, 11),
+QT_MOC_LITERAL(2, 19, 0),
+QT_MOC_LITERAL(3, 20, 9),
+QT_MOC_LITERAL(4, 30, 6),
+QT_MOC_LITERAL(5, 37, 11),
+QT_MOC_LITERAL(6, 49, 21),
+QT_MOC_LITERAL(7, 71, 9)
+    },
+    "LxHttp\0httpRequest\0\0varMethod\0varUrl\0"
+    "varPostData\0httpRequestWithEncode\0"
+    "varEncode\0"
+};
+#undef QT_MOC_LITERAL
+
 static const uint qt_meta_data_LxHttp[] = {
 
  // content:
-       5,       // revision
+       7,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
@@ -30,38 +57,46 @@ static const uint qt_meta_data_LxHttp[] = {
        0,       // flags
        0,       // signalCount
 
- // slots: signature, parameters, type, tag, flags
-      46,   17,    8,    7, 0x0a,
-     125,   86,    8,    7, 0x0a,
+ // slots: name, argc, parameters, tag, flags
+       1,    3,   24,    2, 0x0a,
+       6,    4,   31,    2, 0x0a,
+
+ // slots: parameters
+    QMetaType::QVariant, QMetaType::QVariant, QMetaType::QVariant, QMetaType::QVariant,    3,    4,    5,
+    QMetaType::QVariant, QMetaType::QVariant, QMetaType::QVariant, QMetaType::QVariant, QMetaType::QVariant,    3,    4,    5,    7,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_LxHttp[] = {
-    "LxHttp\0\0QVariant\0varMethod,varUrl,varPostData\0"
-    "httpRequest(QVariant,QVariant,QVariant)\0"
-    "varMethod,varUrl,varPostData,varEncode\0"
-    "httpRequestWithEncode(QVariant,QVariant,QVariant,QVariant)\0"
-};
+void LxHttp::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        LxHttp *_t = static_cast<LxHttp *>(_o);
+        switch (_id) {
+        case 0: { QVariant _r = _t->httpRequest((*reinterpret_cast< QVariant(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2])),(*reinterpret_cast< QVariant(*)>(_a[3])));
+            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
+        case 1: { QVariant _r = _t->httpRequestWithEncode((*reinterpret_cast< QVariant(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2])),(*reinterpret_cast< QVariant(*)>(_a[3])),(*reinterpret_cast< QVariant(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
+        default: ;
+        }
+    }
+}
 
 const QMetaObject LxHttp::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_LxHttp,
-      qt_meta_data_LxHttp, 0 }
+    { &QObject::staticMetaObject, qt_meta_stringdata_LxHttp.data,
+      qt_meta_data_LxHttp,  qt_static_metacall, 0, 0}
 };
 
-#ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &LxHttp::getStaticMetaObject() { return staticMetaObject; }
-#endif //Q_NO_DATA_RELOCATION
 
 const QMetaObject *LxHttp::metaObject() const
 {
-    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
 void *LxHttp::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_LxHttp))
+    if (!strcmp(_clname, qt_meta_stringdata_LxHttp.stringdata))
         return static_cast<void*>(const_cast< LxHttp*>(this));
     return QObject::qt_metacast(_clname);
 }
@@ -72,13 +107,12 @@ int LxHttp::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        switch (_id) {
-        case 0: { QVariant _r = httpRequest((*reinterpret_cast< QVariant(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2])),(*reinterpret_cast< QVariant(*)>(_a[3])));
-            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
-        case 1: { QVariant _r = httpRequestWithEncode((*reinterpret_cast< QVariant(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2])),(*reinterpret_cast< QVariant(*)>(_a[3])),(*reinterpret_cast< QVariant(*)>(_a[4])));
-            if (_a[0]) *reinterpret_cast< QVariant*>(_a[0]) = _r; }  break;
-        default: ;
-        }
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 2)
+            *reinterpret_cast<int*>(_a[0]) = -1;
         _id -= 2;
     }
     return _id;

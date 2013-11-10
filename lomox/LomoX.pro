@@ -10,13 +10,12 @@ message("You are running qmake on a generated .pro file. This may not work!")
 TEMPLATE = lib
 TARGET = lomox
 DESTDIR = ../Release
-QT += core gui sql network xml qtmain phonon webkit
+QT += core gui sql network xml webkit webkitwidgets
 CONFIG += debug
-DEFINES += QT_LARGEFILE_SUPPORT QT_XML_LIB QT_SQL_LIB QT_NETWORK_LIB QT_WEBKIT_LIB QT_PHONON_LIB LOMOX_LIB
+DEFINES += QT_LARGEFILE_SUPPORT QT_XML_LIB QT_SQL_LIB QT_NETWORK_LIB QT_WEBKIT_LIB QT_WEBKITWIDGETS_LIB LOMOX_LIB
 INCLUDEPATH += ./GeneratedFiles \
     ./GeneratedFiles/Release \
     .
-LIBS += -lphonon4
 DEPENDPATH += .
 MOC_DIR += ./GeneratedFiles/release
 OBJECTS_DIR += release

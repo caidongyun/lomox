@@ -42,8 +42,7 @@ QObject *LxWebEditPlugin::create(const QString &mimeType,
 
 //Q_EXPORT_PLUGIN2()必不可少，
 //只有这样插件类才为外部可见，插件名为lxWebEditPlugin
-Q_EXPORT_PLUGIN2("lxWebEditPlugin", LxWebEditPlugin)
-
+//Q_EXPORT_PLUGIN("lxWebEditPlugin", LxWebEditPlugin)
 
 int MyAddEdit::AddNum(int a, int b, int c)
 {

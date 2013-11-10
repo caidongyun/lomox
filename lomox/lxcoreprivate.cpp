@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
 * 版权所有(C) 2011-2012www.LomoX.hk All Rights Follow Lomox licence.
 *
 * 文件名称	: lxcoreprivate.cpp
@@ -90,6 +90,7 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 	QString strStoragePath = QCoreApplication::applicationDirPath() + QDir::separator() + QString("Storage\\");
 	QWebSettings::globalSettings()->enablePersistentStorage(strStoragePath);
     QString strFile = QCoreApplication::applicationDirPath() + "/Resources/main.html";
+	qDebug() << strFile.toLatin1();
     lxCoreApp->showMainDialog(QUrl(strFile));
 	a.exec();
 }

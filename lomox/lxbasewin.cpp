@@ -9,10 +9,11 @@
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxbasewin.h"
-#include <QWebPage>
+#include <QtWebKitWidgets/QWebView>
 #include "lxdialogoperate.h"
 #include "lxdialogs.h"
 #include "lxwebpluginfactory.h"
+class LxWebPluginFactory;
 
 LxBaseWin::LxBaseWin(QWidget *parent)
 :QWebView(parent)
@@ -34,8 +35,8 @@ bool LxBaseWin::_initWidget()
 	this->setAttribute(Qt::WA_TranslucentBackground, true);
 	this->setStyleSheet("#lomoxwin{background-color:transparent} QMenu{background-color:none;}");
 	QPointer<QWebPage> ptrWebPage = this->page();
-	QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
-	ptrWebPage->setPluginFactory(ptrPlugin);
+    QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory((QObject *)ptrWebPage);
+    ptrWebPage->setPluginFactory(ptrPlugin);
 	ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
 	return true;
 }
@@ -101,4 +102,3 @@ void LxBaseWin::linkClickedAction( const QUrl& url )
 
 
 
-	

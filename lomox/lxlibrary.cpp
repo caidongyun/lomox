@@ -49,11 +49,12 @@ QVariant LxLibrary::exec(QString functionName, QVariant param,QString encode)
     qDebug("in exec now!");
     if (m_webView.isNull())return nullptr;
 
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
+    //setCodecForCStrings  removed by QT5 removed by Colin3dmax
+    //QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
     if((!m_pLib.isNull()) && m_pLib->isLoaded())
 	{
         qDebug("exec now!");
-        void * fun = m_pLib->resolve(functionName.toLocal8Bit().data());
+        void * fun = (void *)m_pLib->resolve(functionName.toLocal8Bit().data());
         if(!fun)
             return nullptr;
 

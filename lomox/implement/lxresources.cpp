@@ -1,11 +1,11 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2010-2013 caidongyun. All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2010-2013 caidongyun. All Rights Reserved.
 *
-* ÎÄ¼şÃû³Æ	: lxresources.cpp
-* ×÷    Õß	: ³ÂÏæÔ¾ (mailto:291307963@qq.com)
-* ´´½¨ÈÕÆÚ	: 2013/3/9
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
+* æ–‡ä»¶åç§°	: lxresources.cpp
+* ä½œ    è€…	: é™ˆæ¹˜è·ƒ (mailto:291307963@qq.com)
+* åˆ›å»ºæ—¥æœŸ	: 2013/3/9
+* åŠŸèƒ½æè¿°	: 
+* å¤‡    æ³¨	: 
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxresources.h"
@@ -25,7 +25,7 @@ LxResources::~LxResources()
 bool LxResources::registerResource( QString rccFilename )
 {
 		//Q_ASSERT(0);
-	//´ıÊµÏÖ
+	//å¾…å®ç°
 	return QResource::registerResource(rccFilename);
 }
 
@@ -37,7 +37,7 @@ bool LxResources::unregisterResource( QString rccFilename )
 
 bool LxResources::registerResourceFromRoot( QString rccFilename, QString resourceRoot )
 {
-	//´ıÊµÏÖ
+	//å¾…å®ç°
 	return QResource::registerResource(rccFilename,resourceRoot);
 }
 

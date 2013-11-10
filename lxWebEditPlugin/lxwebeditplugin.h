@@ -8,6 +8,7 @@
 class LXWEBEDITPLUGIN_EXPORT LxWebEditPlugin : public QObject, public LxWebKitPluginInterface
 {
 	Q_OBJECT
+	Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
 	Q_INTERFACES(LxWebKitPluginInterface) //声明lxWebKitPluginInteface是一个接口
 
 public:
