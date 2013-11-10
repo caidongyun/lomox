@@ -5,7 +5,10 @@
 >lomox is a multi-platform framework for building applications. It is based on qt.
 It works on OS X, Windows, and Linux.
 You can use css,html and javascript to develop your applications.
-
+----------
+## New Future：##
+- Qt Update to Qt 5.1.1
+- Add support to vs2012
 ----------
 ## How to Build: ##
 - install visual studio 2008 | visual studio 2010 | visual studio 2012
