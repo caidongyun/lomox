@@ -28,8 +28,10 @@ void LxDialogBase::move()
     LogEx("void LomoX::move()");
     VERIFY_IN_POINTER(m_ptrWebView);
     WId id = m_ptrWebView->winId();
-    ReleaseCapture();
-    SendMessage(HWND(id), WM_SYSCOMMAND, SC_MOVE|HTCAPTION, 0);
+#ifdef Q_OS_WIN32
+    ReleaseCapture();                 //remove by Colin3dmax
+    SendMessage(HWND(id), WM_SYSCOMMAND, SC_MOVE|HTCAPTION, 0);   //remove by Colin3dmax
+#endif
 }
 
 void LxDialogBase::move( int x, int y )

@@ -4,13 +4,11 @@
 
 # This is a reminder that you are using a generated .pro file.
 # Remove it when you are finished editing this file.
-message("You are running qmake on a generated .pro file. This may not work!")
-
 
 TEMPLATE = lib
 TARGET = lomox
 DESTDIR = ../Release
-QT += core gui sql network xml webkit webkitwidgets
+QT += core gui sql network xml webkit
 CONFIG += debug
 DEFINES += QT_LARGEFILE_SUPPORT QT_XML_LIB QT_SQL_LIB QT_NETWORK_LIB QT_WEBKIT_LIB QT_WEBKITWIDGETS_LIB LOMOX_LIB
 INCLUDEPATH += ./GeneratedFiles \

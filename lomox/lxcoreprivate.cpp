@@ -29,8 +29,8 @@ void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
 	if (!m_pMainWin)
 		m_pMainWin = new LxBaseWin();
 	m_pMainWin->setUrl(URL);
-	m_pMainWin->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::WindowStaysOnTopHint);
-	//m_pMainWin->setWindowFlags( Qt::Dialog | Qt::WindowStaysOnTopHint);
+    m_pMainWin->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::WindowStaysOnTopHint);
+    //m_pMainWin->setWindowFlags( Qt::Dialog | Qt::WindowStaysOnTopHint);
 
     m_pDialog = new LxDialogBase(m_pMainWin, m_pMainWin, "LxDialog");
 
@@ -71,9 +71,8 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 	QApplication a(argc, argv);
 
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages,true);
-#ifdef  DEBUG
+
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
-#endif
 
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled,true);
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::OfflineStorageDatabaseEnabled,true);
@@ -92,7 +91,13 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 
 	QString strStoragePath = QCoreApplication::applicationDirPath() + QDir::separator() + QString("Storage\\");
 	QWebSettings::globalSettings()->enablePersistentStorage(strStoragePath);
+#ifdef Q_OS_MAC
+    QString strFile = "file:///"+QCoreApplication::applicationDirPath() + "/../Resources/main.html";
+#elif Q_OS_LINUX
     QString strFile = "file:///"+QCoreApplication::applicationDirPath() + "/Resources/main.html";
+#elif
+    QString strFile = "file:///"+QCoreApplication::applicationDirPath() + "/Resources/main.html";
+#endif
 	qDebug() << strFile.toLatin1();
     lxCoreApp->showMainDialog(strFile);
 	a.exec();
