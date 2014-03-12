@@ -1,0 +1,43 @@
+#ifndef VER_H
+#define VOS_NT_WINDOWS32        0x00040004L
+#define VFT_DLL                 0x00000002L
+#define VS_VERSION_INFO         1
+#endif
+#ifndef VI_VERSION_PVERSION 
+#define VI_VERSION_PVERSION		"www.lomox.org\0"
+#endif
+
+#include "buildcfg.h"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION								VI_VERSION
+PRODUCTVERSION							VI_VERSION
+FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+FILEFLAGS VS_FF_DEBUG
+#else
+FILEFLAGS 0x0L	
+#endif
+FILEOS VOS_NT_WINDOWS32 
+FILETYPE VFT_DLL
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004B0"
+        BEGIN
+            VALUE "CompanyName",		"lomox.org"
+            VALUE "LegalCopyright", 	"(C)lomox.org All Rights Reserved."
+            VALUE "ProductName",		VI_VERSION_PVERSION
+            VALUE "ProductVersion", 	VI_VERSION_STR
+            VALUE "FileDescription",	VI_FILEDESCRIPTION
+            VALUE "FileVersion",		VI_VERSION_STR
+            VALUE "InternalName",		VI_INTERNALNAME
+            VALUE "OriginalFilename",	VI_ORIGINALFILENAME
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0000, 1200
+    END
+END
