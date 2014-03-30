@@ -1,10 +1,17 @@
 欢迎参与建设或者编码设计。
 site:http://www.lomox.org
 
+lomox.dll 0.5.0.4 (蔡东赟)
+=======================
+1.cookie简单保存 固化
+2.bugfix
+3.本地cache默认是1m
+
+
 lomox.dll V0, 5, 0, 3 
 =================================
 1.处理crt问题 crt库对应的token依赖去掉(蔡东赟)
-2.config.ini 配置启动，配置边框
+2.config.ini 配置启动，配置边框 (蔡东赟)
 
 
 

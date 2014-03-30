@@ -35,7 +35,7 @@ public slots:
 	bool getNeedShowChildNcFrame();
 
 	bool getMainWindowStaysOnTopHint();
-
+	QString getCookieFilePath();
 };
 
 

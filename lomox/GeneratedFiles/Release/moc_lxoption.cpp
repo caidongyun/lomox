@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'lxoption.h'
 **
-** Created: Mon Mar 10 21:11:34 2014
+** Created: Sun Mar 30 14:44:54 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_LxOption[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -40,6 +40,7 @@ static const uint qt_meta_data_LxOption[] = {
      135,    9,  130,    9, 0x0a,
      160,    9,  130,    9, 0x0a,
      186,    9,  130,    9, 0x0a,
+     216,    9,   10,    9, 0x0a,
 
        0        // eod
 };
@@ -51,6 +52,7 @@ static const char qt_meta_stringdata_LxOption[] = {
     "getMainTitle()\0bool\0getNeedShowMainNcFrame()\0"
     "getNeedShowChildNcFrame()\0"
     "getMainWindowStaysOnTopHint()\0"
+    "getCookieFilePath()\0"
 };
 
 void LxOption::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -77,6 +79,8 @@ void LxOption::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 8: { bool _r = _t->getMainWindowStaysOnTopHint();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 9: { QString _r = _t->getCookieFilePath();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
         default: ;
         }
     }
@@ -114,9 +118,9 @@ int LxOption::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

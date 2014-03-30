@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'lxmainwin.h'
 **
-** Created: Tue Mar 11 14:38:45 2014
+** Created: Sun Mar 30 14:44:56 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,33 +23,26 @@ static const uint qt_meta_data_LxMainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       0,    0, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
- // slots: signature, parameters, type, tag, flags
-      18,   14,   13,   13, 0x0a,
-
        0        // eod
 };
 
 static const char qt_meta_stringdata_LxMainWindow[] = {
-    "LxMainWindow\0\0url\0linkClickedAction(QUrl)\0"
+    "LxMainWindow\0"
 };
 
 void LxMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        Q_ASSERT(staticMetaObject.cast(_o));
-        LxMainWindow *_t = static_cast<LxMainWindow *>(_o);
-        switch (_id) {
-        case 0: _t->linkClickedAction((*reinterpret_cast< const QUrl(*)>(_a[1]))); break;
-        default: ;
-        }
-    }
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData LxMainWindow::staticMetaObjectExtraData = {
@@ -83,11 +76,6 @@ int LxMainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = LxBaseWin::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
-    }
     return _id;
 }
 QT_END_MOC_NAMESPACE

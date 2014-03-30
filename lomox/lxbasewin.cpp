@@ -20,7 +20,27 @@ LxBaseWin::LxBaseWin(QWidget *parent)
 	//_initWidget();
 	m_strApiName = LOMOX_API_DIALOG ;
 	this->setRenderHints(QPainter::SmoothPixmapTransform | QPainter::HighQualityAntialiasing);
-	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
+	//QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
+
+	QNetworkAccessManager* pNetworkAccessManager = this->page()->networkAccessManager();
+
+	LxOption* pOption = lxCoreApp->getOption();
+	if (pOption && pNetworkAccessManager)
+	{
+		QString strCookies = pOption->getCookieFilePath();
+		LxNetWorkCookies* pCookies = new LxNetWorkCookies(strCookies, this);
+		pNetworkAccessManager->setCookieJar(pCookies);
+
+		QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
+		QString location = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
+		diskCache->setCacheDirectory(location);
+		diskCache->setMaximumCacheSize(1024);//byte
+		pNetworkAccessManager->setCache(diskCache);
+
+		pNetworkAccessManager->setNetworkAccessible(QNetworkAccessManager::Accessible);
+	}
+
+
 }
 
 LxBaseWin::~LxBaseWin()
@@ -36,7 +56,9 @@ bool LxBaseWin::initWidget()
 	QPointer<QWebPage> ptrWebPage = this->page();
 	QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
 	ptrWebPage->setPluginFactory(ptrPlugin);
-	ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
+	//ptrWebPage->setLinkDelegationPolicy(QWebPage:://DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
+
+
 	return true;
 }
 
@@ -51,21 +73,21 @@ void LxBaseWin::showEvent( QShowEvent *e )
  	return QWebView::showEvent(e);
 }
 
-
-void LxBaseWin::linkClickedAction( const QUrl& url )
-{
-	LxDialogs* pDialogs = lxCoreApp->getDialogs();
-	if (pDialogs)
-	{
-		QString strUrl = url.toString();
-		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
-		if (ptrDialog)
-		{
-			ptrDialog->show();
-		}
-	}
-	return ;
-}
+// 
+// void LxBaseWin::linkClickedAction( const QUrl& url )
+// {
+// 	LxDialogs* pDialogs = lxCoreApp->getDialogs();
+// 	if (pDialogs)
+// 	{
+// 		QString strUrl = url.toString();
+// 		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
+// 		if (ptrDialog)
+// 		{
+// 			ptrDialog->show();
+// 		}
+// 	}
+// 	return ;
+// }
 
 // void LxBaseWin::setDefaultApiName( QString strName /*= LOMOX_API_DIALOG*/ )
 // {

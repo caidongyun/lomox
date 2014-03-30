@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Web Utility Tools</title>
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+<link type="text/css" rel="stylesheet" href="css/buttons.css" />
+<link type="text/css" rel="stylesheet" href="css/font-awesome-403/font-awesome.min.css" />
+<style type="text/css">
+header { 
+	margin: 0; padding: 10px; text-align: center;
+	background-color: #F4F4F4;
+}
+header>h1 {
+	line-height: 80px; font-size: 80px; font-weight: 700;
+	margin: 0; padding: 20px 10px 40px;
+	color: #333; text-shadow: 0px 1px 0px white;
+	font-family: Verdana;
+}
+#fn-nav { 
+	text-align: center; margin-top: 40px;
+}
+</style>
+<script type="text/javascript" src="js/3rd/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/stdlib/LxExt-1.0.dev.js"></script>
+<script type="text/javascript" src="js/page.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('nav').on('click', 'a[target]', function(event) {
+		var from = '#' + $('#lx-body>div.current').attr('id');
+		var to = this.target;
+		var url = this.href;
+		event.preventDefault();
+		Page.turn(from, to, url);
+	});
+	$('#lx-nav').on('click', 'a#lx-back', function() {
+		Page.turn('#' + $('#lx-body>div.current').attr('id'), '#index-content', 'back');
+	}).on('click', 'a#lx-menu', function(event) {
+		$('#lx-nav-menu').fadeIn('fast');
+		event.stopPropagation();
+	});
+	$('#lx-nav-menu>nav').html($('#fn-nav').html());
+
+	$('#index-content').on('ready', function() {
+		$('#lx-back').fadeOut();
+	});
+});
+</script>
+<script type="text/javascript" src="js/lx.js?v=1"></script>
+</head>
+
+<body>
+<a id="lx-close" class="button button-highlight">&times;</a>
+<div id="lx">
+	<div id="lx-head">
+		<label><i class="fa fa-wrench"></i> Web Utility Tools</label>
+	</div>
+	<div id="lx-nav">
+		<a id="lx-back"><i class="fa fa-caret-left"></i>&nbsp;<i class="fa fa-home"></i></a>
+		<a id="lx-menu"><i class="fa fa-bars"></i></a>
+		<div id="lx-nav-menu">
+			<i id="lx-nav-caret" class="fa fa-caret-up"></i>
+			<nav>
+			</nav>
+		</div>
+	</div>
+	<div id="lx-body">
+		<div id="index-content" class="content current">
+			<header>
+				<h1>Web<br />Utility Tools</h1>
+			</header>
+			<section class="w">
+				<nav id="fn-nav">
+					<a class="button button-primary" href="page/entity/index.html" target="#entity-content">HTML Entities Lookup</a>
+					<a class="button button-action" href="page/scrollbar-style/index.html" target="#scrollbar-content">Webkit Scrollbar Style</a>
+					<a class="button button-highlight" href="page/image-sprites/index.html" target="#image-sprites-content">CSS Image Sprites</a>
+				</nav>
+
+
+				<center style="margin: 30px;">
+					<a href="javascript:;" id="ajaxtest">Ajax Test</a>
+					<div id="ajaxresult"></div>
+				</center>
+				<script>
+					/***
+					 * Ajax 测试
+					 */
+					$('#ajaxtest').click(function() {
+						$.ajax({
+							url: 'ajaxtest.html',
+							dataType: 'html',
+							type: 'get',
+							success: function(response) {
+								// Success 没有被执行
+								$('#ajaxresult').append($(response));
+								$('#ajaxresult').append($('<div>Done!</div>'));
+							},
+							error: function(jqXHR, status, error) {
+								// Error 被执行了
+								// jqXHR.status 返回了一个 0 的错误代码
+								// error为空，ajax 没有捕捉到 error 信息
+								$('#ajaxresult').append('<div style="color: red;">' + status + '</div>');
+								$('#ajaxresult').append('<div style="color: red;">Status Code: ' + jqXHR.status + '</div>');
+								$('#ajaxresult').append('<div style="color: red;">Error Code: ' + (error || 'N/A') + '</div>');
+							},
+							complete: function(jqXHR) {
+								// Error 执行
+								$('#ajaxresult').append('<div style="color: blue;">Complete</div>');
+								// 返回的jqXHR.responseText，是 ajaxtest.html的页面内容
+								$('#ajaxresult').append($(jqXHR.responseText));
+							}
+						});
+					});
+				</script>
+			</section>
+		</div>
+	</div>
+</div>
+</body>
+</html>

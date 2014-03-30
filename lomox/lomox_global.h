@@ -36,6 +36,7 @@
 #include "tool/utillites.h"
 #include "lxlocaltool.h"
 #include "lxdefinename.h"
+#include "lxnetworkcookie.h"
 
 
 

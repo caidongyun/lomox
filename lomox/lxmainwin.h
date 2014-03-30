@@ -33,8 +33,8 @@ public:
 
 	bool _initWidget();
 
-public slots:
-	void linkClickedAction( const QUrl& url );
+// public slots:
+// 	void linkClickedAction( const QUrl& url );
 
 };
 

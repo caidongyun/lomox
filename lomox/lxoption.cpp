@@ -45,7 +45,8 @@ QString LxOption::getStartUrl()
 		if (!varUrl.isNull() && varUrl.isValid())
 		{
 			QString strUrl = varUrl.toString();
-			return strUrl;
+			if (!strUrl.isEmpty())
+				return strUrl;
 		}
 	}
 

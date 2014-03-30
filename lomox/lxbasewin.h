@@ -28,7 +28,7 @@ public:
 	bool initWidget();
 
 public slots:
-	void linkClickedAction(const QUrl& url);
+	//void linkClickedAction(const QUrl& url);
 
 protected:
 	

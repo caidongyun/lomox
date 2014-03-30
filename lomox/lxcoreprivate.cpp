@@ -35,6 +35,8 @@ void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
 	{
 		if (!m_pMainWin)
 			m_pMainWin = new LxMainWindow();
+		
+		m_pMainWin->_initWidget();
 
 		m_pMainWin->setUrl(URL);
 
@@ -43,23 +45,13 @@ void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
 		if (!pOption)
 			break;
 
-// 		Qt::WindowFlags winType = Qt::Dialog ;
-// 
-// 		if (pOption->getNeedShowMainNcFrame())
-// 			winType = Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
-// 
-// 		if (pOption->getMainWindowStaysOnTopHint())
-// 			winType |= Qt::WindowStaysOnTopHint;
-// 
-// 		m_pMainWin->setWindowFlags(winType);
-
-
 		if (lxCoreApp->getDialogs())
 		{
 			m_pDialogs->append(QString("LomoX-Main"),m_pDialog);
 		}
 
 		new LxCoreApplication((QObject*)m_pMainWin, m_pMainWin,QString(LOMOX_API_COREAPP));
+		LxDialogBase* pDialogOp = new LxDialogBase(this, m_pMainWin, "LxDialog");
 
 		m_pMainWin->show();
 		
@@ -89,7 +81,11 @@ LxDialogs* LxCoreApplicationPrivate::getDialogs()
 LxMainWindow* LxCoreApplicationPrivate::getMainWin()
 {
 	if (!m_pMainWin)
+	{
+
 		m_pMainWin = new LxMainWindow();
+		m_pMainWin->initWidget();
+	}
 	return m_pMainWin;
 }
 
@@ -108,9 +104,11 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalStorageEnabled,true);
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls,true);
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::LocalContentCanAccessFileUrls,true);
+
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,true);
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::LinksIncludedInFocusChain,true);
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::PrintElementBackgrounds, true);
+	QWebSettings::globalSettings()->setAttribute(QWebSettings::XSSAuditingEnabled, false);
 
 	//QWebSettings::globalSettings()->setObjectCacheCapacities(0,0,0); 降低内存用的，但是速度回变低
 
@@ -136,7 +134,6 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 				strUrl = QString::fromLocal8Bit("http://") + strUrl;
 			}
 
-			lxCoreApp->showMainDialog(QUrl(strUrl));
 
 			if (!pOtion)
 				break;
@@ -144,6 +141,8 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 			QString strTitle = pOtion->getMainTitle();
 			if (!strTitle.isEmpty())
 				lxCoreApp->setMainDialogTitle(strTitle);
+
+			lxCoreApp->showMainDialog(QUrl(strUrl));
 		}
 		else
 		{
@@ -181,3 +180,14 @@ void LxCoreApplicationPrivate::setMainDialogTitle( QString &strTitle )
 	return ;
 }
 
+
+QString LxOption::getCookieFilePath()
+{
+	QString strCookieCache = QDesktopServices::storageLocation(QDesktopServices::CacheLocation) + "/lomox/";
+	QDir dir(strCookieCache);
+	dir.mkpath(strCookieCache);
+	strCookieCache += "cookie.dat";
+
+	return strCookieCache;
+
+}
