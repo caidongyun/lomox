@@ -24,7 +24,7 @@ LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
 /*	m_strApiName = LOMOX_API_DIALOG ;*/
 	_initWidget();
 	this->setRenderHints(QPainter::SmoothPixmapTransform | QPainter::HighQualityAntialiasing);
-// 	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
+ 	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
 
 	QNetworkAccessManager* pNetworkAccessManager = this->page()->networkAccessManager();
 	
@@ -67,7 +67,7 @@ bool LxMainWindow::_initWidget()
 
 		if (pOption->getNeedShowMainNcFrame())
 		{
-			winType |= Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
+			winType |=  Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
 		}
 		else
 		{
@@ -92,19 +92,19 @@ bool LxMainWindow::_initWidget()
 	return true;
 }
 
-// 
-// 
-// void LxMainWindow::linkClickedAction( const QUrl& url )
-// {
-// 	LxDialogs* pDialogs = lxCoreApp->getDialogs();
-// 	if (pDialogs)
-// 	{
-// 		QString strUrl = url.toString();
-// 		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
-// 		if (ptrDialog)
-// 		{
-// 			ptrDialog->show();
-// 		}
-// 	}
-// 	return ;
-/*}*/
+ 
+ 
+ void LxMainWindow::linkClickedAction( const QUrl& url )
+ {
+ 	LxDialogs* pDialogs = lxCoreApp->getDialogs();
+ 	if (pDialogs)
+ 	{
+ 		QString strUrl = url.toString();
+ 		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
+ 		if (ptrDialog)
+ 		{
+ 			ptrDialog->show();
+ 		}
+ 	}
+ 	return ;
+}

@@ -52,7 +52,7 @@ bool LxBaseWin::initWidget()
 	setObjectName("lomoxwin");
  	this->setWindowFlags(Qt::WindowMinMaxButtonsHint | Qt::Dialog);
 	//this->setAttribute(Qt::WA_TranslucentBackground, true);background-color:transparent}
-	this->setStyleSheet("#lomoxwin{ QMenu{background-color:none;}");
+	//this->setStyleSheet("#lomoxwin{ QMenu{background-color:none;}");
 	QPointer<QWebPage> ptrWebPage = this->page();
 	QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
 	ptrWebPage->setPluginFactory(ptrPlugin);

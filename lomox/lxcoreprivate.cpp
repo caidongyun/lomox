@@ -36,7 +36,6 @@ void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
 		if (!m_pMainWin)
 			m_pMainWin = new LxMainWindow();
 		
-		m_pMainWin->_initWidget();
 
 		m_pMainWin->setUrl(URL);
 
