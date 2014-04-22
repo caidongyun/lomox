@@ -19,9 +19,8 @@
 #include <QNetworkAccessManager>
 
 LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
-:LxBaseWin(prarent)
+:QWebView(prarent)
 {
-/*	m_strApiName = LOMOX_API_DIALOG ;*/
 	_initWidget();
 	this->setRenderHints(QPainter::SmoothPixmapTransform | QPainter::HighQualityAntialiasing);
  	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
@@ -52,6 +51,20 @@ LxMainWindow::~LxMainWindow()
 {
 
 }
+
+bool LxMainWindow::event(QEvent* e)
+{
+	return QWebView::event(e);
+}
+
+void LxMainWindow::showEvent( QShowEvent *e )
+{
+	this->repaint();
+	return QWebView::showEvent(e);
+}
+
+
+
 bool LxMainWindow::_initWidget()
 {
 	setObjectName("lomoxwin");
@@ -94,17 +107,23 @@ bool LxMainWindow::_initWidget()
 
  
  
- void LxMainWindow::linkClickedAction( const QUrl& url )
- {
- 	LxDialogs* pDialogs = lxCoreApp->getDialogs();
- 	if (pDialogs)
- 	{
- 		QString strUrl = url.toString();
- 		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
- 		if (ptrDialog)
- 		{
- 			ptrDialog->show();
- 		}
- 	}
+void LxMainWindow::linkClickedAction( const QUrl& url )
+{
+	this->load(url);
+//  	LxDialogs* pDialogs = lxCoreApp->getDialogs();
+//  	if (pDialogs)
+//  	{
+//  		QString strUrl = url.toString();
+//  		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
+//  		if (ptrDialog)
+//  		{
+//  			ptrDialog->show();
+//  		}
+//  	}
  	return ;
+}
+
+void LxMainWindow::triggerPageAction(QWebPage::WebAction action, bool checked /*= false*/)
+{
+	qDebug()<<"action:"<<action<<"\r\n";
 }

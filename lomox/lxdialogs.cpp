@@ -75,7 +75,6 @@ QObject* LxDialogs::add( QString key,QString url )
 {
 	LxMainWindow* lxMain= lxCoreApp->getMainWin();
 	LxBaseWin* lxDialog = new LxBaseWin(lxMain);
-	lxDialog->initWidget();
 
 	QString strFullUrl;
 	QFileInfo qFileInfo(url);

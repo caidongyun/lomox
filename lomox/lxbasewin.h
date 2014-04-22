@@ -24,11 +24,15 @@ class LOMOX_EXPORT LxBaseWin : public QWebView
 public:
 	explicit LxBaseWin(QWidget *parent = 0);
 	virtual ~LxBaseWin();
+
 public:
-	bool initWidget();
+	   void triggerPageAction(QWebPage::WebAction action, bool checked = false);
+
+private:
+	bool _initWidget();
 
 public slots:
-	//void linkClickedAction(const QUrl& url);
+	void linkClickedAction(const QUrl& url);
 
 protected:
 	

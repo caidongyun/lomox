@@ -17,10 +17,10 @@
 LxBaseWin::LxBaseWin(QWidget *parent)
 :QWebView(parent)
 {
-	//_initWidget();
+	_initWidget();
 	m_strApiName = LOMOX_API_DIALOG ;
 	this->setRenderHints(QPainter::SmoothPixmapTransform | QPainter::HighQualityAntialiasing);
-	//QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
+	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
 
 	QNetworkAccessManager* pNetworkAccessManager = this->page()->networkAccessManager();
 
@@ -39,28 +39,22 @@ LxBaseWin::LxBaseWin(QWidget *parent)
 
 		pNetworkAccessManager->setNetworkAccessible(QNetworkAccessManager::Accessible);
 	}
-
-
 }
 
 LxBaseWin::~LxBaseWin()
 {
 }
 
-bool LxBaseWin::initWidget()
-{
-	setObjectName("lomoxwin");
- 	this->setWindowFlags(Qt::WindowMinMaxButtonsHint | Qt::Dialog);
-	//this->setAttribute(Qt::WA_TranslucentBackground, true);background-color:transparent}
-	//this->setStyleSheet("#lomoxwin{ QMenu{background-color:none;}");
-	QPointer<QWebPage> ptrWebPage = this->page();
-	QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
-	ptrWebPage->setPluginFactory(ptrPlugin);
-	//ptrWebPage->setLinkDelegationPolicy(QWebPage:://DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
-
-
-	return true;
-}
+// bool LxBaseWin::initWidget()
+// {
+// 	setObjectName("lomoxwin");
+//  	this->setWindowFlags(Qt::WindowMinMaxButtonsHint | Qt::Dialog);
+// 	QPointer<QWebPage> ptrWebPage = this->page();
+// 	QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
+// 	ptrWebPage->setPluginFactory(ptrPlugin);
+// 	//ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
+// 	return true;
+// }
 
 bool LxBaseWin::event(QEvent* e)
 {
@@ -73,9 +67,53 @@ void LxBaseWin::showEvent( QShowEvent *e )
  	return QWebView::showEvent(e);
 }
 
-// 
-// void LxBaseWin::linkClickedAction( const QUrl& url )
-// {
+
+
+bool LxBaseWin::_initWidget()
+{
+	setObjectName("lomoxchildwin");
+
+	do 
+	{
+		LxOption* pOption = lxCoreApp->getOption();
+
+		if (!pOption)
+			break;
+
+		Qt::WindowFlags winType = Qt::Dialog ;
+
+		if (pOption->getNeedShowMainNcFrame())
+		{
+			winType |=  Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
+		}
+		else
+		{
+			winType |= Qt::FramelessWindowHint;
+			this->setAttribute(Qt::WA_TranslucentBackground, true);
+			this->setStyleSheet("#lomoxwin{background-color:transparent} QMenu{background-color:none;}");
+		}
+
+		if (pOption->getNeedShowChildNcFrame())
+			winType |= Qt::WindowStaysOnTopHint;
+
+		this->setWindowFlags(winType);
+
+		QPointer<QWebPage> ptrWebPage = this->page();
+		QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
+		ptrWebPage->setPluginFactory(ptrPlugin);
+
+		ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
+	} while (false);
+
+
+	return true;
+}
+
+
+
+void LxBaseWin::linkClickedAction( const QUrl& url )
+{
+	this->load(url);
 // 	LxDialogs* pDialogs = lxCoreApp->getDialogs();
 // 	if (pDialogs)
 // 	{
@@ -86,8 +124,13 @@ void LxBaseWin::showEvent( QShowEvent *e )
 // 			ptrDialog->show();
 // 		}
 // 	}
-// 	return ;
-// }
+	return ;
+}
+
+void LxBaseWin::triggerPageAction(QWebPage::WebAction action, bool checked /*= false*/)
+{
+	qDebug()<<"action:"<<action<<"\r\n";
+}
 
 // void LxBaseWin::setDefaultApiName( QString strName /*= LOMOX_API_DIALOG*/ )
 // {

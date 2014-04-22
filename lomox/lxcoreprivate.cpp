@@ -81,9 +81,7 @@ LxMainWindow* LxCoreApplicationPrivate::getMainWin()
 {
 	if (!m_pMainWin)
 	{
-
 		m_pMainWin = new LxMainWindow();
-		m_pMainWin->initWidget();
 	}
 	return m_pMainWin;
 }
@@ -182,11 +180,10 @@ void LxCoreApplicationPrivate::setMainDialogTitle( QString &strTitle )
 
 QString LxOption::getCookieFilePath()
 {
-	QString strCookieCache = QDesktopServices::storageLocation(QDesktopServices::CacheLocation) + "/lomox/";
+	QString strCookieCache = QCoreApplication::applicationDirPath() + QString::fromLocal8Bit("/cache/");
 	QDir dir(strCookieCache);
 	dir.mkpath(strCookieCache);
 	strCookieCache += "cookie.dat";
 
 	return strCookieCache;
-
 }

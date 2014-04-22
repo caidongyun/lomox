@@ -16,14 +16,12 @@
 #include "lomox_global.h"
 
 #include "lxoption.h"
-
-#include "lxbasewin.h"
 #include "lxcoreapplication.h"
 #include "lxcoreprivate.h"
 #include <QtGui/QWidget>
-class LxBaseWin;
 
-class LOMOX_EXPORT LxMainWindow : public LxBaseWin
+
+class LOMOX_EXPORT LxMainWindow : public QWebView
 {
 	Q_OBJECT
 public:
@@ -31,11 +29,22 @@ public:
 
 	virtual ~LxMainWindow();
 
-	bool _initWidget();
-
- public slots:
+public:
+	void triggerPageAction(QWebPage::WebAction action, bool checked /*= false*/);
+public slots:
  	void linkClickedAction( const QUrl& url );
 
+protected:
+	void showEvent(QShowEvent *e);
+	bool event(QEvent* e);
+
+private:
+	bool _initWidget();
+
+private:
+	QString m_strApiName;
+	QPointer<QWebPage> m_ptrPage;
+	QPointer<LxWebPluginFactory> m_ptrPlugin;
 };
 
 
