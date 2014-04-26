@@ -203,12 +203,13 @@ bool LxOption::getValueFromIni(QString strKey, bool &bValue)
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat,0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/maintop"));
+		QVariant varValue = qsetting.value(strKey);
 
 		if (!varValue.isNull() && varValue.isValid())
 		{
 			int nValue = varValue.toInt();
-			return bValue != 0 ? true : false;
+			bValue = nValue != 0 ? true : false;
+			return true;
 		}
 	}
 	return false;
