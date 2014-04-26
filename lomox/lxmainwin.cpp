@@ -43,6 +43,7 @@ LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
 		pNetworkAccessManager->setNetworkAccessible(QNetworkAccessManager::Accessible);
 
 		m_bLoadHrefInCurrent = pOption->getLoadHrefInCurrentMainDialog();
+
 	}
 
 }
@@ -64,8 +65,6 @@ void LxMainWindow::showEvent( QShowEvent *e )
 	this->repaint();
 	return QWebView::showEvent(e);
 }
-
-
 
 bool LxMainWindow::_initWidget()
 {

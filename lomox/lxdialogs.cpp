@@ -89,7 +89,7 @@ QObject* LxDialogs::add( QString key,QString url )
 
     qDebug("LxDialogs::add(%s,%s);",key.toLocal8Bit().constData(), strFullUrl.toLocal8Bit().constData());
 	lxDialog->setUrl(QUrl(strFullUrl));
-	lxDialog->setWindowFlags(Qt::WindowMinMaxButtonsHint| Qt::Dialog);
+
 
 	new LxCoreApplication(this,lxDialog,QString(LOMOX_API_COREAPP));
 	LxDialogBase* pDialogOp = new LxDialogBase(lxDialog, lxDialog, "LxDialog");

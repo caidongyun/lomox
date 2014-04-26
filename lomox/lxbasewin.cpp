@@ -47,16 +47,7 @@ LxBaseWin::~LxBaseWin()
 {
 }
 
-// bool LxBaseWin::initWidget()
-// {
-// 	setObjectName("lomoxwin");
-//  	this->setWindowFlags(Qt::WindowMinMaxButtonsHint | Qt::Dialog);
-// 	QPointer<QWebPage> ptrWebPage = this->page();
-// 	QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
-// 	ptrWebPage->setPluginFactory(ptrPlugin);
-// 	//ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
-// 	return true;
-// }
+
 
 bool LxBaseWin::event(QEvent* e)
 {
@@ -84,7 +75,7 @@ bool LxBaseWin::_initWidget()
 
 		Qt::WindowFlags winType = Qt::Dialog ;
 
-		if (pOption->getNeedShowMainNcFrame())
+		if (pOption->getNeedShowChildNcFrame())
 		{
 			winType |=  Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
 		}
