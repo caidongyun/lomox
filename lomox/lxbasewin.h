@@ -44,5 +44,6 @@ private:
 	QString m_strApiName;
 	QPointer<QWebPage> m_ptrPage;
 	QPointer<LxWebPluginFactory> m_ptrPlugin;
+	bool m_bLoadHrefInCurrent;
 };
 #endif // end of __BASEWIN_H__

@@ -38,6 +38,8 @@ LxBaseWin::LxBaseWin(QWidget *parent)
 		pNetworkAccessManager->setCache(diskCache);
 
 		pNetworkAccessManager->setNetworkAccessible(QNetworkAccessManager::Accessible);
+
+		m_bLoadHrefInCurrent = pOption->getLoadHrefInCurrentChildDialog();
 	}
 }
 
@@ -113,17 +115,22 @@ bool LxBaseWin::_initWidget()
 
 void LxBaseWin::linkClickedAction( const QUrl& url )
 {
-	this->load(url);
-// 	LxDialogs* pDialogs = lxCoreApp->getDialogs();
-// 	if (pDialogs)
-// 	{
-// 		QString strUrl = url.toString();
-// 		QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
-// 		if (ptrDialog)
-// 		{
-// 			ptrDialog->show();
-// 		}
-// 	}
+	if (m_bLoadHrefInCurrent)
+	{
+		this->load(url);
+	}
+	else
+	{
+		LxDialogs* pDialogs = lxCoreApp->getDialogs();
+		if (pDialogs)
+		{
+			QString strUrl = url.toString();
+			QPointer<LxDialogBase> ptrDialog = reinterpret_cast<LxDialogBase*>(pDialogs->add(strUrl,strUrl));
+			if (ptrDialog)
+				ptrDialog->show();
+		}
+	}
+
 	return ;
 }
 

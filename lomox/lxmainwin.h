@@ -45,6 +45,9 @@ private:
 	QString m_strApiName;
 	QPointer<QWebPage> m_ptrPage;
 	QPointer<LxWebPluginFactory> m_ptrPlugin;
+
+
+	bool m_bLoadHrefInCurrent;
 };
 
 

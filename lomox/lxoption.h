@@ -36,6 +36,13 @@ public slots:
 
 	bool getMainWindowStaysOnTopHint();
 	QString getCookieFilePath();
+
+	//href是否从本页加载刷新还是弹出新窗口
+	bool getLoadHrefInCurrentMainDialog();
+	bool getLoadHrefInCurrentChildDialog();
+
+private:
+	bool getValueFromIni(QString strKey, bool &bValue);
 };
 
 

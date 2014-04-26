@@ -194,3 +194,42 @@ bool LxOption::getMainWindowStaysOnTopHint()
 
 	return false;
 }
+
+
+
+bool LxOption::getValueFromIni(QString strKey, bool &bValue)
+{
+	QString strConfg = getConfgPath();
+	if (QFile::exists(strConfg))
+	{
+		QSettings qsetting(strConfg, QSettings::IniFormat,0);
+		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/maintop"));
+
+		if (!varValue.isNull() && varValue.isValid())
+		{
+			int nValue = varValue.toInt();
+			return bValue != 0 ? true : false;
+		}
+	}
+	return false;
+}
+
+bool LxOption::getLoadHrefInCurrentMainDialog()
+{
+	bool bRes = false;//默认自己控制
+	if (getValueFromIni(QString::fromLocal8Bit("/maindialog/hrefincurrent"), bRes))//取成功则用成功的结果
+	{
+		return bRes;
+	}
+	return bRes;//默认的
+}
+
+bool LxOption::getLoadHrefInCurrentChildDialog()
+{
+	bool bRes = false;//默认自己控制
+	if (getValueFromIni(QString::fromLocal8Bit("/childdialog/hrefincurrent"), bRes))//取成功则用成功的结果
+	{
+		return bRes;
+	}
+	return bRes;//默认的
+}
