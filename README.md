@@ -7,6 +7,20 @@ www.lomox.org
 
 配置：
 lomox / Release / config.ini 
+[cfg]
+url=http://www.baidu.com
+title=https://github.com/caidongyun/lomox|config.ini
+mainframe=1
+maintop=1
+childframe=1
+
+[maindialog]
+hrefincurrent=0
+
+
+[childdialog]
+hrefincurrent=1
+
 
 [cfg]
 url=http://www.baidu.com //如果指定url则从url启动，如果没有启动则默认在自己resources 目录下面找 main.lx打包资源 或index.html 或者 main.html  
