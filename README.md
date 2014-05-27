@@ -1,6 +1,7 @@
 lomox
 =====
-
+    lomox is a desktop web ui framework 
+    
 build：
 ===========
     vs 2008   
@@ -10,7 +11,7 @@ build：
     
     
     
-lomox is a desktop web ui framework 
+
 www.lomox.org
 ==============================================
 The new version 20140427
