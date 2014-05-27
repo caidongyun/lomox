@@ -2,6 +2,7 @@ lomox
 =====
 
 build：
+===========
     vs 2008   
     下载  qt-win-opensource-4.8.4-vs2008.exe 安装
     再下载 qt-vs-addin-1.1.11-opensource.exe
