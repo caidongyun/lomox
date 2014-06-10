@@ -1,12 +1,12 @@
 
 /*******************************************************************************
-* °æÈ¨ËùÓÐ(C) 1988-2014 All Rights Reserved.
+* ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½(C) 1988-2014 All Rights Reserved.
 *
-* ÎÄ¼þÃû³Æ	: basewin.cpp
-* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
-* ´´½¨ÈÕÆÚ	: 2014/3/9
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
+* ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½	: basewin.cpp
+* ï¿½ï¿½    ï¿½ï¿½	: ï¿½Ì¶ï¿½ï¿½S (mailto:caidongyun19@qq.com)
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	: 2014/3/9
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	: 
+* ï¿½ï¿½    ×¢	: 
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxmainwin.h"
@@ -65,7 +65,12 @@ void LxMainWindow::showEvent( QShowEvent *e )
 	this->repaint();
 	return QWebView::showEvent(e);
 }
-
+void LxMainWindow::showMax()
+{
+	QDesktopWidget desk;
+	this->setGeometry(desk.availableGeometry());
+	this->show();
+}
 bool LxMainWindow::_initWidget()
 {
 	setObjectName("lomoxwin");
