@@ -18,7 +18,7 @@ The new version 20140427
 
 Download the new version:
 
-http://yunpan.cn/QNXJ3SrvtHKqf access password 7c0d
+http://pan.baidu.com/s/1mgKBloO
 
 github:
 
