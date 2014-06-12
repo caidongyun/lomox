@@ -53,8 +53,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 0,5,0,4
- PRODUCTVERSION 0,5,0,4
+ FILEVERSION 0,6,0,4
+ PRODUCTVERSION 0,6,0,4
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -71,12 +71,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "www.lomox.org"
             VALUE "FileDescription", "lomox Dynamic Link Library"
-            VALUE "FileVersion", "0, 5, 0, 4"
+            VALUE "FileVersion", "0, 6, 0, 4"
             VALUE "InternalName", "lomox"
             VALUE "LegalCopyright", "Copyright (C) 2012 www.lomox.org"
             VALUE "OriginalFilename", "lomox.dll"
             VALUE "ProductName", "lomox Dynamic Link Library"
-            VALUE "ProductVersion", "0, 5, 0, 4"
+            VALUE "ProductVersion", "0, 6, 0, 4"
         END
     END
     BLOCK "VarFileInfo"
