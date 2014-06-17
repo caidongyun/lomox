@@ -22,6 +22,8 @@ LxBaseWin::LxBaseWin(QWidget *parent)
 	this->setRenderHints(QPainter::SmoothPixmapTransform | QPainter::HighQualityAntialiasing);
 	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
 
+	this->setAttribute(Qt::WA_DeleteOnClose);
+
 	QNetworkAccessManager* pNetworkAccessManager = this->page()->networkAccessManager();
 
 	LxOption* pOption = lxCoreApp->getOption();
