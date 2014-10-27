@@ -76,4 +76,30 @@ hrefincurrent=0
 hrefincurrent=1 
 //子窗口  href链接是否在当前打开 0为否，href在新子窗口打开
 
+=======================================================
+
+LomoX.libs
+
+LomoX.dialogs
+
+LomoX.file
+
+LomoX.dir
+
+LomoX.appPath
+
+
+LomoX.args
+
+
+LomoX.version
+
+
+LomoX.net
+
+
+LomoX.res
+
+
+ 
  
