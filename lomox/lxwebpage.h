@@ -9,12 +9,18 @@
 ********************************************************************************/
 #ifndef __LXWEBPAGE_H__
 #define __LXWEBPAGE_H__
+#include "lomox_global.h"
 
 class LxWebPage : public QWebPage
 {
+	Q_OBJECT
 public:
 	explicit LxWebPage(QObject *parent = 0);
 	virtual ~LxWebPage();
-public slots:
+protected:
+	virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type);
+private slots:
+	void permissionRequested(QWebFrame* frame, QWebPage::Feature feature);
+	void handleUnsupportedContent(QNetworkReply* reply);
 };
 #endif // end of __LXWEBPAGE_H__

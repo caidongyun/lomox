@@ -6,12 +6,14 @@
 * 创建日期	: 2011/11/3
 * 功能描述	: 
 * 备    注	: 
+* 修    改  ：詹晨辉(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxbasewin.h"
 #include <QWebPage>
 #include "lxdialogoperate.h"
 #include "lxdialogs.h"
+#include "lxwebpage.h"
 #include "lxwebpluginfactory.h"
 
 LxBaseWin::LxBaseWin(QWidget *parent)
@@ -34,7 +36,8 @@ LxBaseWin::LxBaseWin(QWidget *parent)
 		pNetworkAccessManager->setCookieJar(pCookies);
 
 		QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
-		QString location = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
+		QString location = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+		//QString location = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
 		diskCache->setCacheDirectory(location);
 		diskCache->setMaximumCacheSize(1024);//byte
 		pNetworkAccessManager->setCache(diskCache);
@@ -43,6 +46,12 @@ LxBaseWin::LxBaseWin(QWidget *parent)
 
 		m_bLoadHrefInCurrent = pOption->getLoadHrefInCurrentChildDialog();
 	}
+
+	QString iconName = pOption->getSystemTrayIconName();
+	QString iconPath = QCoreApplication::applicationDirPath() + "/" + iconName;
+	qDebug("show path %s", iconPath.toStdString());
+	QIcon icon(iconPath);
+	this->setWindowIcon(icon);
 }
 
 LxBaseWin::~LxBaseWin()
@@ -68,36 +77,38 @@ bool LxBaseWin::_initWidget()
 {
 	setObjectName("lomoxchildwin");
 
-	do 
+	do
 	{
 		LxOption* pOption = lxCoreApp->getOption();
 
 		if (!pOption)
 			break;
 
-		Qt::WindowFlags winType = Qt::Dialog ;
+		Qt::WindowFlags winType = Qt::Dialog;
 
 		if (pOption->getNeedShowChildNcFrame())
 		{
-			winType |=  Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
+			winType |= Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
 		}
 		else
 		{
 			winType |= Qt::FramelessWindowHint;
+			winType |= Qt::WindowSystemMenuHint;//不加不出现窗口 modify by KeoJam 2015-04-19
 			this->setAttribute(Qt::WA_TranslucentBackground, true);
 			this->setStyleSheet("#lomoxwin{background-color:transparent} QMenu{background-color:none;}");
 		}
 
-		if (pOption->getNeedShowChildNcFrame())
+		if (pOption->getChildWindowStaysOnTopHint())
 			winType |= Qt::WindowStaysOnTopHint;
-
 		this->setWindowFlags(winType);
+		SetWindowLong((HWND)this->winId(), GWL_EXSTYLE, WS_EX_APPWINDOW);//add  by KeoJam 强制子窗口最小化显示在任务
 
-		QPointer<QWebPage> ptrWebPage = this->page();
+		QWebPage* ptrWebPage = new LxWebPage(this);
+		this->setPage(ptrWebPage);//add  by KeoJam 启用自定义LxWebPage用于Permission处理
+		//QPointer<QWebPage> ptrWebPage = this->page();
 		QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
 		ptrWebPage->setPluginFactory(ptrPlugin);
-
-		ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
+		//ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
 	} while (false);
 
 

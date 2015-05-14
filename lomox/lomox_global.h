@@ -22,7 +22,9 @@
 
 #include "stdafx.h"
 
-#include <QtGui>
+//#include <QtGui>//5.0被替换
+#include <QtWidgets>
+#include <QtWebKitWidgets>
 #include <QtCore>
 #include <QtWebKit>
 #include <QDir>

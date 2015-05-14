@@ -11,6 +11,7 @@
 #define __LOCALTOOL_H__
 
 #include "stdafx.h"
+#include <QtWebKitWidgets/QWebPage>
 namespace LX_UTILITYTOOL
 {
 	inline bool setupApiObject(QWebPage* pWebPage, QString strApiName, QObject *object) 

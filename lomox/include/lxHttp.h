@@ -10,8 +10,9 @@
 #ifndef __LXHTTP_H__
 #define __LXHTTP_H__
 
-#include <QHttp>
-#include <QtNetwork/QHttp>
+//#include <QHttp>
+#include <QNetworkAccessManager>
+//#include <QtNetwork/QHttp>
 #include <QtScript/QScriptValue>
 #include <QtScript/QScriptContext>
 #include <QtScript/QScriptEngine>

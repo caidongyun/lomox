@@ -1,13 +1,13 @@
 
 
 /*******************************************************************************
-* ��Ȩ����(C) 1988-2014 All Rights Reserved.
+* 版权所有(C) 1988-2014 All Rights Reserved.
 *
-* �ļ�����	: basewin.cpp
-* ��    ��	: �̶��S (mailto:caidongyun19@qq.com)
-* ��������	: 2014/3/9
-* ��������	: 
-* ��    ע	: 
+* 文件名称	: basewin.h
+* 作    者	: 蔡东赟 (mailto:caidongyun19@qq.com)
+* 创建日期	: 2011/11/3
+* 功能描述	:
+* 备    注	:
 ********************************************************************************/
 
 #ifndef __LXMAINWIN_H__
@@ -18,7 +18,7 @@
 #include "lxoption.h"
 #include "lxcoreapplication.h"
 #include "lxcoreprivate.h"
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 
 class LOMOX_EXPORT LxMainWindow : public QWebView
@@ -46,9 +46,8 @@ private:
 	QString m_strApiName;
 	QPointer<QWebPage> m_ptrPage;
 	QPointer<LxWebPluginFactory> m_ptrPlugin;
-
-
 	bool m_bLoadHrefInCurrent;
+	
 };
 
 

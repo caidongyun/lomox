@@ -6,6 +6,7 @@
 * 创建日期	: 2012/2/20
 * 功能描述	:
 * 备    注	:
+* 修    改  ：詹晨辉(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #ifndef __LXCOREPRIVATE_H__
 #define __LXCOREPRIVATE_H__
@@ -29,6 +30,7 @@ static LxCoreApplicationPrivate* g_AppSelft = nullptr;
 
 class LxMainWindow;
 
+class LxDownloadManager;
 
 class LOMOX_EXPORT LxCoreApplicationPrivate : public QObject
 {
@@ -37,7 +39,8 @@ private:
     LxCoreApplicationPrivate()
         :m_pMainWin(nullptr),
         m_pDialogs(nullptr),
-		m_pOption(nullptr)
+		m_pOption(nullptr),
+		m_pdownloadmanager(nullptr)
     {
     }
 
@@ -51,6 +54,8 @@ public:
     LxMainWindow* getMainWin();
 	
 	LxDialogs* getDialogs();
+
+	LxDownloadManager *getDownloadManager();
 
     void showMainDialog( QUrl URL /*= ""*/ );
 
@@ -77,6 +82,7 @@ protected:
     LxDialogs* m_pDialogs;
     LxDialogBase* m_pDialog;
 	LxOption* m_pOption;
+	LxDownloadManager *m_pdownloadmanager; //下载器
 };
 
 

@@ -34,7 +34,7 @@ public slots:
 	virtual QVariant count();
 	virtual QObject* add( QString key,QString url );
 	virtual QVariant remove( QString key);
-
+	virtual void closeAll();
 private:
 	QMap<QString,LxDialogBase *> m_mapDialogs;
 	QPointer<LxMainWindow> m_ptrMainWin;

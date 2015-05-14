@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>邻盛企业私有智能云盘</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <link href="Public/css/zui.css" type="text/css" rel="stylesheet"/>
+        <link href="Public/css/bootswatch.css" type="text/css" rel="stylesheet"/>
+        <link href="Public/css/main_default.css" type="text/css" rel="stylesheet"/>
+        <link href="Public/css/index.css" type="text/css" rel="stylesheet"/>
+        <script src="Public/js/avalon/avalon.min.js" type="text/javascript"></script> 
+        <script src="Public/js/jquery-2.1.1.js" type="text/javascript"></script>
+        <script src="Public/js/index.js" type="text/javascript"></script>     
+   </head>
+    <style>
+    .ms-controller,.ms-important{visibility:hidden !important;}
+    </style>
+<body >
+   <div class="main">
+       <!--main头部开始-->
+       <div class="main_top">
+            <div class="company_name">武汉邻盛在线科技有限公司-邻盛企业私有智能云盘</div><!--公司名称-->
+            <div class="top_set">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <!--右上角关闭-->
+            <div class="top_nav">
+                <span class="pos"></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <!--top导航按钮-->
+       </div><!--main头部结束------------------------------------------------------------->
+       
+       
+       <!--main_body开始-->
+       <div class="main_body" >
+           <!--body_left开始-->
+           
+           <div class="body_left" >
+              <div class="left_user">
+                <span><img src="Public/images/delete/user.jpg"/></span>
+                <span>乔雨妍</span>
+              </div>
+              <hr class="user_hr"/>
+              <ul class="user_news">
+                <li><i class="glyphicon glyphicon-volume-down"></i>应用消息<span class="badge">13</span></li>
+                <li><i class="glyphicon glyphicon-user"></i>我的消息<span class="badge">113</span></li>
+                <li><i class="glyphicon glyphicon-volume-down"></i>通知公告<span class="badge">3</span></li>
+              </ul>
+              <hr class="user_hr"/>
+              <div class="user_rc_title">今天的日程<a class="pull-right" href="#">全部</a></span></div>
+              <ul class="user_rc" >
+                <div class="text-primary">a.m</div>
+                <li><span>09:20</span><a href="#">UI讨论</a></li> 
+                <li><span>10:30</span><a href="#">制定明年销售计划</a></li> 
+                <li><span>11:40</span><a href="#">市场部分配任务</a></li> 
+                <li><span>12:08</span><a href="#">经销商碰头会议</a></li>
+                <div class="text-primary">p.m</div> 
+                <div class="text-muted">暂无工作安排</div>
+              </ul>
+           </div><!--body_left结束------------------------------->
+
+           <!--body_right开始-->
+           <div class="body_right"  >
+          
+             <div class="right_show">
+                  <div class="right_top" ms-important="show_set">
+                    <ul class="right_top_tb"  >
+                      <li><img src="Public/images/icon/icon_1/icon-top_01.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_02.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_03.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_04.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_01.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_02.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_03.png"></li>
+                      <li><img src="Public/images/icon/icon_1/icon-top_04.png"></li>
+                       
+                      <li><img src="Public/images/icon/icon_1/icon-top_04.png"></li>
+                       
+                        
+                      <li ms-click="show('add')"><img src="Public/images/icon/icon_1/icon-top_34.png"></li>
+                     </ul>
+
+                     <div ms-widget="dialog,add,$set" class="set_kk" >
+                        <p>{{message }}</p>
+                        <div class="set_div">
+                            <p><i class="glyphicon glyphicon-th"></i>智能管理</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">客户管理
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">进销存
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">生产订单管理
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">生产管理
+                              </label>
+                            </div> 
+                             <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">项目管理
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">样品报价管理
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">仓库管理
+                              </label>
+                            </div> 
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">设计资料管理
+                              </label>
+                            </div> 
+                        </div>
+                        <div class="set_div">
+                            <p>&nbsp;</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">日程
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">人才发展
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">考勤管理
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">人才招聘
+                              </label>
+                            </div> 
+                             <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">通知公告
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">培训
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">工作流
+                              </label>
+                            </div> 
+                             
+                        </div>
+                        <div class="set_div">
+                            <p>&nbsp;</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">财务室
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">网盘
+                              </label>
+                            </div>
+                           
+                        </div>
+                        <div class="set_div">
+                            <p>&nbsp;</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">知识分享
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">产业圈
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">行业问答
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">行业情报
+                              </label>
+                            </div> 
+                            
+                        </div>
+                        <div class="set_div">
+                            <p><i class="glyphicon glyphicon-new-window"></i>智能营销</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">供应信息
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">求购信息
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">微博营销
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">微信营销
+                              </label>
+                            </div> 
+                        </div>
+                        <div class="set_div">
+                            <p><i class="glyphicon glyphicon-retweet"></i>智能供应链</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">网络订单
+                              </label>
+                            </div>                      
+                        </div>
+                        <div class="set_div">
+                            <p><i class="glyphicon glyphicon-user"></i>个人中心</p>
+                            <div class="checkbox" >
+                              <label>
+                                <input type="checkbox" value="">个人中心
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" value="">我的通讯录
+                              </label>
+                            </div>
+                            
+                        </div>
+                       
+                        
+                      </div>
+            
+                  </div><!--right_top结束-->
+                  <hr class="user_hr"/>
+                  <div class="right_body">
+                     <div class="right_body_top"><span class="text-primary">我的添加</span><span>|</span><span>全部消息</span></div>
+                     
+                     <div class="right_body_main">
+                         <ul class="right_tz">
+                             <li>
+                                <div><a href="#"><img src="Public/images/icon/icon_01.png"/></a></div>
+                                <div class="text-primary">项目管理-项目协同有新通知请查看详情！<br/><a href="#">邀你常见测试........</a></div>
+                                <div >2014-05-03<br/>09:35</div> 
+                             </li>
+                              <li>
+                                <div><a href="#"><img src="Public/images/icon/icon_03.png"/></a></div>
+                                <div class="text-primary">项目管理-项目协同有新通知请查看详情！<br/><a href="#">邀你常见测试........</a></div>
+                                <div >2014-05-03<br/>09:35</div> 
+                             </li>
+                             <li>
+                                <div><a href="#"><img src="Public/images/icon/icon_07.png"/></a></div>
+                                <div class="text-primary">项目管理-项目协同有新通知请查看详情！<br/><a href="#">邀你常见测试........</a></div>
+                                <div>2014-05-03<br/>09:35</div> 
+                             </li>
+    
+                         </ul>
+                         
+                     </div>
+                  </div><!--right_body结束-->
+               </div>
+               <!--首页右边结束---------------------->
+               <div class="right_show">
+                  <div class="gl_nav"><span class="pos">业务与生产</span><span>行政与人力</span><span>公共与财务</span><span>社区与分享</span><span>全部应用</span></div> 
+                  <div class="gl_kk">
+                      <div class="gl_show other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="app/Customer/index.html"><img src="Public/images/icon/icon_01.png" /><p>客户管理</p></a><span class="badge">3</span></li>
+                            <li><a href="app/Invoicimg/index.html"><img src="Public/images/icon/icon_02.png"/><p>进销存</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_03.png"/><p>生产订单管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_04.png"/><p>生产管理</p></a></li>
+                            <li><a href="app/Project/index.html"><img src="Public/images/icon/icon_05.png"/><p>项目管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_06.png"/><p>样品报价管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_07.png"/><p>仓库管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_08.png"/><p>设计资料管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_09.png"/><p>原料管理</p></a><span class="badge">3</span></li>
+                            <li><a href="app/Shouyin/index.html"><img src="Public/images/icon/icon_33.png"/><p>收银系统</p></a></li>
+                            <li><a href="app/ShouyinFace/index.html"><img src="Public/images/icon/icon_34.png"/><p>收银前台</p></a></li>
+                            
+                         </ul>
+                      </div><!--业务与生产结束-->
+                      <div class="gl_show other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_14.png"/><p>日程</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_15.png"/><p>人才发展</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_16.png"/><p>考勤管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_17.png"/><p>人才招聘</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_18.png"/><p>通知公告</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_19.png"/><p>培训</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_20.png"/><p>工作流</p></a></li>
+                            
+                         </ul>
+                      </div><!--行政与人力结束-->
+                      <div class="gl_show other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_23.png"/><p>财务室</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_24.png"/><p>网盘</p></a></li>
+                            
+                         </ul>
+                      </div><!--公共与财务结束-->
+                      <div class="gl_show other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_10.png"/><p>知识分享</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_11.png"/><p>产业圈</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_12.png"/><p>行业问答</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_13.png"/><p>行业情报</p></a></li>  
+                         </ul>
+                      </div><!--社区与分享结束-->
+                      <div class="gl_show other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_25.png"/><p>系统管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_01.png" /><p>客户管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_02.png"/><p>进销存</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_03.png"/><p>生产订单管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_04.png"/><p>生产管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_05.png"/><p>项目管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_06.png"/><p>样品报价管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_07.png"/><p>仓库管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_08.png"/><p>设计资料管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_09.png"/><p>原料管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_10.png"/><p>知识分享</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_11.png"/><p>产业圈</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_12.png"/><p>行业问答</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_13.png"/><p>行业情报</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_14.png"/><p>日程</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_15.png"/><p>人才发展</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_16.png"/><p>考勤管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_17.png"/><p>人才招聘</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_18.png"/><p>通知公告</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_19.png"/><p>培训</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_20.png"/><p>工作流</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_23.png"/><p>财务室</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_24.png"/><p>网盘</p></a></li>
+                            
+                         </ul>
+                      </div><!--全部应用结束-->
+                  </div> 
+               </div>
+               <!--智能管理结束---------------------->
+               <div class="right_show">
+                  <div class="other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_26.png"/><p>供应信息</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_27.png"/><p>求购信息</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_28.png"/><p>微博营销</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_29.png"/><p>微信营销</p></a></li>
+                         </ul>
+                  </div>
+               </div>
+                <!--智能营销结束--------------------->
+               <div class="right_show">
+                  <div class="other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_32.png"/><p>网络订单</p></a></li>
+                         </ul>
+                  </div>
+               </div>
+                <!--智能供应链结束------------------->
+               <div class="right_show">
+                 <div class="other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_30.png"/><p>个人中心</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_31.png"/><p>我的通讯录</p></a></li>
+                           
+                         </ul>
+                  </div>
+               </div>
+                <!--个人中心结束--------------------->
+               <div class="right_show">
+                  <div class="other_show">
+                         <ul class="gl_show_ul">
+                            <li><a href="#"><img src="Public/images/icon/icon_25.png"/><p>系统管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_01.png" /><p>客户管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_02.png"/><p>进销存</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_03.png"/><p>生产订单管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_04.png"/><p>生产管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_05.png"/><p>项目管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_06.png"/><p>样品报价管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_07.png"/><p>仓库管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_08.png"/><p>设计资料管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_09.png"/><p>原料管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_10.png"/><p>知识分享</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_11.png"/><p>产业圈</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_12.png"/><p>行业问答</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_13.png"/><p>行业情报</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_14.png"/><p>日程</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_15.png"/><p>人才发展</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_16.png"/><p>考勤管理</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_17.png"/><p>人才招聘</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_18.png"/><p>通知公告</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_19.png"/><p>培训</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_20.png"/><p>工作流</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_23.png"/><p>财务室</p></a></li>
+                            <li><a href="#"><img src="Public/images/icon/icon_24.png"/><p>网盘</p></a></li>
+                            
+                         </ul>
+                  </div>
+               </div>
+                <!--应用中心结束--------------------->
+           </div><!--body_right结束------------------------------>
+           
+           
+       </div><!--main_body结束------------------------------------------------------------>
+       
+       <!--IM开始-->
+       <div class="im_list">
+          <div class="im_list_main">
+             <div class="im_list_left"><i class="icon-ellipsis-vertical"></i></div>
+             <div class="im_list_top"><i class="icon-user"></i>联系人(1/22)</div>
+             <ul class="im_user">
+               <li><i class="icon-caret-right"></i>技术部（50）</li>
+               <li><i class="icon-caret-right"></i>销售部（20）</li>
+               <li><i class="icon-caret-right"></i>技术部（50）</li>
+               <li><i class="icon-caret-right"></i>销售部（20）</li>
+             </ul>
+          </div>      
+       </div>
+       
+       <div class="im">
+           <ul class="im_bottom">
+             <li><i class="icon-chat-dot"></i>群发</li>
+             <li><i class="icon-comment"></i></li>
+             <li class="im_change"><i class="icon-exchange"></i></li>
+           </ul>
+       </div>
+       
+       <!--<div class="im_chart">
+           <div class="im_chart_top"><i class="icon-comments-alt"></i>马云
+              <span><i class="icon-remove"></i></span>
+           </div>
+           <div class="im_chart_body">
+              <div class="im_chart_message">
+                <ul class="im_chart_message_list">
+                   <li class="m">
+                      <img src="Public/images/delete/user.jpg">
+                      <div>这是消息这是消息这是消息</div>
+                      <span>你好啊 -2015-05-08 19:30</span>
+                   </li>
+                   <div style=" clear:both"></div>
+                   <li class="t">
+                      <img src="Public/images/delete/user.jpg">
+                      <div>这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息</div>
+                      <span>2015-05-08 19:30</span>
+                   </li>
+                   <li class="m">
+                      <img src="Public/images/delete/user.jpg">
+                      <div>这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息这是消息</div>
+                      <span>2015-05-08 19:30</span>
+                   </li>
+                </ul>
+              </div>
+              <div class="im_chart_middle"><i class="icon-folder-close-alt"></i><span><i class="icon-comment-alt"></i>聊天记录</span></div>
+              <div class="im_chart_text"></div>
+              <div class="im_chart_send">
+                <a href="javascript:">发送</a>
+              </div>
+           </div>
+       </div>
+   </div>-->
+   
+  
+
+</html>
+
+<style>
+.im_chart_message_list{ padding: 10px 12px;}
+.im_chart_message_list li{  margin-bottom: 15px; }
+.im_chart_message_list li:after {content: '\20';display: block;clear: both;}
+.im_chart_message_list li img{ width: 28px; height: 28px; border-radius:50%;box-shadow: 1px 1px 2px rgba(153, 153, 153, 0.44) } 
+.im_chart_message_list li div{ padding: 3px 5px; margin-top: 3px; max-width: 320px;box-shadow: 1px 1px 2px rgba(153, 153, 153, 0.44);  vertical-align:top} 
+.im_chart_message_list li span {color: #919496; padding-top: 5px; text-align: right;overflow: hidden; width: 60px; white-space:nowrap; }
+  
+.t img{float: left; margin-right: 10px;} 
+.t div{ float: left;margin-right: 5px; background: #DEEDFF}
+.t span{ float: left;}
+.m{ position: relative; }
+.m img{float: right; margin-left: 10px;}
+.m div{ float: right;margin-left: 5px; background: rgba(222, 237, 255, 0.39)}
+.m span{ float: right; z-index: 1 }  
+ 
+.im{ position:absolute; right:1px; bottom:2px; width:210px; height:34px; background:#F2F4F8; line-height:34px; border: 1px solid #D0DCF3; z-index: 2 }  
+.im_bottom{ width: 230px; height: 34px;}
+.im_bottom li{ width: 69px; float: left;border-right: 1px solid #D0DCF3; cursor: pointer}
+.im_bottom li:nth-last-child(1){ border-right:none}
+.im i{ margin-left:29px; color: #676A6C   }
+.im .icon-chat-dot { color: #FFA00A;margin-left:15px; margin-right: 5px;}
+.im_list{position:absolute;right: -210px;bottom: 2px;width: 210px; height: 400px; border: 1px solid #D0DCF3;background-color: #fff;font-size: 12px;box-shadow: 0 0 10px rgba(0,0,0,.2);z-index: 1;}
+.im_list_main{ position: relative}
+.im_list_left{position: absolute;left: -17px;top: 120px;width: 16px;text-align: center;color: #999;line-height: 97px;height: 97px;border: solid 1px #D0DCF3;border-right: none;background: #F2F4F8; cursor: pointer}
+.im_list_top{ height: 40px; line-height: 40px; border-bottom: 1px solid #D0DCF3; padding-left: 20px;}  
+.im_list_top i{ color: #1AB394; margin-right: 10px} 
+.im_user{  height: 320px; padding:10px 15px; overflow: hidden; overflow-y: auto}  
+.im_user li{ line-height: 25px; cursor: pointer}
+.im_user li i{ margin-right: 10px;} 
+  
+.im_chart{ position: absolute; left: 180px; top: 120px;  width: 520px; height: 420px;border: 1px solid #BEBEBE;background-color: #fff;font-size: 12px;box-shadow: 0 0 10px rgba(0,0,0,.2)}  
+.im_chart_top{ height: 35px; line-height: 35px; position:relative; padding-left: 15px; border-bottom: 1px solid #BEBEBE}
+.im_chart_top span{ position: absolute; right: 10px;}
+.im_chart_top .icon-comments-alt{ color: #2FA4E7; margin-right: 5px;}
+.im_chart_body{  width: 518px; height: 455px; }
+.im_chart_message{ width: 518px; height: 220px;}
+.im_chart_middle{ height: 35px; padding-left: 15px; width: 518px; background: #F3F3F3; line-height: 35px;} 
+.im_chart_middle .icon-paper-clip{  font-size: 16px}
+.im_chart_middle i{ cursor:pointer}
+.im_chart_middle i:hover{ color:#FFA00A }  
+.im_chart_middle span{ float: right; font-size: 12px; margin-right: 10px;cursor:pointer}
+.im_chart_middle span i{ margin-right: 5px;}
+.im_chart_text{ height:88px; padding: 5px 8px 0 8px; box-sizing: border-box; width: 518px;} 
+.im_chart_send{ height: 40px; background:#F3F3F3 }
+.im_chart_send a{display: block; width: 65px; height: 26px; background: #FFA00A; border-radius: 4px; color: #fff; line-height: 26px; text-align: center; float: right;  margin-right: 10px; margin-top: 8px; text-decoration: none;}  
+</style>
+<script>
+  $(function(){
+      var state=0;
+      $("body").on('click','.im_list_left,.im_change',function(){
+        if(state==0){
+            $(".im_list").animate({"right":"1px"},200);
+            state=1;
+        }else if(state==1){
+           $(".im_list").animate({"right":"-210px"},200);
+           $(".im").animate({"right":"-210px"},200);
+           $(".im").animate({"right":"1px"},100)
+           state=0;
+        }
+        
+        })
+  }) 
+  
+
+
+
+</script>

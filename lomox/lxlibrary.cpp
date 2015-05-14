@@ -49,7 +49,8 @@ QVariant LxLibrary::exec(QString functionName, QVariant param,QString encode)
     qDebug("in exec now!");
     if (m_webView.isNull())return nullptr;
 
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
+	QTextCodec::codecForName(encode.toLocal8Bit().data());
+    //QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
     if((!m_pLib.isNull()) && m_pLib->isLoaded())
 	{
         qDebug("exec now!");

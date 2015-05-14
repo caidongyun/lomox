@@ -1,18 +1,20 @@
 
 /*******************************************************************************
-* ��Ȩ����(C) 1988-2014 All Rights Reserved.
+* 版权所有(C) 1988-2014 All Rights Reserved.
 *
-* �ļ�����	: basewin.cpp
-* ��    ��	: �̶��S (mailto:caidongyun19@qq.com)
-* ��������	: 2014/3/9
-* ��������	: 
-* ��    ע	: 
+* 文件名称	: basewin.h
+* 作    者	: 蔡东赟 (mailto:caidongyun19@qq.com)
+* 创建日期	: 2011/11/3
+* 功能描述	:
+* 备    注  ：
+* 修    改  ：詹晨辉(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxmainwin.h"
 #include <QWebPage>
 #include "lxdialogoperate.h"
 #include "lxdialogs.h"
+#include "lxwebpage.h"
 #include "lxwebpluginfactory.h"
 
 
@@ -26,7 +28,6 @@ LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
  	QObject::connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClickedAction(const QUrl&)));
 
 	QNetworkAccessManager* pNetworkAccessManager = this->page()->networkAccessManager();
-	
 	LxOption* pOption = lxCoreApp->getOption();
 	if (pOption && pNetworkAccessManager)
 	{
@@ -35,7 +36,8 @@ LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
 		pNetworkAccessManager->setCookieJar(pCookies);
 
 		QNetworkDiskCache *diskCache = new QNetworkDiskCache(this);
-		QString location = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
+		QString location = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+		//QString location = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
 		diskCache->setCacheDirectory(location);
 		diskCache->setMaximumCacheSize(1024);//byte
 		pNetworkAccessManager->setCache(diskCache);
@@ -45,14 +47,23 @@ LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
 		m_bLoadHrefInCurrent = pOption->getLoadHrefInCurrentMainDialog();
 
 	}
-
+	QString iconName = pOption->getSystemTrayIconName();
+	QString iconPath = QCoreApplication::applicationDirPath() + "/" + iconName;
+	qDebug("show path %s", iconPath.toStdString());
+	QIcon icon(iconPath);
+	this->setWindowIcon(icon);
 }
 
 
 
 LxMainWindow::~LxMainWindow()
 {
-
+	if (!lxCoreApp->getOption()->getDialogsRelationShip())//如果不存在父子关系，主窗口关闭要手动关闭所有窗口
+	{
+		LxDialogs* pDialogs = lxCoreApp->getDialogs();
+		pDialogs->closeAll();
+	}
+	
 }
 
 bool LxMainWindow::event(QEvent* e)
@@ -74,6 +85,7 @@ void LxMainWindow::showMax()
 bool LxMainWindow::_initWidget()
 {
 	setObjectName("lomoxwin");
+	setAttribute(Qt::WA_DeleteOnClose);//主窗口关闭时析构
 
 	do 
 	{
@@ -91,6 +103,7 @@ bool LxMainWindow::_initWidget()
 		else
 		{
 			winType |= Qt::FramelessWindowHint;
+			winType |= Qt::WindowSystemMenuHint;//不加不出现窗口 modify by KeoJam 2015-04-19
 			this->setAttribute(Qt::WA_TranslucentBackground, true);
 			this->setStyleSheet("#lomoxwin{background-color:transparent} QMenu{background-color:none;}");
 		}
@@ -100,11 +113,12 @@ bool LxMainWindow::_initWidget()
 
 		this->setWindowFlags(winType);
 
-		QPointer<QWebPage> ptrWebPage = this->page();
+		QWebPage* ptrWebPage = new LxWebPage(this);
+		this->setPage(ptrWebPage);//add  by KeoJam 启用自定义LxWebPage用于Permission处理
+		//QPointer<QWebPage> ptrWebPage = this->page();
 		QPointer<LxWebPluginFactory> ptrPlugin = new LxWebPluginFactory(ptrWebPage);
 		ptrWebPage->setPluginFactory(ptrPlugin);
-
-		ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
+		//ptrWebPage->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);//LinkDelegationPolicy::DelegateAllLinks
 	} while (false);
 
 

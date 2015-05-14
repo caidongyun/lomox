@@ -5,7 +5,7 @@
 TEMPLATE = lib
 TARGET = lomox
 DESTDIR = ../Release
-QT += core gui sql network xml script phonon webkit
+QT += core sql network xml script webkit widgets webkitwidgets
 CONFIG += debug
 DEFINES += QT_LARGEFILE_SUPPORT QT_XML_LIB QT_SQL_LIB QT_NETWORK_LIB QT_WEBKIT_LIB QT_PHONON_LIB LOMOX_LIB
 INCLUDEPATH += ./GeneratedFiles \

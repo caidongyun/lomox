@@ -4,9 +4,10 @@ lomox
     
 build：
 ===========
-    vs 2008   
-    下载  qt-win-opensource-4.8.4-vs2008.exe 安装
-    再下载 qt-vs-addin-1.1.11-opensource.exe
+    vs 2013 or vs2012   
+    下载  qt-win-opensource-5.4-vs2012.exe or  qt-win-opensource-5.4-vs2013.exe安装
+    再下载 qt-vs-addin-opensource.exe
+	默认为VS2013工程 若要变为VS2012 请自行调整，如何调整自行百度
     其他自己调整 
     
     
@@ -67,6 +68,21 @@ maintop=1
 childframe=1
 //子窗口是否要带非客户区系统窗口边框，1为需要 0 为不需要，0是给异形窗口使用
 
+dialogsrelation=0
+//父子窗口关系，1为需要 0 为不需要，1是主窗口最小化 子窗口也最小化
+
+systemtray=1
+//是否显示系统托盘 1为需要 0 为不需要
+
+trayicon=lomox.ico
+//系统托盘 图标，程序目录下
+
+showloadinggif=1
+//加载动画 1为需要 0 为不需要
+
+loadinggifwidth=60
+loadinggifheight=60
+//动画大小
 
 [maindialog]
 hrefincurrent=0
@@ -347,5 +363,6 @@ LxExt.Transition.Button(config)
 		int     speed				动画延时  默认为 50毫秒
 		int     space    			图集元素间隔 默认为0 
 	}
+ 
  
  

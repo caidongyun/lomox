@@ -6,6 +6,7 @@
 * 创建日期	: 2013/3/9
 * 功能描述	: 
 * 备    注	: 
+* 修    改  ：詹晨辉(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #ifndef __LXOPTION_H__
 #define __LXOPTION_H__
@@ -35,11 +36,21 @@ public slots:
 	bool getNeedShowChildNcFrame();
 
 	bool getMainWindowStaysOnTopHint();
+	bool getChildWindowStaysOnTopHint();
+
+	bool getDialogsRelationShip();
+
+	bool getNeedSystemTray();
+	QString getSystemTrayIconName();
 	QString getCookieFilePath();
 
 	//href是否从本页加载刷新还是弹出新窗口
 	bool getLoadHrefInCurrentMainDialog();
 	bool getLoadHrefInCurrentChildDialog();
+
+	bool getNeedShowLoadingGif();
+	int getLoadingGifWidth();
+	int getLoadingGifHeight();
 
 private:
 	bool getValueFromIni(QString strKey, bool &bValue);

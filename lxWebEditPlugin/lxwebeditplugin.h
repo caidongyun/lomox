@@ -12,7 +12,7 @@
 
 #include "lxwebeditplugin_global.h"
 #include "lxwebkitplugininterface.h"
-#include <QTextEdit>
+#include <QtWidgets/QTextEdit>
 
 class LXWEBEDITPLUGIN_EXPORT LxWebEditPlugin : public QObject, public LxWebKitPluginInterface
 {

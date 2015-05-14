@@ -12,6 +12,7 @@
 
 #include "lomox_global.h"
 #include "stdafx.h"
+#include <QtWebKitWidgets/QWebView>
 class LxOperate;
 class LxWebPluginFactory;
 

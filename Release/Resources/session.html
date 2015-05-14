@@ -1,0 +1,11 @@
+<body style="background:white">
+
+<?PHP include 'header.html'; ?>
+
+<h3>用SESSION 记录 刷新次数 (<span style="color:blue">每刷新一次,计数器+1，在客户端会执行>=2次</span></span>) </h3>
+
+<h2 style="color:red">计数器：<?php echo $_SESSION['count']; ?></h2>
+
+<a href="index.php?method=session">刷新</a> | <a href="index.php?method=session&action=clear">清零</a>
+
+</body>

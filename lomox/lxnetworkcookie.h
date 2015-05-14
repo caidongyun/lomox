@@ -10,6 +10,7 @@
 #ifndef __NETWORKCOOKIE_H__
 #define __NETWORKCOOKIE_H__
 #include <QtNetwork/QNetworkCookie>
+#include <QNetworkCookieJar>
 class LxNetWorkCookies : public QNetworkCookieJar
 {
 	Q_OBJECT

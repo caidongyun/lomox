@@ -18,7 +18,8 @@ class LOMOX_EXPORT LxDialogBase : public LxOperate
 {
     Q_OBJECT
 public:
-    explicit LxDialogBase(QObject* object, QWebView* pWebView, QString strApiName );
+    explicit LxDialogBase(QObject* object, QWebView* pWebView, QString strApiName,bool bshowloading = false,
+		int gifW = 0,int gifH = 0);
     virtual ~LxDialogBase();
 
 public slots:
@@ -55,12 +56,28 @@ public slots:
     virtual void setVisible(bool visible);
     virtual void setHidden(bool hidden);
 
+	virtual void printPreview();
+
     virtual QVariant eval( QVariant code);
     virtual QVariant toHTML();
     virtual void setHTML( QVariant code);
     virtual QObject* getCoreDialog();
+private slots:
+	void downloadRequested(const QNetworkRequest &request);
+	void loadStarted(){};
+	void loadProgress(int progress){};
+	void loadFinished(bool);
 private:
+	QUrl m_url;
     QWebFrame* m_mainFrame;
+	QLabel* m_label;
+	bool m_showloading;
+	int m_lablW;
+	int m_lablH;
+	double m_nWidth;
+	double m_nHeight;
+	QMovie* m_movie;
+	QBoxLayout *m_layout;
 };
 
 
