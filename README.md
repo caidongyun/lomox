@@ -21,6 +21,7 @@ lomox.dll 0.7.0.4 (詹晨辉KeoJam)
 5.增加了窗口父子关系配置
 6.增加了打印接口（lxDialog.printPreview()）
 7.增加了下载功能
+
     
 
 www.lomox.org
