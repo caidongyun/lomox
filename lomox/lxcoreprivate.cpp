@@ -144,7 +144,10 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 	QWebSettings::globalSettings()->setAttribute(QWebSettings::NotificationsEnabled, true);
 	
 	//QWebSettings::globalSettings()->setObjectCacheCapacities(0,0,0); 降低内存用的，但是速度回变低
-
+	QString libraryPath = QCoreApplication::applicationDirPath() + QDir::separator() + QString("plugins\\");
+	QStringList libraryPaths;
+	libraryPaths.append(libraryPath);
+	QCoreApplication::setLibraryPaths(libraryPaths);
 	QString strStoragePath = QCoreApplication::applicationDirPath() + QDir::separator() + QString("Storage\\");
 	QWebSettings::globalSettings()->enablePersistentStorage(strStoragePath);
 
