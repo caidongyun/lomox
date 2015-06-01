@@ -30,6 +30,7 @@ lomox.dll 0.7.0.4 (詹晨辉KeoJam)
 7.增加了下载功能
 
 
+build QT5  LX 0.7.0.4 : http://pan.baidu.com/s/1jGIN5jS
     
 
 www.lomox.org
