@@ -115,6 +115,10 @@ hrefincurrent=1
 =======================================================
 LxDialog. 当前窗口操作
 
+LxDialog  API控制实例包装库（几百年前的库，终于找到了 by 曹良 超朋）
+http://pan.baidu.com/s/1qWJXnxM
+
+
 ===============
 LomoX.libs
 
