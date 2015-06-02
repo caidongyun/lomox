@@ -151,12 +151,14 @@ http://pan.baidu.com/s/1kT1PcJP
 LxExt.Dialog = function(){};
 LxExt.Dialog.canDragBorder=false;//窗体边框是否可以拖拽
 
+
 //设置窗口初始大小
 LxExt.Dialog.initWndWH = function(width,height){
 	LxDialog.setDialogWH(width,height);
 	LxDialog.width = width;
 	LxDialog.height = height;
 };
+
 //设置边框是否可以拖动
 LxExt.Dialog.setBorderDrag= function( drag ){
 	if(drag!=undefined){
@@ -164,6 +166,7 @@ LxExt.Dialog.setBorderDrag= function( drag ){
 	}
 	return LxExt.Dialog.canDragBorder;
 };
+
 //标题栏的的可拖着区域
 //obj设置拖动区域的对象
 LxExt.Dialog.dragRegion = function( obj ){
@@ -177,10 +180,13 @@ LxExt.Dialog.dragRegion = function( obj ){
 	var topleftPoint=new Point(0,0);
 	var canMoveWindow=false;
 	function getWindowPos(){
+	
 		topleftPoint.x=LxDialog.getTopLeftX();
 		topleftPoint.y=LxDialog.getTopLeftY();
+		
 	}
 	obj.bind("mousedown",function(e){
+	
 		oldPoint.x=e.pageX;
 		oldPoint.y=e.pageY;
 		getWindowPos();
@@ -191,21 +197,28 @@ LxExt.Dialog.dragRegion = function( obj ){
 		else{ 
 			obj.setCapture(); 
 		}
+		
 	});
 	$(document).bind("mousemove",function(e){
+	
 		if(canMoveWindow){
 			currPoint.x=e.pageX;
 			currPoint.y=e.pageY;
 			LxDialog.move( topleftPoint.x+currPoint.x-oldPoint.x, topleftPoint.y+currPoint.y-oldPoint.y);
 			getWindowPos();
 		}
+		
 	})
 	$(document).bind("mouseup",function(){
+	
 		canMoveWindow=false;
 		if(window.captureEvents)window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);  
 		else obj.releaseCapture();  
+		
 	});
+	
 };
+
 
 //移动窗口至x,y坐标处
 LxExt.Dialog.moveWnd = function(x,y){
