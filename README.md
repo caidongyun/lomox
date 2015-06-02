@@ -353,15 +353,18 @@ LxExt.Dialog.exec = function(exeName){
 	LxDialog.openUrl(exeName);
 };
 
+
 LxExt.Dialog.updateClientSize = function( objClient,offset ){
 	objClient.height( document.documentElement.clientHeight - objClient.position().top - offset );
 } 
+
 
 /*
  功能:默认对最外层Div实现边框拖拽功能
   param:obj  		添加拖拽功能的对象
   pargm:int size	拖动感应区域 默认5 px;
 */
+
 LxExt.Dialog.borderDrag=function(objBody,obj,size){
 	var size= typeof(size)=="undefined"?10:size;
 	var canMoveWindow =false;
@@ -369,6 +372,7 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 		this.x=x;
 		this.y=y;
 	}
+	
 	function isMouseInBorder( obj,point ){
 		var offset=obj.offset();
 		if(point.x<=offset.left+size && point.y<=offset.top+size ){
@@ -555,7 +559,10 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 };
 
 
-----------------------------------
+
+
+--------------------------------------------------------------------
+===================================================
 
 
 LxExt.Dialog.initWndWH(width, height)
