@@ -553,6 +553,8 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 		
 	}
 };
+
+
 ----------------------------------
 
 
