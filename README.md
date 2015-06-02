@@ -229,7 +229,7 @@ LxExt.Dialog.closeWnd = function(){
 
 //显示窗口
 LxExt.Dialog.showNormal = function(){
-	LxDialog.showNormal();
+	LxDialog.showNormal(); 
 };
 
 //当前窗口是否最小化
