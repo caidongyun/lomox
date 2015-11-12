@@ -1,6 +1,4 @@
-﻿//#include <QtGui/QApplication>
-#include <QGuiApplication>
-#include <QApplication>
+﻿#include <QtGui/QApplication>
 #include "../lomox/lxcoreprivate.h"
 
 int main(int argc, char *argv[])

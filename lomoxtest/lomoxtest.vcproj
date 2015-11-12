@@ -164,6 +164,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="mt.exe /manifest  &quot;..\include\manifest\release\crt.xml&quot; /outputresource:&quot;$(TargetPath)&quot;;1"
 			/>
 		</Configuration>
 	</Configurations>

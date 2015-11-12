@@ -15,11 +15,10 @@
 #include "lxdylink.h"
 
 
-
 int main()
 {
 	TCHAR buffer[MAX_PATH] = {0};
-	::GetModuleFileName(NULL, buffer, MAX_PATH);
+	::GetModuleFileNameW(NULL, buffer, MAX_PATH);
 	std::wstring wstrPath(buffer);
 
 	std::wstring::size_type  pos = wstrPath.find_last_of(L'\\');//
@@ -28,6 +27,7 @@ int main()
  		std::wstring wstrDllPath = wstrPath.substr(0, pos);
 		wstrDllPath.append(L"\\lomox.dll");
 
+		//
 		LxDybamicLink lxlink(wstrDllPath);
 		lxlink.RunLomoxApp(0,  NULL);
 	}

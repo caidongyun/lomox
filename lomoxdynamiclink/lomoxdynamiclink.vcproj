@@ -81,6 +81,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="mt.exe /manifest  &quot;..\..\..\manifest\debug\crt.xml&quot; /outputresource:&quot;$(TargetPath)&quot;;1"
 			/>
 		</Configuration>
 		<Configuration
@@ -88,7 +89,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			CharacterSet="2"
+			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -152,6 +153,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				CommandLine="mt.exe /manifest  &quot;..\include\manifest\release\crt.xml&quot; /outputresource:&quot;$(TargetPath)&quot;;1"
 			/>
 		</Configuration>
 	</Configurations>
