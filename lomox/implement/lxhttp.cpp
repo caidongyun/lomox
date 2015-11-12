@@ -1,14 +1,14 @@
-ï»¿/*******************************************************************************
-* ç‰ˆæƒæ‰€æœ‰(C) 2010-2012 LomoX. All Rights Reserved.
+/*******************************************************************************
+* °æÈ¨ËùÓĞ(C) 2010-2012 LomoX. All Rights Reserved.
 *
-* æ–‡ä»¶åç§°	: lxhttp.cpp
-* ä½œ    è€…	: è”¡ä¸œèµŸ (mailto:caidongyun19@qq.com)
-* åˆ›å»ºæ—¥æœŸ	: 2012/10/19
-* åŠŸèƒ½æè¿°	: 
-* å¤‡    æ³¨	: 
+* ÎÄ¼şÃû³Æ	: lxhttp.cpp
+* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
+* ´´½¨ÈÕÆÚ	: 2012/10/19
+* ¹¦ÄÜÃèÊö	: 
+* ±¸    ×¢	: 
 ********************************************************************************/
 #include "lomox_global.h"
-#include "include/lxHttp.h"
+#include "lxHttp.h"
 
 
 LxHttp::LxHttp( QObject* parent )
@@ -58,7 +58,7 @@ QVariant LxHttp::httpRequest(QVariant varMethod,  QVariant varUrl ,  QVariant va
 
 	if (method == POST) 
 	{
-		// post æ•°æ®ç¼–ç 
+		// post Êı¾İ±àÂë
 		req.setUrl(QUrl(url));
 		req.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 		reply = manager->post(req, QUrl(data).toEncoded());
@@ -86,7 +86,7 @@ QVariant LxHttp::httpRequest(QVariant varMethod,  QVariant varUrl ,  QVariant va
 		reply = manager->get(QNetworkRequest(QUrl(url)));
 	}
 
-	// å¼€å¯å±€éƒ¨äº‹ä»¶å¾ªç¯
+	// ¿ªÆô¾Ö²¿ÊÂ¼şÑ­»·
 	QEventLoop eventLoop;
 	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 	eventLoop.exec();
@@ -154,7 +154,7 @@ QVariant LxHttp::httpRequestWithEncode(QVariant varMethod,  QVariant varUrl ,  Q
 
 	if (method == POST) 
 	{
-		// post æ•°æ®ç¼–ç 
+		// post Êı¾İ±àÂë
 		req.setUrl(QUrl(url));
 		req.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 		reply = manager->post(req, QUrl(data).toEncoded());
@@ -182,7 +182,7 @@ QVariant LxHttp::httpRequestWithEncode(QVariant varMethod,  QVariant varUrl ,  Q
 		reply = manager->get(QNetworkRequest(QUrl(url)));
 	}
 
-	// å¼€å¯å±€éƒ¨äº‹ä»¶å¾ªç¯
+	// ¿ªÆô¾Ö²¿ÊÂ¼şÑ­»·
 	QEventLoop eventLoop;
 	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 	eventLoop.exec();

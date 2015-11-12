@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+<meta content="yes" name="apple-mobile-web-app-capable">
+<noscript><div class="ui-top-note">您的浏览器已禁用javascript,为了您能正常浏览网站,请在浏览器里面启用javascript!</div></noscript>
+<title>CSS Image Sprites</title>
+<link type="text/css" rel="stylesheet" href="../../css/global.css" />
+<link type="text/css" rel="stylesheet" href="../../css/buttons.css" />
+<link type="text/css" rel="stylesheet" href="../../css/font-awesome-403/font-awesome.min.css" />
+<style type="text/css">
+#holder-wrapper {
+	display: inline-block;
+	background: url('blank.gif') repeat;
+}
+#holder { 
+	position: relative;
+	width: 380px; height: 280px;
+	border: 1px solid #999;
+	overflow: hidden;
+} 
+#holder.focus {
+	border-color: orange;
+}
+#holder, #cursor, #preview {
+	background-image: url('icons.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+#cursor {
+	position: absolute; top: -1px; left: -1px;
+	border: 1px solid #69c;
+}
+#cursor, #preview {
+	width: 100px; height: 100px;
+	background-color: #eee;
+}
+#preview {
+	display: inline-block;
+	vertical-align: top;
+}
+.cursor-corner {
+	position: absolute; top: 0; left: 0;
+	width: 6px; height: 6px; margin: -3px 0 0 -3px;
+	background-color: #69c;
+	cursor: se-resize;
+}
+#corner-rt {
+	left: auto; right: 0; margin-left: 0; margin-right: -3px;
+	cursor: sw-resize;
+}
+#corner-lb {
+	top: auto; bottom: 0; margin-top: 0; margin-bottom: -3px;
+	cursor: sw-resize;
+}
+#corner-rb {
+	top: auto; bottom: 0; left: auto; right: 0;
+	margin: 0 -3px -3px 0;
+}
+#mask {
+	width: 100%; height: 100%;
+	background-color: rgba(200, 200, 200, .5);
+}
+#focus-lnk {
+	outline: none; text-decoration: none;
+}
+#code { 
+	display: block;
+	margin: 10px 0;
+
+}
+#code>pre { 
+	margin: 5px 0; 
+	-webkit-user-select: text; 
+}
+#code>pre::selection, #code>pre::-webkit-selection {
+	color: #496011; background: #fcfcfc;
+}
+#lo {
+	position: absolute; top: -27px; left: 0px;
+}
+#lo>a {
+	padding: 4px 6px; line-height: 14px;
+	height: 14px; width: 14px;
+}
+#lo>a.active {
+	background: #76a312;
+ 	color: #374f00;
+	-webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+}
+#lo>label { 
+	font-size: 14px;
+}
+#content { 
+	position: relative;
+}
+#x, #y {
+	position: absolute; 
+	top: 0; left: 0;
+	display: none;
+}
+#xy {
+	font-size: 12px; font-family: Verdana;
+}
+#y {
+	width: 100%; border-top: 1px dotted #d00; height: 1px;
+}
+#x {
+	height: 100%; border-left: 1px dotted #d00; width: 1px;
+}
+#radio, #xy {
+	display: none; 
+}
+</style>
+</head>
+
+<body>
+<h1 class="title">CSS Image Sprites</h1>
+
+<div class="w">
+	<div id="content">
+		<div id="lo">
+			Auxiliary:
+			<a class="button button-rounded button-action" href="javascript:;" id="check"><i class="fa fa-square-o" id="lo-check-empty"></i></a>
+			<a class="button button-rounded button-action" href="javascript:;" id="radio">&oplus;</a>
+			&nbsp;
+			<label id="xy">x: 0, y: 0</label>
+<!-- 			&nbsp;
+			<label id="lo-check">
+				<i class="fa fa-square-o" id="lo-check-empty"></i>
+				<i class="fa fa-check-square-o" id="lo-checked"></i>
+			</label> -->
+		</div>
+		<div id="holder-wrapper">
+			<div id="holder">
+				<div id="mask">
+					<a id="focus-lnk" href="javascript:;">&nbsp;</a>
+				</div>
+				<div id="cursor">
+					<!-- <div id="corner-lt" class="cursor-corner"></div> -->
+					<!-- <div id="corner-rt" class="cursor-corner"></div> -->
+					<!-- <div id="corner-lb" class="cursor-corner"></div> -->
+					<div id="corner-rb" class="cursor-corner"></div>
+				</div>
+				<div id="x"></div>
+				<div id="y"></div>
+			</div>
+		</div>
+
+		<div id="preview"></div>
+
+		<form id="action">
+			<input type="file" id="file" />
+		</form>
+
+		<code id="code">
+		</code>
+
+		<a href="javascript:;" id="reset-lnk">Reset</a>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../js/3rd/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	(function() {
+		var x = 0, y = 0, o = false;
+		var ox, oy;
+		var px = 0, py = 0;
+		var focus = false;
+		var css = {
+			x: 0, 
+			y: 0
+		}
+		var setPosition = function(x, y) {
+			$('#holder, #cursor, #preview').css({
+				'background-position': [x, y].join('px ') + 'px'
+			});
+			css.x = x;
+			css.y = y;
+			updateCode();
+		}
+		var updateCode = function() {
+			var code = [
+				'width: ' + css.width + 'px;',
+				'height: ' + css.height + 'px;',
+				'\n',
+				'position-position: ' + css.x + 'px ' + css.y + 'px;'
+			].join('');
+			$('#code').html('CSS:<pre>' + code + '</pre>');
+		}
+		$('#holder').on('mousedown', function(event) {
+			o = true;
+			ox = event.pageX, oy = event.pageY;
+			$('#focus-lnk').focus();
+			$('#holder').css('cursor', 'move');
+			return false;
+		});
+		$(document).on('mouseup', function() {
+			if(o == true) {
+				px = x, py = y;
+				o = false;
+				$('#holder').css('cursor', 'auto');
+			}
+		}).on('mousemove', function(event) {
+			var mx = event.pageX, my = event.pageY;
+			if(o == true) {
+				x = px + (mx - ox);
+				y = py + (my - oy);
+				setPosition(x, y);
+			}
+			event.preventDefault();
+		});
+
+		var cursor = $('#cursor');
+		var cw = cursor.width(), ch = cursor.height();
+		var holderWidth = $('#holder').width();
+		var holderHeight = $('#holder').height();
+		var cx, cy, on;
+		css.width = cw;
+		css.height = ch;
+		$('#corner-rb').on('mousedown', function(eventxl) {
+			cx = event.pageX;
+			cy = event.pageY;
+			on = true;
+			$('#focus-lnk').focus();
+			$('#holder').css('cursor', 'se-resize');
+			return false;
+		});
+		$(document).on('mousemove', function(event) {
+			if(on) {
+				var w = cw + (event.pageX - cx);
+				var h = ch + (event.pageY - cy);
+				if(w > holderWidth) w = holderWidth;
+				else if(w < 10) w = 10;
+				if(h > holderHeight) h = holderHeight;
+				else if(h < 10) h = 10;
+				$('#cursor, #preview').css({
+					width: w + 'px',
+					height: h + 'px'
+				});
+				css.width = w;
+				css.height = h;
+				updateCode();
+			}
+			event.preventDefault();
+		}).on('mouseup', function() {
+			if(on) {
+				cw = cursor.width(), ch = cursor.height();
+				on = false;
+				$('#holder').css('cursor', 'auto');
+			}
+		});
+
+		$('#focus-lnk').on('focus', function() {
+			$('#holder').addClass('focus');
+			focus = true;
+		});
+
+		$(document).on('mousedown', function() {
+			$('#holder').removeClass('focus');
+			focus = false;
+		}).on('keydown', function(event) {
+			if(focus) {
+				var kc = event.keyCode;
+				if(kc == 38) {
+					py -= 1;
+					event.preventDefault();
+				} else if(kc == 40) {
+					py += 1;
+					event.preventDefault();
+				} else if(kc == 37) {
+					px -= 1;
+					event.preventDefault();
+				} else if(kc == 39) {
+					px += 1;
+					event.preventDefault();
+				}
+				setPosition(px, py);
+			}
+		});
+
+		$('#file').on('change', function() {
+			var file = this.files.item(0);
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				$('#holder, #cursor, #preview').css({
+					'background-image': 'url(' + event.target.result + ')'
+				});
+				px = 0;
+				py = 0;
+				setPosition(px, py);
+			};
+			reader.readAsDataURL(file);
+		});
+
+		$('#reset-lnk').on('click', function() {
+			var cursor = $('#cursor');
+			$('#action').get(0).reset();
+			$('#holder, #cursor, #preview').css({
+				'background-image': '',
+				'background-position': '0 0'
+			});
+			$('#cursor, #preview').css({
+				'width': '',
+				'height': ''
+			});
+
+			px = 0;
+			py = 0;
+			setPosition(px, py);
+
+			css.width = cursor.width();
+			css.height = cursor.height();
+			updateCode();
+		});
+
+		var lo = false, loMov = false;
+		$('#lo').on('click', 'a', function() {
+			var id = this.id;
+			$(this).toggleClass('active');
+			if(id == 'check') {
+				if($(this).hasClass('active')) {
+					$('i', this).removeClass().addClass('fa fa-check-square-o');
+					$('#radio').addClass('active').show();
+					$('#x, #y, #xy').show();
+					lo = true;
+					loMov = true;
+				} else {
+					$('i', this).removeClass().addClass('fa fa-square-o');
+					$('#radio').removeClass('active').hide();
+					$('#x, #y, #xy').hide();
+					lo = false;
+					loMov = false;
+				}
+			} else {
+				if($(this).hasClass('active')) {
+					loMov = true;
+				} else {
+					loMov = false;
+				}
+			}
+		});
+		var pos = $('#holder').offset();
+		$('#holder').on('mousemove', function(event) {
+			if(loMov) {
+				var x = event.pageX - pos.left;
+				var y = event.pageY - pos.top;
+				$('#y').css('top', y);
+				$('#x').css('left', x);
+				$('#xy').text('x: ' + x + ', y: ' + y);
+			}
+		}).on('mousedown', function() {
+			if(loMov) {
+				loMov = false;
+				$(this).css('cursor', 'auto');
+				$('#radio').removeClass('active');
+				return false;
+			}
+		});
+
+		updateCode();
+	})();
+});
+</script>
+</body>
+</html>

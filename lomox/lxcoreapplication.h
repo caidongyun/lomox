@@ -2,9 +2,12 @@
 * 版权所有(C) 2011-2012  caidongyun All Rights Reserved.
 *
 * 文件名称	: lxcoreapplication.h
-* 作    者	: 蔡东赟 (mailto:caidongyun19@qq.com)
+* 作    者	: 蔡东赟
 * 创建日期	: 2012/2/6
 * 功能描述	: 
+
+  add resources 陈湘跃 (mailto:291307963@qq.com)
+
 * 备    注	: 
 ********************************************************************************/
 #ifndef __LXCOREAPPLICATION_H__
@@ -12,6 +15,8 @@
 
 #include "lomox_global.h"
 #include "stdafx.h"
+#include <QMap>
+#include <QProcess>
 
 #include "lxbasewin.h"
 #include "lxdialogs.h"
@@ -19,7 +24,6 @@
 #include "lxlibmanager.h"
 #include "lxfile.h"
 #include "lxdir.h"
-
 
 class LxOperate;
 class LxDialogs;
@@ -44,6 +48,7 @@ class LOMOX_EXPORT LxCoreApplication : public LxOperate
 
 	Q_PROPERTY(QObject* net	 READ getHttpTool)
 
+	Q_PROPERTY(QObject* res READ getResources)
 
 public:
     explicit LxCoreApplication(QObject* object, QWebView* pWebView, QString strApiName =  QString(LOMOX_API_COREAPP));
@@ -61,6 +66,12 @@ private slots:
 
 	QObject* getHttpTool();
 
+	QObject* getResources();
+
+public slots:
+	int execute(QVariant varProgram, QVariant varArguments);
+/*	QVariant exec(QString varProgram, QString varArguments);*/
+
 public:
 	LxBaseWin* getMainDialog();
 
@@ -72,5 +83,8 @@ private:
     QPointer<LxFile> m_pFile;
     QPointer<LxDir> m_pDir;
 	QPointer<QObject> m_pHttp;
+	QPointer<QObject> m_pResource;
+
+	QMap<QString, QPointer<QObject>> m_mapNameToObject;
 };
 #endif // end of __LXCOREAPPLICATION_H__

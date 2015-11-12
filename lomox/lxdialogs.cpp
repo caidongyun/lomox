@@ -6,10 +6,12 @@
 * 创建日期	: 2012/2/6
 * 功能描述	: 
 * 备    注	: 
+* 修    改  ：詹晨辉（KeoJam）(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxcoreapplication.h"
 #include "lxdialogs.h"
+
 
 LxDialogs::LxDialogs( QObject* parent )
 :QObject(parent)
@@ -64,7 +66,8 @@ inline bool isNetWorkPath(QString strUrl)
 	if (qUrl.isValid())
 	{
 		if (1 != strUrl.indexOf(':'))
-			if (0 == strUrl.indexOf(QString("http://")) || 0 == strUrl.indexOf(QString("https://")))
+			//modify by Keojam 2015/04/17  加入file:///判断
+		if (0 == strUrl.indexOf(QString("http://")) || 0 == strUrl.indexOf(QString("https://")) || 0 == strUrl.indexOf(QString("file:///")))
 				return true;
 	}
 	return false;
@@ -72,9 +75,24 @@ inline bool isNetWorkPath(QString strUrl)
 
 QObject* LxDialogs::add( QString key,QString url )
 {
-	LxBaseWin* lxMain= lxCoreApp->getMainWin();
-	LxBaseWin* lxDialog = new LxBaseWin(lxMain);
-
+	if (m_mapDialogs.contains(key))
+	{
+		return NULL;
+	}
+	LxMainWindow* lxMain= lxCoreApp->getMainWin();
+	//LxBaseWin* lxDialog = new LxBaseWin(lxMain); //modify by KeoJam
+	LxOption* pOption = lxCoreApp->getOption();//add by KeoJam  lxDialog->setparent()不好用
+	LxBaseWin* lxDialog = NULL;
+	if (pOption->getDialogsRelationShip()) 
+	{
+		lxDialog = new LxBaseWin(lxMain);
+	}
+	else
+	{
+		lxDialog = new LxBaseWin();
+	}
+	//--------------------------------------------------------
+	
 	QString strFullUrl;
 	QFileInfo qFileInfo(url);
 	if (isNetWorkPath(url) || qFileInfo.isAbsolute())
@@ -88,10 +106,22 @@ QObject* LxDialogs::add( QString key,QString url )
 
     qDebug("LxDialogs::add(%s,%s);",key.toLocal8Bit().constData(), strFullUrl.toLocal8Bit().constData());
 	lxDialog->setUrl(QUrl(strFullUrl));
-	lxDialog->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
+
 
 	new LxCoreApplication(this,lxDialog,QString(LOMOX_API_COREAPP));
-	LxDialogBase* pDialogOp = new LxDialogBase(lxDialog, lxDialog, "LxDialog");
+	bool bshowloading = false;
+	int gifW = 0;
+	int gifH = 0;
+	if (pOption->getNeedShowLoadingGif())
+	{
+		gifW = pOption->getLoadingGifWidth();
+		gifH = pOption->getLoadingGifHeight();
+		if (gifW > 0 && gifH > 0)
+		{
+			bshowloading = true;
+		}
+	}
+	LxDialogBase* pDialogOp = new LxDialogBase(lxDialog, lxDialog, "LxDialog", bshowloading, gifW, gifH);
     this->append(key,pDialogOp);
     return pDialogOp;
 }
@@ -111,4 +141,14 @@ QVariant LxDialogs::remove(QString key)
     }
 }
 
+void LxDialogs::closeAll()
+{
+	QMap<QString, LxDialogBase *>::iterator it;
+	for (it = m_mapDialogs.begin(); it != m_mapDialogs.end(); ++it) {
+		if (it.key() != QString("LomoX-Main"))
+		{
+			it.value()->close();
+		}
+	}
+}
 

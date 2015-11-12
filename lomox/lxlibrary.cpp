@@ -49,18 +49,18 @@ QVariant LxLibrary::exec(QString functionName, QVariant param,QString encode)
     qDebug("in exec now!");
     if (m_webView.isNull())return nullptr;
 
-    //setCodecForCStrings  removed by QT5 removed by Colin3dmax
+	QTextCodec::codecForName(encode.toLocal8Bit().data());
     //QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
     if((!m_pLib.isNull()) && m_pLib->isLoaded())
 	{
         qDebug("exec now!");
-        void * fun = (void *)m_pLib->resolve(functionName.toLocal8Bit().data());
+        void * fun = m_pLib->resolve(functionName.toLocal8Bit().data());
         if(!fun)
             return nullptr;
 
         char * result = ((char *(*)(char *))fun)(param.toString().toLocal8Bit().data());
         qDebug(result);
-        QString str(QString::fromLocal8Bit(result));
+        QString str(result);
         //借用Webkit 转换JSON格式
         QVariant myVal( m_webView->page()->mainFrame()->evaluateJavaScript( "("+str+")" ));
         if(myVal.isValid())

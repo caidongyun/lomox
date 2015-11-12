@@ -32,14 +32,14 @@ QVariant LxFile::readFileData( QVariant varFilename,QString encode )
 {
     if (!varFilename.isNull() && QVariant::String == varFilename.type())
     {
-        //setCodecForCStrings  removed by QT5 removed by Colin3dmax
+		QTextCodec::codecForName(encode.toLocal8Bit().data());
         //QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
         QFile file(varFilename.toString());
         if(!file.open(QIODevice::ReadOnly))
 		{
             return QVariant(false);
         }
-        return QVariant(QString::fromLocal8Bit(file.readAll()));
+        return QVariant(file.readAll());
     }
     return QVariant(false);
 }
@@ -135,7 +135,7 @@ QVariant LxFile::write(QVariant varFilename, QVariant text,QString encode)
 {
      if (!varFilename.isNull() && QVariant::String == varFilename.type())
 	 {
-         //setCodecForCStrings  removed by QT5 removed by Colin3dmax
+		 QTextCodec::codecForName(encode.toLocal8Bit().data());
         //QTextCodec::setCodecForCStrings(QTextCodec::codecForName(encode.toLocal8Bit().data()));
         QFile file(varFilename.toString());
         if(!file.open(QIODevice::WriteOnly))

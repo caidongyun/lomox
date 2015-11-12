@@ -12,6 +12,7 @@
 
 #include "lomox_global.h"
 #include "stdafx.h"
+#include <QtWebKitWidgets/QWebView>
 class LxOperate;
 class LxWebPluginFactory;
 
@@ -25,11 +26,17 @@ public:
 	explicit LxBaseWin(QWidget *parent = 0);
 	virtual ~LxBaseWin();
 
+public:
+	   void triggerPageAction(QWebPage::WebAction action, bool checked = false);
+
+private:
+	bool _initWidget();
+
 public slots:
 	void linkClickedAction(const QUrl& url);
 
 protected:
-	bool _initWidget();
+	
 	void showEvent(QShowEvent *e);
 	bool event(QEvent* e);
 
@@ -38,5 +45,6 @@ private:
 	QString m_strApiName;
 	QPointer<QWebPage> m_ptrPage;
 	QPointer<LxWebPluginFactory> m_ptrPlugin;
+	bool m_bLoadHrefInCurrent;
 };
 #endif // end of __BASEWIN_H__

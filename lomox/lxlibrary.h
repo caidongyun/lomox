@@ -8,7 +8,7 @@
 
 class LOMOX_EXPORT LxLibrary : public QObject
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
     explicit LxLibrary(QObject *parent = 0);
     virtual ~LxLibrary();

@@ -1,0 +1,38 @@
+<html>
+<head></head>
+
+<style>
+table{
+	border:1px solid #97CBFF;min-width:400px
+}
+th,td{border-right:1px solid #888;border-bottom:1px solid #888;padding:5px 15px;}
+
+h3{
+	color:red;
+}
+</style>
+
+<body style="background:white">
+
+<?PHP include 'header.html'; ?>
+
+<h2>数据库写入测试 (<span style="color:blue">有些php框架环境下有问题</span>)</h2>
+<h3><?php echo $error;?></h3>
+<form method="post" action="index.php?method=db">
+	姓名：<input type="text" name="name" />	</br>
+	性别：<input type="text" name="sex" /> </br>
+	<input type="submit" name="提交" />
+</form>
+
+<hr/>
+
+写入的数据如下： <a href="index.php?method=db&action=clear" >清空数据</a>
+<table >
+	<?php foreach( $datas as $v ): ?>
+	<tr><td><?php echo $v['name']; ?></td><td><?php echo $v['sex']; ?></td></tr>
+	<?php endforeach; ?>
+</table>
+
+</body>
+
+</html>

@@ -22,11 +22,11 @@
 
 #include "stdafx.h"
 
-#include <QtGui>
-#include <QtWidgets/QApplication>
+//#include <QtGui>//5.0被替换
+#include <QtWidgets>
+#include <QtWebKitWidgets>
 #include <QtCore>
 #include <QtWebKit>
-#include <QtWebKitWidgets/QWebView>
 #include <QDir>
 #include <QVector>
 #include <iostream>
@@ -38,6 +38,7 @@
 #include "tool/utillites.h"
 #include "lxlocaltool.h"
 #include "lxdefinename.h"
+#include "lxnetworkcookie.h"
 
 
 

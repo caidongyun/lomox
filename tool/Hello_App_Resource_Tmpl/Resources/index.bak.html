@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<link href="tab.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.min.js"></script>
+<script type="text/javascript" src="tab.js"></script>
+<script type="text/javascript">
+// 测试数据
+window.options = [
+{id:"1",name:"测试页面",lock:true,url:"test.html",title:"测试页面",frame:{name:'测试页面',style:'width:100%;height:100%'}},
+{id:"2",name:"爱问-中国最大的搜索引擎",lock:false,url:"http://iask.com/",title:"爱问-中国最大的搜索引擎"},
+{id:"3",name:"搜乐-中国最大的搜索引擎",lock:false,url:"http://www.sooule.com/",title:"搜乐-中国最大的搜索引擎"},
+{id:"4",name:"搜狗",lock:false,url:"http://www.sogou.cn",title:"搜狗-中国最大的搜索引擎"},
+{id:"5",name:"百度",lock:true,url:"http://www.baidu.com",title:"百度-中国最大的搜索引擎"},
+{id:"6",name:"谷歌",lock:true,url:"http://www.google.com",title:"谷歌-中国最大的搜索引擎"},
+{id:"7",name:"搜搜",lock:false,url:"http://www.soso.com",title:"搜搜-中国最大的搜索引擎"},
+{id:"8",name:"必应",lock:true,url:"http://cn.bing.com/",title:"必应-中国最大的搜索引擎"}];
+// 新增
+var add = function(i){
+	tab.add(window.options[i]);
+};
+// 解锁与锁定
+var lock = function( isLock ){
+	tab.lock("1",isLock);
+};
+// 关闭
+var remove = function( id ){
+	tab.close(id);
+};
+
+// 移动
+var move = function( state ){
+	tab.move({action:state});
+};
+
+jQuery( function(){
+	var option = {tabID:"Tabs",frameID:"Frames",activeClass:"on",lockClass:"locked",leftID:"Left",
+	rightID:"Right",resetID:"Reset",closeID:"Close"};
+	window.tab = FantasyTab.create(option);
+	window.tab.add(window.options[0]);
+});
+</script>
+</head>
+<body>
+<fieldset>
+测试按钮
+<input type="button" value="爱问" onclick="add(1)" />
+<input type="button" value="搜乐" onclick="add(2)" />
+<input type="button" value="搜狗" onclick="add(3)" />
+<input type="button" value="百度" onclick="add(4)" />
+<input type="button" value="谷歌" onclick="add(5)" />
+<input type="button" value="搜搜" onclick="add(6)" />
+<input type="button" value="必应" onclick="add(7)" />
+<input type="button" value="解锁Blog" onclick="lock(false)" />
+<input type="button" value="锁定Blog" onclick="lock(true)" />
+<input type="button" value="关闭Blog" onclick="remove(1)" />
+<input type="button" value="左移" onclick="move('left')" />
+<input type="button" value="右移" onclick="move('right')" />
+<input type="button" value="复位" onclick="move('reset')" />
+</fieldset>
+<div id="TabMain">
+	<div class="c_tabNav"><div class="tabNavWrapper">
+		<div class="tabTurner">
+			<ul>
+				<li><a id="Left" href="#" title="左移标签组" class="left"></a></li>
+				<li><a id="Right" href="#" title="右移标签组" class="right"></a></li>
+				<li><a id="Reset" href="#" title="复位标签组" class="default"></a></li>
+				<li><a id="Close" href="#" title="全部关闭" class="close"></a></li>
+			</ul>
+		</div>
+		<div><div class="tab"><div class="maxWidth">
+			<!-- 这里存放生成的Tab-->
+			<ul id="Tabs"></ul>
+		</div></div></div>
+	</div>
+	</div>
+</div>
+<!-- 这里存放生成的IFrame 只要ID='Frames'就可以，可以根据布局自己定义-->
+<div id="Frames" style="height:768px">
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'lxcoreprivate.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.1.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'lxcoreprivate.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.1.1. It"
+#error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,18 +20,19 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_LxCoreApplicationPrivate_t {
     QByteArrayData data[1];
-    char stringdata[26];
+    char stringdata0[25];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_LxCoreApplicationPrivate_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData) \
+    qptrdiff(offsetof(qt_meta_stringdata_LxCoreApplicationPrivate_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_LxCoreApplicationPrivate_t qt_meta_stringdata_LxCoreApplicationPrivate = {
     {
-QT_MOC_LITERAL(0, 0, 24)
+QT_MOC_LITERAL(0, 0, 24) // "LxCoreApplicationPrivate"
+
     },
-    "LxCoreApplicationPrivate\0"
+    "LxCoreApplicationPrivate"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +62,7 @@ void LxCoreApplicationPrivate::qt_static_metacall(QObject *_o, QMetaObject::Call
 
 const QMetaObject LxCoreApplicationPrivate::staticMetaObject = {
     { &QObject::staticMetaObject, qt_meta_stringdata_LxCoreApplicationPrivate.data,
-      qt_meta_data_LxCoreApplicationPrivate,  qt_static_metacall, 0, 0}
+      qt_meta_data_LxCoreApplicationPrivate,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -72,8 +73,8 @@ const QMetaObject *LxCoreApplicationPrivate::metaObject() const
 
 void *LxCoreApplicationPrivate::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_LxCoreApplicationPrivate.stringdata))
+    if (!_clname) return Q_NULLPTR;
+    if (!strcmp(_clname, qt_meta_stringdata_LxCoreApplicationPrivate.stringdata0))
         return static_cast<void*>(const_cast< LxCoreApplicationPrivate*>(this));
     return QObject::qt_metacast(_clname);
 }
