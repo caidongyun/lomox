@@ -2,20 +2,24 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h</Extensions>
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Source Files\private">
-      <UniqueIdentifier>{72efa0e7-3eaf-4cfb-89c7-1f7231edecf0}</UniqueIdentifier>
+      <UniqueIdentifier>{de5d09f6-5778-4681-ace6-68d54ba6d914}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\api">
-      <UniqueIdentifier>{a4b6f4be-3842-4c18-ba5f-02ab2f3d48f1}</UniqueIdentifier>
+      <UniqueIdentifier>{8b646166-35e8-4556-9625-fb9d8515e32b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\public">
-      <UniqueIdentifier>{4144c6f2-7d89-4757-b0bc-cbee5cf4ea4d}</UniqueIdentifier>
+      <UniqueIdentifier>{741acffb-18ee-4e94-9eac-93a036e4dd83}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\sql">
-      <UniqueIdentifier>{16f6b119-4d87-4e14-a811-d4e730a4392f}</UniqueIdentifier>
+      <UniqueIdentifier>{5c739cc8-a7f0-437a-a3dc-84e0ded39a4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\internalplugin">
+      <UniqueIdentifier>{ec21279a-be3a-426a-b9aa-63124e063b38}</UniqueIdentifier>
     </Filter>
     <Filter Include="Form Files">
       <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
@@ -32,65 +36,35 @@
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{8cdcd7d8-4735-4b37-989f-a136792bfeaa}</UniqueIdentifier>
+      <UniqueIdentifier>{c8568292-eca6-4d1a-b748-c3a7bf941ad7}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{6edf92e1-2e0a-4338-886d-ce70fa961c70}</UniqueIdentifier>
+      <UniqueIdentifier>{d9d82699-57ce-4d5c-acf9-dd9236d217e5}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="tool">
-      <UniqueIdentifier>{8f49ff04-4c22-4933-aedb-fe4b40d239fa}</UniqueIdentifier>
+      <UniqueIdentifier>{297848df-8b15-4feb-98f1-413e1b35684e}</UniqueIdentifier>
     </Filter>
     <Filter Include="include">
-      <UniqueIdentifier>{2595af3b-7d96-4814-9f5c-db2f62ee765d}</UniqueIdentifier>
+      <UniqueIdentifier>{2a48b423-4232-42aa-a585-87ade79af5ce}</UniqueIdentifier>
     </Filter>
     <Filter Include="impl">
-      <UniqueIdentifier>{3f912ac6-33b9-4600-84b2-1f320108f016}</UniqueIdentifier>
+      <UniqueIdentifier>{47fce2f3-a3d1-4925-8506-9e02edb16583}</UniqueIdentifier>
     </Filter>
     <Filter Include="lxapi">
-      <UniqueIdentifier>{bf81b908-e9e2-44ac-83e5-8f534480ffed}</UniqueIdentifier>
+      <UniqueIdentifier>{57436a3e-c114-4dcf-b13d-b49a356a2c39}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lxwebpage.h">
-      <Filter>Source Files\private</Filter>
-    </ClInclude>
-    <ClInclude Include="lxwebkitplugininterface.h">
-      <Filter>Source Files\api</Filter>
-    </ClInclude>
-    <ClInclude Include="lomox_global.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="lxdefinename.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="lxlocaltool.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="lxsqldatabase.h">
-      <Filter>Source Files\sql</Filter>
-    </ClInclude>
-    <ClInclude Include="lxsqlquery.h">
-      <Filter>Source Files\sql</Filter>
-    </ClInclude>
-    <ClInclude Include="tool\check.h">
-      <Filter>tool</Filter>
-    </ClInclude>
-    <ClInclude Include="tool\utillites.h">
-      <Filter>tool</Filter>
-    </ClInclude>
-    <ClInclude Include="lxapi\Lx_api.hpp">
-      <Filter>lxapi</Filter>
-    </ClInclude>
+    <Filter Include="logic">
+      <UniqueIdentifier>{06a14b63-561c-467b-b2a2-5ce06c229f5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -100,6 +74,12 @@
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="lxcoreprivate.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="lxmainwin.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="lxnetworkcookie.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="lxwebpage.cpp">
@@ -141,83 +121,137 @@
     <ClCompile Include="lxsqlquery.cpp">
       <Filter>Source Files\sql</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxbasewin.cpp">
+    <ClCompile Include="lxoption.cpp">
+      <Filter>tool</Filter>
+    </ClCompile>
+    <ClCompile Include="implement\lxhttp.cpp">
+      <Filter>impl</Filter>
+    </ClCompile>
+    <ClCompile Include="implement\lxresources.cpp">
+      <Filter>impl</Filter>
+    </ClCompile>
+    <ClCompile Include="lxapi\Lx_api.cpp">
+      <Filter>lxapi</Filter>
+    </ClCompile>
+    <ClCompile Include="lxsystemtray.cpp">
+      <Filter>Source Files\api</Filter>
+    </ClCompile>
+    <ClCompile Include="lxdownloadmanager.cpp">
+      <Filter>Source Files\api</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxwebpluginfactory.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxwebpluginfactory.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxcoreapplication.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxwebpage.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxwebpage.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxcoreprivate.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxsystemtray.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxsystemtray.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxdialogoperate.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxresources.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxresources.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxdialogs.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxoption.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxoption.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxdir.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxfile.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxHttp.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxlibmanager.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxlibrary.cpp">
-      <Filter>Generated Files\Release</Filter>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxoperate.cpp">
+      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_lxoperate.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_lxwebpluginfactory.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxnetworkcookie.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxnetworkcookie.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxmainwin.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxmainwin.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxlibrary.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxlibrary.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxlibmanager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxlibmanager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxHttp.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxHttp.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxfile.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxfile.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxdownloadmanager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxdownloadmanager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxdir.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxdir.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxdialogs.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxdialogs.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxdialogoperate.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxdialogoperate.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxcoreprivate.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxcoreprivate.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lxcoreapplication.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxcoreapplication.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_lxbasewin.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxcoreapplication.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxcoreprivate.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxdialogoperate.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxdialogs.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxdir.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxfile.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxHttp.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxlibmanager.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxlibrary.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxoperate.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxwebpluginfactory.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="implement\lxhttp.cpp">
-      <Filter>impl</Filter>
-    </ClCompile>
-    <ClCompile Include="lxapi\Lx_api.cpp">
-      <Filter>lxapi</Filter>
+    <ClCompile Include="GeneratedFiles\Release\moc_lxbasewin.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,10 +260,25 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="resource.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="stdafx.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="lxbasewin.h">
       <Filter>Source Files\private</Filter>
     </CustomBuild>
     <CustomBuild Include="lxcoreprivate.h">
+      <Filter>Source Files\private</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxmainwin.h">
+      <Filter>Source Files\private</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxnetworkcookie.h">
+      <Filter>Source Files\private</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxwebpage.h">
       <Filter>Source Files\private</Filter>
     </CustomBuild>
     <CustomBuild Include="lxwebpluginfactory.h">
@@ -256,14 +305,60 @@
     <CustomBuild Include="lxlibrary.h">
       <Filter>Source Files\api</Filter>
     </CustomBuild>
+    <CustomBuild Include="lxwebkitplugininterface.h">
+      <Filter>Source Files\api</Filter>
+    </CustomBuild>
     <CustomBuild Include="lomox.h">
+      <Filter>Source Files\public</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lomox_global.h">
+      <Filter>Source Files\public</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxdefinename.h">
+      <Filter>Source Files\public</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxlocaltool.h">
       <Filter>Source Files\public</Filter>
     </CustomBuild>
     <CustomBuild Include="lxoperate.h">
       <Filter>Source Files\public</Filter>
     </CustomBuild>
+    <CustomBuild Include="lxsqldatabase.h">
+      <Filter>Source Files\sql</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxsqlquery.h">
+      <Filter>Source Files\sql</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tool\check.h">
+      <Filter>tool</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxoption.h">
+      <Filter>tool</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tool\utillites.h">
+      <Filter>tool</Filter>
+    </CustomBuild>
     <CustomBuild Include="include\lxHttp.h">
       <Filter>include</Filter>
+    </CustomBuild>
+    <CustomBuild Include="include\lxresources.h">
+      <Filter>include</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxapi\Lx_api.hpp">
+      <Filter>lxapi</Filter>
+    </CustomBuild>
+    <CustomBuild Include="changelog.txt" />
+    <CustomBuild Include="lxinternalplugins.h">
+      <Filter>Source Files\internalplugin</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxpluginbase.h">
+      <Filter>Source Files\internalplugin</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxsystemtray.h">
+      <Filter>Source Files\api</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lxdownloadmanager.h">
+      <Filter>Source Files\api</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

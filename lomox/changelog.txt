@@ -1,8 +1,58 @@
-
 欢迎参与建设或者编码设计。
+site:http://www.lomox.org
+
+lomox.dll 0.7.0.4 (詹晨辉KeoJam)
+=======================
+1.QT升级到QT5版本，由于QT4和QT5类库不同，不能再用QT4进行编译
+2.bugfix
+3.增加了系统托盘
+4.增加了加载图标
+5.增加了窗口父子关系配置
+6.增加了打印接口（lxDialog.printPreview()）
+7.增加了下载功能
+
+lomox.dll 0.5.0.4 (蔡东赟)
+=======================
+1.cookie简单保存 固化
+2.bugfix
+3.本地cache默认是1m
 
 
-site:http://www.lomox.hk
+lomox.dll V0, 5, 0, 3 
+=================================
+1.处理crt问题 crt库对应的token依赖去掉(蔡东赟)
+2.config.ini 配置启动，配置边框 (蔡东赟)
+
+
+
+lomox.dll V0.4.0.3  （蔡东赟）
+===============================
+1.内部插件打桩
+
+
+lomox.dll V0.4.0.2  （蔡东赟,陈湘跃）
+===============================
+1.资源管理，接口
+LomoX.res.
+	bool registerResource(QString rccFilename);
+	bool unregisterResource(QString rccFilename);
+	bool registerResourceFromRoot(QString rccFilename, QString resourceRoot);
+	bool unregisterResourceFromRoot(QString rccFilename, QString resourceRoot);
+
+
+
+
+lomox.dll V0, 4, 0, 1
+===============================
+1.增加lxoption工具类，提供启动的兼容，兼容旧版的，并支持注册资源启动 （蔡东赟）
+
+	兼容启动项目：
+	 main.lx //资源包默认现在用 qrc:/pack/main.html 后面评估，或者等编辑器出来
+	main.html";
+	lomoxdemo.html
+	index.html
+2. 资源管理简单雏形  陈湘跃 (mailto:291307963@qq.com)
+
 
 
 lomox.dll V0, 3, 0, 1 (蔡东赟)

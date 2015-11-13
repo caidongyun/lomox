@@ -1,15 +1,17 @@
-﻿生成启动时间为 2013/11/10 20:06:35。
-     1>项目“E:\github\lomox\lomoxtest\lomoxtest.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2015/11/12 14:11:33。
+     1>项目“C:\Users\Administrator\Work\lomox_caidongyun\lomoxtest\lomoxtest.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWebKit /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\lomoxstaticlink.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt lomoxtest.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I\include\QtWebKit /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\lomoxstaticlink.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I\include\QtWebKit /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\lomoxstaticlink.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt lomoxtest.cpp
          lomoxtest.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Debug\lomoxstaticlink.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug lomox.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Debug\lomoxstaticlink.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Debug\lomoxstaticlink.lib" /MACHINE:X86 /SAFESEH Debug\lomoxtest.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Debug\lomoxstaticlink.exe" /INCREMENTAL /NOLOGO /LIBPATH:../Debug C:\Users\Administrator\Work\lomox_caidongyun\Debug\lomox.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Debug\lomoxstaticlink.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Debug\lomoxstaticlink.lib" /MACHINE:X86 /SAFESEH Debug\lomoxtest.obj
          Debug\stdafx.obj
      1>lomoxtest.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
-         lomoxtest.vcxproj -> E:\github\lomox\lomoxtest\../Debug\lomoxstaticlink.exe
-     1>已完成生成项目“E:\github\lomox\lomoxtest\lomoxtest.vcxproj”(Build 个目标)的操作。
+         lomoxtest.vcxproj -> C:\Users\Administrator\Work\lomox_caidongyun\lomoxtest\../Debug\lomoxstaticlink.exe
+     1>已完成生成项目“C:\Users\Administrator\Work\lomox_caidongyun\lomoxtest\lomoxtest.vcxproj”(Rebuild 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:05.55
+已用时间 00:00:00.37

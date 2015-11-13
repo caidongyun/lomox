@@ -11,8 +11,8 @@
 #include "lomox_global.h"
 #include "lxcoreapplication.h"
 //#include <QtScript>
-#include "include/lxHttp.h"
-
+#include "lxHttp.h"
+#include "lxresources.h"
 
 LxCoreApplication::LxCoreApplication( QObject* object, QWebView* pWebView, QString strApiName /*= QString(LOMOX_API_COREAPP)*/ )
 :LxOperate(object, pWebView, strApiName)
@@ -93,3 +93,40 @@ QObject* LxCoreApplication::getHttpTool()
 	return m_pHttp;
 }
 
+QObject* LxCoreApplication::getResources()
+{
+	m_pResource = new LxResources(this);
+	return m_pResource;
+}
+
+int LxCoreApplication::execute( QVariant varProgram, QVariant varArguments )
+{
+	if (varProgram.isNull() || !varProgram.isValid())
+		return 0;
+
+	if (varArguments.isNull())
+	{
+		return QProcess::execute(varProgram.toString());
+	}
+	
+	if (varArguments.type() == QVariant::String)
+	{
+		QStringList arg;
+		arg.append(varArguments.toString());
+		return QProcess::execute(varProgram.toString());
+	}
+	if (varArguments == QVariant::StringList)
+	{
+		return QProcess::execute(varProgram.toString(), varArguments.toStringList());
+	}
+	return 0;
+}
+
+// QVariant LxCoreApplication::exec( QString strProgram, QString strArguments )
+// {
+// 	QProcess* proc = new QProcess(this);
+// 	proc->start(strProgram, strArguments);
+// 
+// 
+// 	return 1;
+// }

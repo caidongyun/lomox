@@ -13,6 +13,8 @@
 #include "lxdialogoperate.h"
 #include "lxbasewin.h"
 #include "lxcoreapplication.h"
+#include "lxmainwin.h"
+class LxMainWindow;
 
 
 class LxCoreApplication;
@@ -32,9 +34,9 @@ public slots:
 	virtual QVariant count();
 	virtual QObject* add( QString key,QString url );
 	virtual QVariant remove( QString key);
-
+	virtual void closeAll();
 private:
 	QMap<QString,LxDialogBase *> m_mapDialogs;
-	QPointer<LxBaseWin> m_ptrMainWin;
+	QPointer<LxMainWindow> m_ptrMainWin;
 };
 #endif // end of __LXWINDOWS_H__

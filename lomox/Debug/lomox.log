@@ -1,43 +1,70 @@
-﻿生成启动时间为 2013/11/10 21:38:48。
-     1>项目“E:\github\lomox\lomox\lomox.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2015/11/12 12:43:14。
+     1>项目“C:\Users\Administrator\Work\lomox_caidongyun\lomox\lomox.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxdownloadmanager.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_lxdownloadmanager.cpp, GeneratedFiles\Release\moc_lxdownloadmanager.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxsystemtray.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_lxsystemtray.cpp, GeneratedFiles\Release\moc_lxsystemtray.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxwebpage.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_lxwebpage.cpp, GeneratedFiles\Release\moc_lxwebpage.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxbasewin.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxbasewin.cpp, GeneratedFiles\Debug\moc_lxbasewin.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxcoreapplication.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxcoreapplication.cpp, GeneratedFiles\Debug\moc_lxcoreapplication.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxcoreprivate.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxcoreprivate.cpp, GeneratedFiles\Debug\moc_lxcoreprivate.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxdialogoperate.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxdialogoperate.cpp, GeneratedFiles\Debug\moc_lxdialogoperate.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxdialogs.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxdialogs.cpp, GeneratedFiles\Debug\moc_lxdialogs.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxdir.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxdir.cpp, GeneratedFiles\Debug\moc_lxdir.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxfile.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxfile.cpp, GeneratedFiles\Debug\moc_lxfile.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxHttp.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxHttp.cpp, GeneratedFiles\Debug\moc_lxHttp.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxlibmanager.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxlibmanager.cpp, GeneratedFiles\Debug\moc_lxlibmanager.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxlibrary.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxlibrary.cpp, GeneratedFiles\Debug\moc_lxlibrary.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxmainwin.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxmainwin.cpp, GeneratedFiles\Debug\moc_lxmainwin.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxnetworkcookie.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxnetworkcookie.cpp, GeneratedFiles\Debug\moc_lxnetworkcookie.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxoperate.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxoperate.cpp, GeneratedFiles\Debug\moc_lxoperate.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxoption.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxoption.cpp, GeneratedFiles\Debug\moc_lxoption.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxresources.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxresources.cpp, GeneratedFiles\Debug\moc_lxresources.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_lxwebpluginfactory.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Release\moc_lxwebpluginfactory.cpp, GeneratedFiles\Debug\moc_lxwebpluginfactory.cpp.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\GeneratedFiles /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\qtmain /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtCore /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtGui /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtXml /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtSql /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtNetwork /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWebKit /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtANGLE /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\QtWidgets /IC:\Qt\Qt5.1.1\5.1.1\msvc2012\include\phonon /I.\ /I.\tool /I.\include /Iinclude /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_CORE_LIB /D QT_GUI_LIB /D QT_XML_LIB /D QT_SQL_LIB /D QT_NETWORK_LIB /D QT_WEBKIT_LIB /D QT_PHONON_LIB /D LOMOX_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt lxcoreprivate.cpp
-         lxcoreprivate.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\Debug\lomox.dll" /NOLOGO /LIBPATH:C:\Qt\Qt5.1.1\5.1.1\msvc2012\lib Qt5Cored.lib Qt5Guid.lib Qt5WebKitd.lib Qt5Xmld.lib Qt5Sqld.lib Qt5Networkd.lib Qt5Scriptd.lib Qt5WebKitWidgetsd.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../Debug\lomox.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Debug\lomox.lib" /MACHINE:X86 /SAFESEH /DLL Debug\resource.res
-         Debug\stdafx.obj
-         Debug\lxbasewin.obj
-         Debug\lxcoreprivate.obj
-         Debug\lxwebpage.obj
-         Debug\lxwebpluginfactory.obj
-         Debug\lxcoreapplication.obj
-         Debug\lxdialogoperate.obj
-         Debug\lxdialogs.obj
-         Debug\lxdir.obj
-         Debug\lxfile.obj
-         Debug\lxlibmanager.obj
-         Debug\lxlibrary.obj
-         Debug\lomox.obj
-         Debug\lxoperate.obj
-         Debug\lxsqldatabase.obj
-         Debug\lxsqlquery.obj
-         Debug\moc_lxbasewin.obj
-         Debug\moc_lxcoreapplication.obj
-         Debug\moc_lxcoreprivate.obj
-         Debug\moc_lxdialogoperate.obj
-         Debug\moc_lxdialogs.obj
-         Debug\moc_lxdir.obj
-         Debug\moc_lxfile.obj
-         Debug\moc_lxHttp.obj
-         Debug\moc_lxlibmanager.obj
-         Debug\moc_lxlibrary.obj
-         Debug\moc_lxoperate.obj
-         Debug\moc_lxwebpluginfactory.obj
-         Debug\lxhttp.obj
-         Debug\Lx_api.obj
-         lomox.vcxproj -> E:\github\lomox\lomox\../Debug\lomox.dll
-     1>已完成生成项目“E:\github\lomox\lomox\lomox.vcxproj”(Build 个目标)的操作。
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtCore /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtGui /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtNetwork /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtSql /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtWebKit /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtScript /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtWebkitWidgets /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtWidgets /IC:\Qt\Qt5.5.1_win32\5.5\msvc2013\include\QtXml /I.\include /I.\lxapi /I.\tool /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_CORE_LIB /D QT_GUI_LIB /D QT_XML_LIB /D QT_SQL_LIB /D QT_NETWORK_LIB /D QT_WEBKIT_LIB /D LOMOX_LIB /D QT_DLL /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_lxdownloadmanager.cpp GeneratedFiles\Debug\moc_lxsystemtray.cpp GeneratedFiles\Release\moc_lxbasewin.cpp GeneratedFiles\Release\moc_lxcoreapplication.cpp GeneratedFiles\Release\moc_lxcoreprivate.cpp GeneratedFiles\Release\moc_lxdialogoperate.cpp GeneratedFiles\Release\moc_lxdialogs.cpp GeneratedFiles\Release\moc_lxdir.cpp GeneratedFiles\Release\moc_lxdownloadmanager.cpp GeneratedFiles\Release\moc_lxfile.cpp GeneratedFiles\Release\moc_lxHttp.cpp GeneratedFiles\Release\moc_lxlibmanager.cpp GeneratedFiles\Release\moc_lxlibrary.cpp GeneratedFiles\Release\moc_lxmainwin.cpp GeneratedFiles\Release\moc_lxnetworkcookie.cpp GeneratedFiles\Release\moc_lxoperate.cpp GeneratedFiles\Release\moc_lxoption.cpp GeneratedFiles\Release\moc_lxresources.cpp GeneratedFiles\Release\moc_lxsystemtray.cpp GeneratedFiles\Release\moc_lxwebpluginfactory.cpp GeneratedFiles\Debug\moc_lxbasewin.cpp
+         moc_lxdownloadmanager.cpp
+         moc_lxsystemtray.cpp
+         moc_lxbasewin.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxbasewin.cpp”: No such file or directory
+         moc_lxcoreapplication.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxcoreapplication.cpp”: No such file or directory
+         moc_lxcoreprivate.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxcoreprivate.cpp”: No such file or directory
+         moc_lxdialogoperate.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxdialogoperate.cpp”: No such file or directory
+         moc_lxdialogs.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxdialogs.cpp”: No such file or directory
+         moc_lxdir.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxdir.cpp”: No such file or directory
+         moc_lxdownloadmanager.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxdownloadmanager.cpp”: No such file or directory
+         moc_lxfile.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxfile.cpp”: No such file or directory
+         moc_lxHttp.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxHttp.cpp”: No such file or directory
+         moc_lxlibmanager.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxlibmanager.cpp”: No such file or directory
+         moc_lxlibrary.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxlibrary.cpp”: No such file or directory
+         moc_lxmainwin.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxmainwin.cpp”: No such file or directory
+         moc_lxnetworkcookie.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxnetworkcookie.cpp”: No such file or directory
+         moc_lxoperate.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxoperate.cpp”: No such file or directory
+         moc_lxoption.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxoption.cpp”: No such file or directory
+         moc_lxresources.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxresources.cpp”: No such file or directory
+         moc_lxsystemtray.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxsystemtray.cpp”: No such file or directory
+         moc_lxwebpluginfactory.cpp
+     1>c1xx : fatal error C1083: 无法打开源文件: “GeneratedFiles\Release\moc_lxwebpluginfactory.cpp”: No such file or directory
+         正在生成代码...
+         正在编译...
+         moc_lxbasewin.cpp
+         正在生成代码...
+     1>已完成生成项目“C:\Users\Administrator\Work\lomox_caidongyun\lomox\lomox.vcxproj”(Build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:09.57
+已用时间 00:00:06.27

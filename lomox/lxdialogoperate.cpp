@@ -6,31 +6,70 @@
 * 创建日期	: 2011/11/3
 * 功能描述	:
 * 备    注	:
+* 修    改  ：詹晨辉(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxoperate.h"
 #include "lxdialogoperate.h"
+#include "lxmainwin.h"
 #include "lxbasewin.h"
+#include "lxdownloadmanager.h"
+#include <QtPrintSupport/QPrintPreviewDialog>
 
-LxDialogBase::LxDialogBase( QObject* object /*= NULL*/, QWebView* pWebView /*= NULL*/, QString strApiName /*= NULL*/ )
+LxDialogBase::LxDialogBase(QObject* object, QWebView* pWebView, QString strApiName, bool bshowloading, int gifW, int gifH)
 :LxOperate(object, pWebView, strApiName)
 {
+	m_layout = NULL;
+	m_movie = NULL;
+	m_label = NULL;
+	m_nWidth = 0;
+	m_nHeight = 0;
+	m_url = m_ptrWebView->url();
     m_mainFrame = ((QWebView *)m_ptrWebView)->page()->mainFrame();
+	QObject::connect(m_ptrWebView->page(), SIGNAL(downloadRequested(QNetworkRequest)), this, SLOT(downloadRequested(QNetworkRequest)));
+	QObject::connect(m_ptrWebView, SIGNAL(loadFinished(bool)), this, SLOT(loadFinished(bool)));
+	m_showloading = bshowloading;
+	if (m_showloading)
+	{
+		m_label = new QLabel(m_ptrWebView);
+		m_layout = new QBoxLayout(QBoxLayout::LeftToRight, m_ptrWebView);
+		m_lablW = gifW;
+		m_lablH = gifH;
+		qDebug() << QCoreApplication::applicationDirPath() + "/Resources/loading.gif";
+		m_movie = new QMovie(QCoreApplication::applicationDirPath() + "/Resources/loading.gif");
+		m_label->setStyleSheet("background-color: transparent;");
+		m_label->setScaledContents(true);
+		m_label->setContentsMargins(0, 0, 0, 0);
+		m_label->setAlignment(Qt::AlignCenter);
+		m_label->resize(QSize(m_lablW, m_lablH));
+		m_label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+		m_layout->addWidget(m_label, 0, Qt::AlignHCenter);
+// 		QSize size = m_ptrWebView->size();
+// 		int nposx = (m_ptrWebView->width() - gifW) / 2;
+// 		int nposy = (m_ptrWebView->height() - gifH) / 2;
+// 		QPoint npoint = m_label->mapToParent(QPoint(nposx, nposy));
+// 		m_label->setGeometry(npoint.x(), npoint.y(), gifW, gifH);
+		m_label->setMovie(m_movie);
+		m_movie->start();
+
+	}
 }
 
 LxDialogBase::~LxDialogBase()
 {
     LogEx("LomoX::~LMDialogBase()");
+	LxDialogs *plxDialogs = lxCoreApp->getDialogs();
+	plxDialogs->remove(m_url.toString());
 }
 
 void LxDialogBase::move()
 {
     LogEx("void LomoX::move()");
     VERIFY_IN_POINTER(m_ptrWebView);
-    WId id = m_ptrWebView->winId();
-#ifdef Q_OS_WIN32
-    ReleaseCapture();                 //remove by Colin3dmax
-    SendMessage(HWND(id), WM_SYSCOMMAND, SC_MOVE|HTCAPTION, 0);   //remove by Colin3dmax
+# ifdef  Q_OS_WIN32
+	WId id = m_ptrWebView->winId();
+	ReleaseCapture();
+	SendMessage(HWND(id), WM_SYSCOMMAND, SC_MOVE|HTCAPTION, 0);
 #endif
 }
 
@@ -53,22 +92,33 @@ void LxDialogBase::showMaximized()
     VERIFY_IN_POINTER(m_ptrWebView);
     if (m_ptrWebView->isMaximized())
         return;
-    else
-        m_ptrWebView->showMaximized();
+	else
+	{
+		m_ptrWebView->showMaximized();
+	}
 }
 
 void LxDialogBase::close()
 {
     LogEx("void LomoX::close()");
-    VERIFY_IN_POINTER(this->m_ptrWebView)
-    m_ptrWebView->close();
+	VERIFY_IN_POINTER(this->m_ptrWebView)
+	m_ptrWebView->close();
 }
 
 void LxDialogBase::showNormal()
 {
     LogEx("void LomoX::normal()");
     VERIFY_IN_POINTER(m_ptrWebView);
-    m_ptrWebView->showNormal();
+//    m_ptrWebView->showNormal();
+ 	WId id = m_ptrWebView->winId();
+ 	ShowWindow((HWND)id, SW_RESTORE);
+	if (m_nWidth == 0 && m_nHeight == 0)
+	{
+		qDebug() << m_ptrWebView->minimumWidth();
+		SetWindowPos((HWND)id, HWND_TOP, 0, 0, m_ptrWebView->minimumWidth(), m_ptrWebView->minimumHeight(), SWP_NOMOVE);
+	}
+	else
+		SetWindowPos((HWND)id, HWND_TOP, 0, 0, m_nWidth, m_nHeight, SWP_NOMOVE);
 }
 
 void LxDialogBase::show()
@@ -93,6 +143,8 @@ void LxDialogBase::setDialogWH( QVariant Width, QVariant Hight)
         nHeight = (int) Hight.toDouble() + 1;
         QSize size(nWidth, nHeight);
         m_ptrWebView->resize(size);
+		m_nWidth = nWidth;
+		m_nHeight = nHeight;
     }
     else
     {
@@ -143,7 +195,7 @@ int LxDialogBase::minimumWidth()
 {
     LogEx("LMDialogBase::minimumWidth()");
     Q_CHECK_PTR(m_ptrWebView);
-    return m_ptrWebView->minimumHeight();
+	return m_ptrWebView->minimumWidth();
 }
 
 int LxDialogBase::minimumHeight()
@@ -263,6 +315,18 @@ void LxDialogBase::setVisible( bool visible )
     Q_CHECK_PTR(m_ptrWebView);
     m_ptrWebView->setVisible(visible);
 }
+//add by KeoJam 增加打印接口
+void LxDialogBase::printPreview()
+{
+	LogEx("void LomoX::printPreview()");
+	if (!m_ptrWebView)
+		return;
+	QPrintPreviewDialog *dialog = new QPrintPreviewDialog(m_ptrWebView);
+	dialog->setAttribute(Qt::WA_DeleteOnClose);
+	connect(dialog, SIGNAL(paintRequested(QPrinter*)),
+		m_ptrWebView, SLOT(print(QPrinter*)));
+	dialog->exec();
+}
 
 QVariant LxDialogBase::eval( QVariant code)
 {
@@ -285,4 +349,20 @@ QVariant LxDialogBase::toHTML()
     }else{
         return nullptr;
     }
+}
+//add by KeoJam 增加下载功能 
+void LxDialogBase::downloadRequested(const QNetworkRequest &request)
+{
+	LogEx("downloadRequested()");
+	lxCoreApp->getDownloadManager()->download(request,this);
+	//BrowserApplication::downloadManager()->download(request);
+}
+
+void LxDialogBase::loadFinished(bool bFinished)
+{
+	if (m_showloading)
+	{
+		m_movie->stop();
+		m_label->hide();
+	}
 }

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+<meta content="yes" name="apple-mobile-web-app-capable">
+<noscript><div class="ui-top-note">您的浏览器已禁用javascript,为了您能正常浏览网站,请在浏览器里面启用javascript!</div></noscript>
+<title>HTML Entities</title>
+<link type="text/css" rel="stylesheet" href="../../css/global.css" />
+<link type="text/css" rel="stylesheet" href="../../css/buttons.css" />
+<style type="text/css">
+header { 
+	position: relative;
+}
+#arr {
+	position: absolute; left: 50%; bottom: 0;
+	margin: 0 0 -60px -60px;
+	border-radius: 90px; overflow: hidden;
+	padding: 10px;
+	background-color: #D5E0E6;
+}
+#arr>a {
+	width: 90px; height: 90px;
+	line-height: 86px;
+	font-size: 24px;
+}
+#input {
+	border: 1px solid #888; border-radius: 4px;
+	width: 280px; height: 56px; padding: 10px;
+	margin: 50px 0 0 245px;
+	font-size: 28px; outline: none;
+}
+#input:focus { 
+	-webkit-box-shadow: 0 0 15px #8CC4DE;
+	border-color: #00a1cb;
+}
+figure { 
+	position: relative;
+	margin: 0 0 10px 0; padding: 0; 
+} 
+figurecaption { 
+	clear: both; text-align: center; display: block; 
+	line-height: 24px; color: #999;
+}
+
+#result {
+	display: table; text-align: center; margin: auto;
+	font-size: 16px; font-size: Verdana;
+}
+#result>ul { 
+	margin: 0; padding: 0; list-style: none; 
+	text-align: left;
+}
+#result>ul>li { 
+	display: inline-block;
+	background-color: #7db500; color: #fff;
+	-webkit-user-select: text; text-align: center;
+	margin: 3px; padding: 5px;
+	width: 70px; height: 60px;
+	-webkit-box-shadow: 0 0 2px #888;
+}
+::selection, ::-webkit-selection {
+	color: #496011; background: #fcfcfc;
+}
+#result-caption { 
+	color: #999; 
+	display: none;
+}
+div.entity-content { 
+	font-size: 18px; 
+}
+div.entity-code, div.entity-value {
+	font-size: 12px; color: #496011;
+	-webkit-text-shadow: 0 1px 1px #fff;
+	font-family: Verdana;
+}
+
+</style>
+</head>
+
+<body>
+<div id="main">
+	<header>
+		<h1 class="title">HTML Entity Lookup</h1>
+		<div id="arr">
+			<a class="button button-circle button-flat button-flat-primary glow">&darr;</a>
+		</div>
+	</header>
+
+	<div class="w">
+		<figure>
+			<input type="search" id="input" placeholder="HTML entities like" autofocus="on" />
+			<figurecaption>HTML entities like, space separate for more</figurecaption>
+		</figure>
+		<div id="result">
+			<div id="result-caption"></div>
+			<ul>
+			</ul>
+		</div>
+</div>
+
+<script type="text/javascript" src="../../js/3rd/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../js/global.js"></script>
+<script type="text/javascript" src="Entities.js"></script>
+<script type="text/javascript" src="entity.data.js"></script>
+<script type="text/javascript">
+window.onkeydown = function(event) {
+	if(event.keyCode == 116) {
+		location.reload();
+	}
+}
+$(document).ready(function() {
+	$('#arr').on('click', 'a', function() {
+		$('#input').focus();
+	});
+
+	$('input').on('input', function() {
+		var val = $.trim(this.value);
+		var html = [];
+		e.like(val).each(function(idx, end) {
+			html.push([
+				'<li>',
+					'<div class="entity-content">' + this.html + '</div>',
+					'<div class="entity-code">#' + this.code + '</div>',
+					'<div class="entity-value">&amp;' + this.entity + ';</div>',
+				'</li>'
+			].join(''));
+		});
+		if(val.length > 0) {
+			$('#result-caption').text('Lookup - found ' + html.length + ' matches').show();
+		} else {
+			$('#result-caption').hide();
+		}
+		$('#result>ul').html(html.join(''));
+	});
+});
+</script>
+</body>
+</html>

@@ -6,15 +6,20 @@
 * 创建日期	: 2012/2/20
 * 功能描述	:
 * 备    注	:
+* 修    改  ：詹晨辉(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #ifndef __LXCOREPRIVATE_H__
 #define __LXCOREPRIVATE_H__
+
+#include <qpointer.h>
 
 #include "lxbasewin.h"
 #include "lxoperate.h"
 #include "lxdialogs.h"
 #include "lxcoreapplication.h"
 #include "lxlibmanager.h"
+#include "lxoption.h"
+#include "lxmainwin.h"
 
 class LxCoreApplication;
 class LxDialogs;
@@ -23,13 +28,19 @@ class LxCoreApplicationPrivate;
 
 static LxCoreApplicationPrivate* g_AppSelft = nullptr;
 
+class LxMainWindow;
+
+class LxDownloadManager;
+
 class LOMOX_EXPORT LxCoreApplicationPrivate : public QObject
 {
     Q_OBJECT
 private:
     LxCoreApplicationPrivate()
         :m_pMainWin(nullptr),
-        m_pDialogs(nullptr)
+        m_pDialogs(nullptr),
+		m_pOption(nullptr),
+		m_pdownloadmanager(nullptr)
     {
     }
 
@@ -40,11 +51,17 @@ public:
 
     void quit();
 
-    LxBaseWin* getMainWin();
+    LxMainWindow* getMainWin();
 	
 	LxDialogs* getDialogs();
 
+	LxDownloadManager *getDownloadManager();
+
     void showMainDialog( QUrl URL /*= ""*/ );
+
+	LxOption* getOption();
+
+	void setMainDialogTitle( QString &strTitle );
 
 public:
     static LxCoreApplicationPrivate* instance()
@@ -56,10 +73,16 @@ public:
         return g_AppSelft;
     }
 
+
+
+// private:
+// 	QString 
 protected:
-    LxBaseWin* m_pMainWin;
+    LxMainWindow* m_pMainWin;
     LxDialogs* m_pDialogs;
     LxDialogBase* m_pDialog;
+	LxOption* m_pOption;
+	LxDownloadManager *m_pdownloadmanager; //下载器
 };
 
 

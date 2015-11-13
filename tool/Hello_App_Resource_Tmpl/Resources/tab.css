@@ -1,0 +1,52 @@
+html,body,form,div,p,
+ul,ol,li,dl,dt,dd,
+h1,h2,h3,h4,h5,h6,
+input,button,textarea,img,
+table,caption,thead,tbody,tfoot,tr,th,td { margin:0; padding:0; list-style:none;}
+html { height:100%; overflow:hidden;}
+body { height:100%; overflow:hidden; background:#fff; font-size:12px; font-family:simsun; scrollbar-highlight-color:#fff; scrollbar-face-color:#f2f6f9; scrollbar-arrow-color:#a0c0d7; scrollbar-3dlight-color:#a0c0d7; scrollbar-track-color:#f2f6f9; scrollbar-darkshadow-color:#a0c0d7; scrollbar-3dshadow-color:#f2f6f9; }
+
+.c_tabNav { height:26px; background:url(s.png) repeat-x 0 -198px;}
+.c_tabNav .tabNavWrapper { position:relative; overflow:hidden;}
+.c_tabNav .tab { margin-right:76px; position:relative; z-index:2; overflow:hidden; white-space:nowrap; zoom:1; margin-left:-1px;}
+.c_tabNav .tab .maxWidth { width:100%; overflow:hidden; float:left;}
+.c_tabNav .tab ul { width:10000px; height:26px; overflow:hidden;}
+.c_tabNav .tab li { float:left; margin-right:-1px; position:relative; margin-top:3px; color:#000;}
+.c_tabNav .tab .li { line-height:22px; margin:0; text-decoration:none; color:#0279c5;}
+.c_tabNav .tab .li:hover { cursor:pointer; color:#f60;}
+.c_tabNav .tab .left { float:left; width:2px; height:22px; overflow:hidden; font-size:0; background:url(s.png) no-repeat 0 -740px;}
+.c_tabNav .tab .right { float:left; width:2px; height:22px; overflow:hidden; font-size:0; background:url(s.png) no-repeat -449px -740px;}
+.c_tabNav .tab .text { width:90px;overflow:hidden;float:left; padding:0 20px 0 8px; background:url(s.png) repeat-x -2px -740px;}
+.c_tabNav .tab .li:hover .left { background-position:0 -762px;}
+.c_tabNav .tab .li:hover .right { background-position:-449px -762px; color:#f60;}
+.c_tabNav .tab .li:hover .text { background-position:-2px -762px;}
+.c_tabNav .tab .loading .text span { padding-left:20px; float:left; background:url(icoLoading.gif) no-repeat 0 2px;}
+.c_tabNav .tab .locked .text { padding-right:8px;}
+.c_tabNav .tab .locked .text span { padding-left:14px; float:left; background:url(s.png) no-repeat -6px -1622px;}
+.c_tabNav .tab .on { margin-top:0;}
+.c_tabNav .tab .on .li,
+.c_tabNav .tab .on .li:hover { color:#000; line-height:26px; margin:0; cursor:default;}
+.c_tabNav .tab .on .left,
+.c_tabNav .tab .on .li:hover .left { float:left; width:2px; height:26px; overflow:hidden; font-size:0; background:url(s.png) no-repeat 0 -714px;}
+.c_tabNav .tab .on .right,
+.c_tabNav .tab .on .li:hover .right { float:left; width:2px; height:26px; overflow:hidden; font-size:0; background:url(s.png) -449px -714px;}
+.c_tabNav .tab .on .text,
+.c_tabNav .tab .on .li:hover .text { float:left; padding:0 25px 0 10px; background:url(s.png) repeat-x -2px -714px;}
+.c_tabNav .tab .on .loading .text span { padding-left:20px; float:left; background:url(icoLoading.gif) no-repeat 0 4px;}
+.c_tabNav .tab .on .locked:hover .text,
+.c_tabNav .tab .on .locked .text { padding-right:10px;}
+.c_tabNav .tab .on .locked .text span { background-position:-6px -1619px;}
+.c_tabNav .tab .closeTab { position:absolute; width:15px; height:15px; overflow:hidden; top:3px; right:5px; cursor:default; background:url(s.png) no-repeat -132px -401px;}
+.c_tabNav .tab .on .closeTab { top:5px; right:8px; background:url(s.png) no-repeat -132px -401px;}
+.c_tabNav .tab .closeTab:hover { background-position:-132px -416px;}
+.c_tabNav .tab .closeTab:active { background-position:-132px -431px;}
+.c_tabNav .tabTurner { position:absolute; width:66px; top:4px; right:5px;}
+.c_tabNav .tabTurner li { display:inline;}
+.c_tabNav .tabTurner a { float:left; margin-right:-1px; width:16px; height:16px; overflow:hidden; font-size:0; background:url(s.png) no-repeat -163px -418px;}
+.c_tabNav .tabTurner .left:hover { background-position:-163px -434px;}
+.c_tabNav .tabTurner .right { background-position:-179px -418px;}
+.c_tabNav .tabTurner .right:hover { background-position:-179px -434px;}
+.c_tabNav .tabTurner .default { background-position:-195px -418px;}
+.c_tabNav .tabTurner .default:hover { background-position:-195px -434px;}
+.c_tabNav .tabTurner .close { background-position:-286px -418px; margin-left:5px;}
+.c_tabNav .tabTurner .close:hover { background-position:-286px -434px;}
