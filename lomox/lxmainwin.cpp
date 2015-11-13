@@ -1,4 +1,4 @@
-
+﻿
 /*******************************************************************************
 * 版权所有(C) 1988-2014 All Rights Reserved.
 *
@@ -49,7 +49,7 @@ LxMainWindow::LxMainWindow( QWidget* prarent /*= 0*/ )
 	}
 	QString iconName = pOption->getSystemTrayIconName();
 	QString iconPath = QCoreApplication::applicationDirPath() + "/" + iconName;
-	qDebug("show path %s", iconPath.toStdString());
+	qDebug("show path %s", qPrintable(iconPath));
 	QIcon icon(iconPath);
 	this->setWindowIcon(icon);
 }

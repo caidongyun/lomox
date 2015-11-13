@@ -1,4 +1,4 @@
-#include "lxdir.h"
+﻿#include "lxdir.h"
 
 LxDir::LxDir(QObject *parent) :
     LxOperate(parent)

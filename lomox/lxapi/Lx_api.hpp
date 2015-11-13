@@ -1,29 +1,41 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 1988-2012 All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 1988-2012 All Rights Reserved.
 *
-* ÎÄ¼şÃû³Æ	: Lx_api.h
-* ×÷    Õß	: Õ²³¿»Ô (mailto:zch.fly@gmail.com)
-* ´´½¨ÈÕÆÚ	: 2012/12/21
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
+* æ–‡ä»¶åç§°	: Lx_api.h
+* ä½œ    è€…	: è©¹æ™¨è¾‰ (mailto:zch.fly@gmail.com)
+* åˆ›å»ºæ—¥æœŸ	: 2012/12/21
+* åŠŸèƒ½æè¿°	:
+* å¤‡    æ³¨	:
 ********************************************************************************/
 #ifndef LOMOX_API_H
 #define LOMOX_API_H
 
 #ifdef WIN32
-#ifndef LOMOX_EXPORT
-#ifdef	LOMOX_LIB
-#define LOMOX_EXPORT __declspec(dllexport)
+	#ifndef LOMOX_EXPORT
+	#ifdef	LOMOX_LIB
+	#define LOMOX_EXPORT __declspec(dllexport)
+	#else
+	#define LOMOX_EXPORT __declspec(dllimport)
+	#endif
+	#endif
 #else
-#define LOMOX_EXPORT __declspec(dllimport)
+	#include <QtCore/qglobal.h>
+	#ifndef LOMOX_EXPORT
+	#ifdef LOMOX_LIB
+	# define LOMOX_EXPORT Q_DECL_EXPORT
+	#else
+	# define LOMOX_EXPORT Q_DECL_IMPORT
+	#endif
+	#endif
 #endif
-#endif
-#endif
+
+
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-	LOMOX_EXPORT void LomoxAppRun(int argc, char *argv[]);
+    LOMOX_EXPORT void LomoxAppRun(int argc, char *argv[]);
 #ifdef __cplusplus
 };
 #endif // __cplusplus

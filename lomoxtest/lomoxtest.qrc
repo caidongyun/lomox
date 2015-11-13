@@ -1,3 +1,5 @@
 <RCC>
-    <qresource prefix="/lomoxtest"/>
+    <qresource prefix="/">
+        <file>../tool/Hello_App_Resource_Tmpl/config.ini</file>
+    </qresource>
 </RCC>

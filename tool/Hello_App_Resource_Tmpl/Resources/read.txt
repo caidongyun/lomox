@@ -1,0 +1,6 @@
+#在 php环境下直接 运行 index.html文件(localhost/xxx/index.html)
+
+#如果要在数据库下测试,请在mysql下运行 mydb.sql
+
+#如果要在数据库下测试 请配制数据库 dbconfig.php的用户名、密码
+

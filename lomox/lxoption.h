@@ -1,12 +1,12 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2010-2013 lomox caidongyun. All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2010-2013 lomox caidongyun. All Rights Reserved.
 * 
-* ÎÄ¼şÃû³Æ	: lxoption.h
-* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
-* ´´½¨ÈÕÆÚ	: 2013/3/9
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
-* ĞŞ    ¸Ä  £ºÕ²³¿»Ô(KeoJam)(mailto:zch.fly@gmail.com)
+* æ–‡ä»¶åç§°	: lxoption.h
+* ä½œ    è€…	: è”¡ä¸œèµŸ (mailto:caidongyun19@qq.com)
+* åˆ›å»ºæ—¥æœŸ	: 2013/3/9
+* åŠŸèƒ½æè¿°	: 
+* å¤‡    æ³¨	: 
+* ä¿®    æ”¹  ï¼šè©¹æ™¨è¾‰(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #ifndef __LXOPTION_H__
 #define __LXOPTION_H__
@@ -44,7 +44,7 @@ public slots:
 	QString getSystemTrayIconName();
 	QString getCookieFilePath();
 
-	//hrefÊÇ·ñ´Ó±¾Ò³¼ÓÔØË¢ĞÂ»¹ÊÇµ¯³öĞÂ´°¿Ú
+	//hrefæ˜¯å¦ä»æœ¬é¡µåŠ è½½åˆ·æ–°è¿˜æ˜¯å¼¹å‡ºæ–°çª—å£
 	bool getLoadHrefInCurrentMainDialog();
 	bool getLoadHrefInCurrentChildDialog();
 

@@ -12,6 +12,29 @@ build：
     
    
 changelog:
+
+==========================
+lomox.dll 0.8.0.2 (曹良Colin3dmax)
+1.测试Mac环境下，liblomox.dylib和Test项目的运行
+
+2.修改项目配置文件，兼容Mac环境Lomox的使用
+
+3.修改Mac下，启动路径为/开头的路径兼容
+
+4.还有两项需要优化的地方
+	生成的Mac App的 Resouce资源 需要手动拷贝进入，目前还没有找到有效的方法自动把Resouce 和 Config.ini 自动写入App包
+	另外生成的动态库文件，需要手动拷贝到 /usr/lib/目录下去，否则 启动Test App 会包找不到动态库的问题
+	
+==========================
+lomox.dll 0.8.0.1 (曹良Colin3dmax)
+1.测试Lomox在QT5.5.1下的运行情况，修复VS工程配置对Win32和x86的支持
+
+2.Lomox代码编码格式统一改成UTF8-BOM编码格式
+
+3.测试新手首次配置Lomox是可能遇到的问题，整理成下面的链接，后续有新问题，会更新进来
+http://www.evernote.com/l/ANYux0NyZ9FIW50-TUU7965jGJFSjHcCUtY/
+
+
 ==========================
 lomox.dll 0.7.0.4 (詹晨辉KeoJam)
 

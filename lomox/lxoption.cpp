@@ -1,12 +1,12 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2010-2013 lomox caidongyun. All Rights Reserved.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2010-2013 lomox caidongyun. All Rights Reserved.
 *
-* ÎÄ¼şÃû³Æ	: lxoption.cpp
-* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
-* ´´½¨ÈÕÆÚ	: 2013/3/9
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
-* ĞŞ    ¸Ä  £ºÕ²³¿»Ô(KeoJam)(mailto:zch.fly@gmail.com)
+* æ–‡ä»¶åç§°	: lxoption.cpp
+* ä½œ    è€…	: è”¡ä¸œèµŸ (mailto:caidongyun19@qq.com)
+* åˆ›å»ºæ—¥æœŸ	: 2013/3/9
+* åŠŸèƒ½æè¿°	: 
+* å¤‡    æ³¨	: 
+* ä¿®    æ”¹  ï¼šè©¹æ™¨è¾‰(KeoJam)(mailto:zch.fly@gmail.com)
 ********************************************************************************/
 #include "lomox_global.h"
 #include "lxoption.h"
@@ -29,9 +29,9 @@ QString LxOption::getStartResourceFileName()
 	return QCoreApplication::applicationDirPath() + "/Resources/main.lx";
 }
 
-//¼æÈİÆô¶¯ÏîÄ¿
+//å…¼å®¹å¯åŠ¨é¡¹ç›®
 /*
-// main.lx //×ÊÔ´°ü
+// main.lx //èµ„æºåŒ…
 //main.html";
 //lomoxdemo.html
 //index.html
@@ -39,6 +39,7 @@ QString LxOption::getStartResourceFileName()
 QString LxOption::getStartUrl()
 {
 	QString strUrlConfg = QCoreApplication::applicationDirPath() + QString::fromUtf8("/config.ini");
+    qDebug()<<"Config.ini Path:"<<strUrlConfg;
 	if (QFile::exists(strUrlConfg))
 	{
 		QSettings qsetting(strUrlConfg, QSettings::IniFormat,0);
@@ -61,7 +62,7 @@ QString LxOption::getStartUrl()
 	
 	if (QFile::exists(strResCab))
 	{
-		//×¢²á×ÊÔ´£¬·µ»Ømain »òÕßindex½Úµã
+		//æ³¨å†Œèµ„æºï¼Œè¿”å›main æˆ–è€…indexèŠ‚ç‚¹
 		QResource::registerResource(strResCab);
 		return QString::fromLocal8Bit("qrc:/pack/main.html");
 
@@ -196,7 +197,7 @@ bool LxOption::getMainWindowStaysOnTopHint()
 	return false;
 }
 
-//add by KeoJam 2015-04-19 Ôö¼Ó×Ó´°¿ÚÊÇ·ñÏÔÊ¾¶¥²ãÅäÖÃ
+//add by KeoJam 2015-04-19 å¢åŠ å­çª—å£æ˜¯å¦æ˜¾ç¤ºé¡¶å±‚é…ç½®
 bool LxOption::getChildWindowStaysOnTopHint()
 {
 	QString strConfg = getConfgPath();
@@ -215,7 +216,7 @@ bool LxOption::getChildWindowStaysOnTopHint()
 	return false;
 }
 
-//add by KeoJam 2015-04-19 Ôö¼ÓÊÇ·ñÆôÓÃ´°¿Ú¸¸×Ó¹ØÏµ
+//add by KeoJam 2015-04-19 å¢åŠ æ˜¯å¦å¯ç”¨çª—å£çˆ¶å­å…³ç³»
 bool LxOption::getDialogsRelationShip()
 {
 	QString strConfg = getConfgPath();
@@ -234,7 +235,7 @@ bool LxOption::getDialogsRelationShip()
 	return false;
 }
 
-//add by KeoJam 2015-04-19 Ôö¼ÓÊÇ·ñÆôÓÃ´°¿ÚÏµÍ³ÍĞÅÌ
+//add by KeoJam 2015-04-19 å¢åŠ æ˜¯å¦å¯ç”¨çª—å£ç³»ç»Ÿæ‰˜ç›˜
 bool LxOption::getNeedSystemTray()
 {
 	QString strConfg = getConfgPath();
@@ -289,26 +290,26 @@ bool LxOption::getValueFromIni(QString strKey, bool &bValue)
 
 bool LxOption::getLoadHrefInCurrentMainDialog()
 {
-	bool bRes = false;//Ä¬ÈÏ×Ô¼º¿ØÖÆ
-	if (getValueFromIni(QString::fromLocal8Bit("/maindialog/hrefincurrent"), bRes))//È¡³É¹¦ÔòÓÃ³É¹¦µÄ½á¹û
+	bool bRes = false;//é»˜è®¤è‡ªå·±æ§åˆ¶
+	if (getValueFromIni(QString::fromLocal8Bit("/maindialog/hrefincurrent"), bRes))//å–æˆåŠŸåˆ™ç”¨æˆåŠŸçš„ç»“æœ
 	{
 		return bRes;
 	}
-	return bRes;//Ä¬ÈÏµÄ
+	return bRes;//é»˜è®¤çš„
 }
 
 bool LxOption::getLoadHrefInCurrentChildDialog()
 {
-	bool bRes = false;//Ä¬ÈÏ×Ô¼º¿ØÖÆ
-	if (getValueFromIni(QString::fromLocal8Bit("/childdialog/hrefincurrent"), bRes))//È¡³É¹¦ÔòÓÃ³É¹¦µÄ½á¹û
+	bool bRes = false;//é»˜è®¤è‡ªå·±æ§åˆ¶
+	if (getValueFromIni(QString::fromLocal8Bit("/childdialog/hrefincurrent"), bRes))//å–æˆåŠŸåˆ™ç”¨æˆåŠŸçš„ç»“æœ
 	{
 		return bRes;
 	}
-	return bRes;//Ä¬ÈÏµÄ
+	return bRes;//é»˜è®¤çš„
 }
 
 
-//add by KeoJam 2015-04-19 Ôö¼ÓÊÇ·ñÆôÓÃ´°¿Ú¼ÓÔØÊ±µÈ ´ıÍ¼±ê
+//add by KeoJam 2015-04-19 å¢åŠ æ˜¯å¦å¯ç”¨çª—å£åŠ è½½æ—¶ç­‰ å¾…å›¾æ ‡
 bool LxOption::getNeedShowLoadingGif()
 {
 	QString strConfg = getConfgPath();

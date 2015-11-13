@@ -9,18 +9,57 @@ message("You are running qmake on a generated .pro file. This may not work!")
 
 TEMPLATE = app
 TARGET = lomoxtest
-DESTDIR = ../Release
-QT += core gui network xml qtmain phonon webkit
-CONFIG += release
+QT += core gui network xml  webkit widgets webkitwidgets
 DEFINES += QT_LARGEFILE_SUPPORT
 INCLUDEPATH += ./GeneratedFiles \
     ./GeneratedFiles/Release \
-    .
-LIBS += -L"./../release" \
-    -llomox
+    . \
+    ./../lomox
+
+
+# Copies the given files to the destination directory
+defineTest(copyToDestdir) {
+    files = $$1
+
+    for(FILE, files) {
+        DDIR = $$DESTDIR
+
+        # Replace slashes in paths with backslashes for Windows
+        win32:FILE ~= s,/,\\,g
+        win32:DDIR ~= s,/,\\,g
+
+        QMAKE_POST_LINK += $$QMAKE_COPY $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
+    }
+
+    export(QMAKE_POST_LINK)
+}
+
+
+
+mac{
+    CONFIG +=  app_bundle
+    QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.10.5
+    debug:LIBS += -L"./../build-LomoX-Desktop_Qt_5_5_1_clang_64bit-Debug" -llomox
+    Release:LIBS += -L"./../build-LomoX-Desktop_Qt_5_5_1_clang_64bit-Release" -llomox
+    Release:MOC_DIR += ./GeneratedFiles/Release
+    Debug:MOC_DIR += ./GeneratedFiles/Debug
+    Release:OBJECTS_DIR += Release
+    Debug:OBJECTS_DIR += Debug
+    UI_DIR += ./GeneratedFiles
+    RCC_DIR += ./GeneratedFiles
+
+}
+win32{
+
+    DESTDIR = ../Release
+    LIBS += -L"./../release" -llomox
+    MOC_DIR += ./GeneratedFiles/release
+    OBJECTS_DIR += release
+    UI_DIR += ./GeneratedFiles
+    RCC_DIR += ./GeneratedFiles
+}
+
+
+
 DEPENDPATH += .
-MOC_DIR += ./GeneratedFiles/release
-OBJECTS_DIR += release
-UI_DIR += ./GeneratedFiles
-RCC_DIR += ./GeneratedFiles
 include(lomoxtest.pri)

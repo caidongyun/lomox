@@ -1,11 +1,11 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C) 2011-2015www.LomoX.hk All Rights Follow Lomox licence.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2011-2015www.LomoX.hk All Rights Follow Lomox licence.
 *
-* ÎÄ¼şÃû³Æ	: lxsystemtray.cpp
-* ×÷    Õß	: Õ²³¿»Ô (mailto:zch.fly@gmail.com)
-* ´´½¨ÈÕÆÚ	: 2015/04/20
-* ¹¦ÄÜÃèÊö	:
-* ±¸    ×¢	:
+* æ–‡ä»¶åç§°	: lxsystemtray.cpp
+* ä½œ    è€…	: è©¹æ™¨è¾‰ (mailto:zch.fly@gmail.com)
+* åˆ›å»ºæ—¥æœŸ	: 2015/04/20
+* åŠŸèƒ½æè¿°	:
+* å¤‡    æ³¨	:
 ********************************************************************************/
 #include "lxsystemtray.h"
 
@@ -30,40 +30,40 @@ bool LxSystemTray::__initSystemTray()
 	m_ptrTrayIcon->setToolTip(m_toolTipName);
 	m_ptrTrayMenu = new QMenu(this);
 
-	QAction *action = new QAction(QString::fromLocal8Bit("Òş²Ø"), this);
+	QAction *action = new QAction(QString::fromLocal8Bit("éšè—"), this);
 	action->setIcon(QIcon(QCoreApplication::applicationDirPath()+"/Resources/hide.ico"));
 	m_ptrTrayMenu->addAction(action);
 	connect(action, SIGNAL(triggered()), m_ptrLxDialogBase, SLOT(showMinimized()));
-	m_trayActions.insert(QString::fromLocal8Bit("Òş²Ø"), action);
+	m_trayActions.insert(QString::fromLocal8Bit("éšè—"), action);
 
-	action = new QAction(QString::fromLocal8Bit("×îĞ¡»¯"), this);
+	action = new QAction(QString::fromLocal8Bit("æœ€å°åŒ–"), this);
 	action->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Resources/mini.ico"));
 	m_ptrTrayMenu->addAction(action);
 	connect(action, SIGNAL(triggered()), m_ptrLxDialogBase, SLOT(showMinimized()));
-	m_trayActions.insert(QString::fromLocal8Bit("×îĞ¡»¯"), action);
+	m_trayActions.insert(QString::fromLocal8Bit("æœ€å°åŒ–"), action);
 
-	action = new QAction(QString::fromLocal8Bit("×î´ó»¯"), this);
+	action = new QAction(QString::fromLocal8Bit("æœ€å¤§åŒ–"), this);
 	action->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Resources/max.ico"));
 	m_ptrTrayMenu->addAction(action);
 	connect(action, SIGNAL(triggered()), m_ptrLxDialogBase, SLOT(showMaximized()));
-	m_trayActions.insert(QString::fromLocal8Bit("×î´ó»¯"), action);
+	m_trayActions.insert(QString::fromLocal8Bit("æœ€å¤§åŒ–"), action);
 
-	action = new QAction(QString::fromLocal8Bit("»¹Ô­"), this);
+	action = new QAction(QString::fromLocal8Bit("è¿˜åŸ"), this);
 	action->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Resources/normal.ico"));
 	m_ptrTrayMenu->addAction(action);
 	connect(action, SIGNAL(triggered()), m_ptrLxDialogBase, SLOT(showNormal()));
-	m_trayActions.insert(QString::fromLocal8Bit("»¹Ô­"), action);
+	m_trayActions.insert(QString::fromLocal8Bit("è¿˜åŸ"), action);
 
 	m_ptrTrayMenu->addSeparator();
-	action = new QAction(QString::fromLocal8Bit("ÍË³ö"), this);
+	action = new QAction(QString::fromLocal8Bit("é€€å‡º"), this);
 	action->setIcon(QIcon(QCoreApplication::applicationDirPath() + "/Resources/close.ico"));
 	m_ptrTrayMenu->addAction(action);
 	connect(action, SIGNAL(triggered()), m_ptrLxDialogBase, SLOT(close()));
-	m_trayActions.insert(QString::fromLocal8Bit("ÍË³ö"), action);
+	m_trayActions.insert(QString::fromLocal8Bit("é€€å‡º"), action);
 
 	m_ptrTrayIcon->setContextMenu(m_ptrTrayMenu);
 
-	//Í¼±êµã»÷ÊÂ¼ş
+	//å›¾æ ‡ç‚¹å‡»äº‹ä»¶
 	connect(m_ptrTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
 	m_ptrTrayIcon->show();
@@ -72,7 +72,7 @@ bool LxSystemTray::__initSystemTray()
 
 void LxSystemTray::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
-	//´¥·¢ºóÌ¨Í¼±êÖ´ĞĞÏàÓ¦ÊÂ¼ş  
+	//è§¦å‘åå°å›¾æ ‡æ‰§è¡Œç›¸åº”äº‹ä»¶  
 	switch (reason)
 	{
 	case QSystemTrayIcon::Trigger:
@@ -82,7 +82,7 @@ void LxSystemTray::iconActivated(QSystemTrayIcon::ActivationReason reason)
 		m_ptrLxDialogBase->showNormal();
 		break;
 // 	case QSystemTrayIcon::MiddleClick:
-// 		showMessage("Êó±êÖĞ¼ü£¡");
+// 		showMessage("é¼ æ ‡ä¸­é”®ï¼");
 // 		break;
 	default:
 		break;

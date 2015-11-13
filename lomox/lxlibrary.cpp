@@ -54,7 +54,7 @@ QVariant LxLibrary::exec(QString functionName, QVariant param,QString encode)
     if((!m_pLib.isNull()) && m_pLib->isLoaded())
 	{
         qDebug("exec now!");
-        void * fun = m_pLib->resolve(functionName.toLocal8Bit().data());
+        void * fun = (void *)m_pLib->resolve(functionName.toLocal8Bit().data());
         if(!fun)
             return nullptr;
 
