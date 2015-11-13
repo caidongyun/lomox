@@ -1,11 +1,11 @@
-/*******************************************************************************
-* °æÈ¨ËùÓÐ(C) 2011-2015www.LomoX.hk All Rights Follow Lomox licence.
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C) 2011-2015www.LomoX.hk All Rights Follow Lomox licence.
 *
-* ÎÄ¼þÃû³Æ	: lxdownloadmanager.cpp
-* ×÷    Õß	: Õ²³¿»Ô (mailto:zch.fly@gmail.com)
-* ´´½¨ÈÕÆÚ	: 2015/04/20
-* ¹¦ÄÜÃèÊö	:
-* ±¸    ×¢	:
+* æ–‡ä»¶åç§°	: lxdownloadmanager.cpp
+* ä½œ    è€…	: è©¹æ™¨è¾‰ (mailto:zch.fly@gmail.com)
+* åˆ›å»ºæ—¥æœŸ	: 2015/04/20
+* åŠŸèƒ½æè¿°	:
+* å¤‡    æ³¨	:
 ********************************************************************************/
 #include "lxdownloadmanager.h"
 #include "lxdialogoperate.h"
@@ -98,12 +98,12 @@ void LxDownloadItem::downloadFinished()
 	}
 	QString strfilter = "";
 	QString selectedFilter = "Images(*.png *.xpm *.jpg);; Text files(*.txt);; XML files(*.xml)";
-	QString fileName = QFileDialog::getSaveFileName((QWidget*)m_pLxDialogBase->getCoreDialog(), QString::fromLocal8Bit("±£´æ"),
+	QString fileName = QFileDialog::getSaveFileName((QWidget*)m_pLxDialogBase->getCoreDialog(), QString::fromLocal8Bit("ä¿å­˜"),
 		QCoreApplication::applicationDirPath() + "/download/" + name, "*" + endName);
 	if (fileName.isEmpty()) {
 		m_pReply->close();
 		//fileNameLabel->setText(tr("Download canceled: %1").arg(QFileInfo(defaultFileName).fileName()));
-		QString method = QString(QString::fromLocal8Bit("downloadfailed(\"%1\")")).arg(QString::fromLocal8Bit("ÏÂÔØÈ¡Ïû"));
+		QString method = QString(QString::fromLocal8Bit("downloadfailed(\"%1\")")).arg(QString::fromLocal8Bit("ä¸‹è½½å–æ¶ˆ"));
 		QVariant code = method;
 		m_pLxDialogBase->eval(code);
 		return;
@@ -111,14 +111,14 @@ void LxDownloadItem::downloadFinished()
 	m_file.setFileName(fileName);
 	if (!m_file.isOpen()) {
 		if (!m_file.open(QIODevice::WriteOnly)) {
-			QString method = QString(QString::fromLocal8Bit("downloadfailed(\"%1\")")).arg(QString::fromLocal8Bit("ÎÞ·¨±£´æ"));
+			QString method = QString(QString::fromLocal8Bit("downloadfailed(\"%1\")")).arg(QString::fromLocal8Bit("æ— æ³•ä¿å­˜"));
 			QVariant code = method;
 			m_pLxDialogBase->eval(code);
 			return;
 		}
 	}
 	if (-1 == m_file.write(m_pReply->readAll())) {
-		QString method = QString(QString::fromLocal8Bit("downloadfailed(\"%1\")")).arg(QString::fromLocal8Bit("±£´æÊ§°Ü"));
+		QString method = QString(QString::fromLocal8Bit("downloadfailed(\"%1\")")).arg(QString::fromLocal8Bit("ä¿å­˜å¤±è´¥"));
 		QVariant code = method;
 		m_pLxDialogBase->eval(code);
 		m_file.close();

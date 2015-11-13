@@ -21,7 +21,7 @@
 #endif
 
 #include "stdafx.h"
-
+#include <QtGlobal>
 //#include <QtGui>//5.0被替换
 #include <QtWidgets>
 #include <QtWebKitWidgets>

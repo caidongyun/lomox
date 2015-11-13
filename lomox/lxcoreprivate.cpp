@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
 * 版权所有(C) 2011-2012www.LomoX.hk All Rights Follow Lomox licence.
 *
 * 文件名称	: lxcoreprivate.cpp
@@ -72,7 +72,9 @@ void LxCoreApplicationPrivate::showMainDialog( QUrl URL /*= ""*/ )
 		{
 			QString iconName = pOption->getSystemTrayIconName();
 			QString iconPath = QCoreApplication::applicationDirPath() + "/" + iconName;
-			qDebug("show path %s", iconPath.toStdString());
+
+			qDebug() << "Show Path:" << iconPath;
+			
 			QIcon icon(iconPath);
 			pSystemTray = new LxSystemTray(icon, pOption->getMainTitle(), pDialogOp);
 		}
@@ -165,7 +167,8 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 
 		if (!strUrl.isEmpty())
 		{
-			if (-1 == strUrl.indexOf(':'))
+            //Mac版文件路径开始为/需要,排除 by Colin3dmax
+            if (-1 == strUrl.indexOf(':') && strUrl.indexOf("/")!=0)
 			{
 				strUrl = QString::fromLocal8Bit("http://") + strUrl;
 			}

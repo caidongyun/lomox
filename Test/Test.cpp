@@ -1,10 +1,10 @@
-// Test.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+ï»¿// Test.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
 
 #include "../lomox/lxapi/Lx_api.hpp"
-//#pragma comment(linker, "/subsystem:windows /entry:wmainCRTStartup") //¹Ø±Õconsole
+//#pragma comment(linker, "/subsystem:windows /entry:wmainCRTStartup") //å…³é—­console
 int _tmain(int argc, char* argv[])
 {
 	LomoxAppRun(argc, argv);

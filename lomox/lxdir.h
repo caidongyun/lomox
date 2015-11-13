@@ -1,4 +1,4 @@
-#ifndef LXDIR_H
+﻿#ifndef LXDIR_H
 #define LXDIR_H
 
 #include "lomox_global.h"

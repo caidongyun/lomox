@@ -1,11 +1,11 @@
-/*******************************************************************************
-* °æÈ¨ËùÓĞ(C)
+ï»¿/*******************************************************************************
+* ç‰ˆæƒæ‰€æœ‰(C)
 *
-* ÎÄ¼şÃû³Æ	: networkcookie.h
-* ×÷    Õß	: ²Ì¶«ÚS (mailto:caidongyun19@qq.com)
-* ´´½¨ÈÕÆÚ	: 2011-6-30
-* ¹¦ÄÜÃèÊö	: 
-* ±¸    ×¢	: 
+* æ–‡ä»¶åç§°	: networkcookie.h
+* ä½œ    è€…	: è”¡ä¸œèµŸ (mailto:caidongyun19@qq.com)
+* åˆ›å»ºæ—¥æœŸ	: 2011-6-30
+* åŠŸèƒ½æè¿°	: 
+* å¤‡    æ³¨	: 
 ********************************************************************************/
 #ifndef __NETWORKCOOKIE_H__
 #define __NETWORKCOOKIE_H__
@@ -17,10 +17,10 @@ class LxNetWorkCookies : public QNetworkCookieJar
 public:
     LxNetWorkCookies (QString path, QObject *parent = 0);  
     ~LxNetWorkCookies (); 
-    QList<QNetworkCookie> cookiesForUrl ( const QUrl & url ) const;//·µ»ØÖ¸¶¨urlµÄcookie
-    bool setCookiesFromUrl ( const QList<QNetworkCookie> & cookieList, const QUrl & url );// Ğ´cookieµÄÊ±ºò»áµ÷ÓÃµ½
+    QList<QNetworkCookie> cookiesForUrl ( const QUrl & url ) const;//è¿”å›æŒ‡å®šurlçš„cookie
+    bool setCookiesFromUrl ( const QList<QNetworkCookie> & cookieList, const QUrl & url );// å†™cookieçš„æ—¶å€™ä¼šè°ƒç”¨åˆ°
 
-	bool SaveCookie();//±£´æµ½×Ô¼ºÖ¸¶¨µÄµØ·½£¬Î´¼ÓÃÜ
+	bool SaveCookie();//ä¿å­˜åˆ°è‡ªå·±æŒ‡å®šçš„åœ°æ–¹ï¼ŒæœªåŠ å¯†
 
 private:
 	QString file; 

@@ -28,6 +28,10 @@ HEADERS += ./resource.h \
     ./lxoperate.h \
     ./lxsqldatabase.h \
     ./lxsqlquery.h \
+    ./lxsystemtray.h \
+    ./lxnetworkcookie.h \
+    ./lxdownloadmanager.h \
+    ./lxmainwin.h \
     ./lxinternalplugins.h \
     ./lxpluginbase.h \
     ./tool/check.h \
@@ -52,6 +56,10 @@ SOURCES += ./stdafx.cpp \
     ./lxoperate.cpp \
     ./lxsqldatabase.cpp \
     ./lxsqlquery.cpp \
+    ./lxsystemtray.cpp \
+    ./lxnetworkcookie.cpp \
+    ./lxdownloadmanager.cpp \
+    ./lxmainwin.cpp \
     ./lxoption.cpp \
     ./implement/lxhttp.cpp \
     ./implement/lxresources.cpp \
