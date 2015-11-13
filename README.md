@@ -15,6 +15,7 @@ changelog:
 
 ==========================
 lomox.dll 0.8.0.2 (曹良Colin3dmax)
+
 1.测试Mac环境下，liblomox.dylib和Test项目的运行
 
 2.修改项目配置文件，兼容Mac环境Lomox的使用
@@ -27,6 +28,7 @@ lomox.dll 0.8.0.2 (曹良Colin3dmax)
 	
 ==========================
 lomox.dll 0.8.0.1 (曹良Colin3dmax)
+
 1.测试Lomox在QT5.5.1下的运行情况，修复VS工程配置对Win32和x86的支持
 
 2.Lomox代码编码格式统一改成UTF8-BOM编码格式
