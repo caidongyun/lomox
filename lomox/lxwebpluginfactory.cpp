@@ -1,6 +1,6 @@
 ﻿
 #include "lxwebpluginfactory.h"
-#include "lxWebKitPluginInterface.h"
+#include "lxwebkitplugininterface.h"
 #include "lxdir.h"
 
 LxWebPluginFactory::LxWebPluginFactory(QObject *parent):QWebPluginFactory()

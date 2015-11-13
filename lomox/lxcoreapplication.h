@@ -85,6 +85,6 @@ private:
 	QPointer<QObject> m_pHttp;
 	QPointer<QObject> m_pResource;
 
-	QMap<QString, QPointer<QObject>> m_mapNameToObject;
+    QMap<QString, QPointer<QObject> > m_mapNameToObject;
 };
 #endif // end of __LXCOREAPPLICATION_H__

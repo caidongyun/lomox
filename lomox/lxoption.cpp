@@ -39,6 +39,7 @@ QString LxOption::getStartResourceFileName()
 QString LxOption::getStartUrl()
 {
 	QString strUrlConfg = QCoreApplication::applicationDirPath() + QString::fromUtf8("/config.ini");
+    qDebug()<<"Config.ini Path:"<<strUrlConfg;
 	if (QFile::exists(strUrlConfg))
 	{
 		QSettings qsetting(strUrlConfg, QSettings::IniFormat,0);

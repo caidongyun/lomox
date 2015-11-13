@@ -1,6 +1,6 @@
 /*!
  * LxExt v0.0.1
- * LxExt ÊÇLxExt JS¿ò¼ÜµÄºËĞÄÎÄ¼ş
+ * LxExt æ˜¯LxExt JSæ¡†æ¶çš„æ ¸å¿ƒæ–‡ä»¶
  * http://intelomo.com/
  * Author: Colin3dmax
  * Date: 2012-02-06
@@ -11,7 +11,7 @@ LxExt.Transition=function(){};
 function setConfig( value,defaultValue ){
 	if(typeof(value)=="undefined"){
 		if(typeof(defaultValue)=="undefined"){
-			throw("ÅäÖÃÊôĞÔÃ»ÓĞÄ¬ÈÏÖµ£¬ĞèÒªjs¿Í»§¶Ë³ÌĞòÔ±Ö¸¶¨¸Ã²ÎÊı£¡"); 
+			throw("é…ç½®å±æ€§æ²¡æœ‰é»˜è®¤å€¼ï¼Œéœ€è¦jså®¢æˆ·ç«¯ç¨‹åºå‘˜æŒ‡å®šè¯¥å‚æ•°ï¼"); 
 		}
 		return defaultValue;
 	}
@@ -21,28 +21,28 @@ function setConfig( value,defaultValue ){
 
 /*!
 	LxExt.Dialog
-	¶Ô»°¿òÀà
+	å¯¹è¯æ¡†ç±»
 */
 LxExt.Dialog = function(){};
-LxExt.Dialog.canDragBorder=false;//´°Ìå±ß¿òÊÇ·ñ¿ÉÒÔÍÏ×§
+LxExt.Dialog.canDragBorder=false;//çª—ä½“è¾¹æ¡†æ˜¯å¦å¯ä»¥æ‹–æ‹½
 
-//ÉèÖÃ´°¿Ú³õÊ¼´óĞ¡
+//è®¾ç½®çª—å£åˆå§‹å¤§å°
 LxExt.Dialog.initWndWH = function(width,height){
 	LxDialog.setDialogWH(width,height);
 	LxDialog.width = width;
 	LxDialog.height = height;
 };
-//ÉèÖÃ±ß¿òÊÇ·ñ¿ÉÒÔÍÏ¶¯
+//è®¾ç½®è¾¹æ¡†æ˜¯å¦å¯ä»¥æ‹–åŠ¨
 LxExt.Dialog.setBorderDrag= function( drag ){
 	if(drag!=undefined){
 		LxExt.Dialog.canDragBorder=drag;
 	}
 	return LxExt.Dialog.canDragBorder;
 };
-//±êÌâÀ¸µÄµÄ¿ÉÍÏ×ÅÇøÓò
-//objÉèÖÃÍÏ¶¯ÇøÓòµÄ¶ÔÏó
+//æ ‡é¢˜æ çš„çš„å¯æ‹–ç€åŒºåŸŸ
+//objè®¾ç½®æ‹–åŠ¨åŒºåŸŸçš„å¯¹è±¡
 LxExt.Dialog.dragRegion = function( obj ){
-	//½â¾öLxDialog.move();µÄBug£¬Ìæ»»LxDialog.move();
+	//è§£å†³LxDialog.move();çš„Bugï¼Œæ›¿æ¢LxDialog.move();
 	function Point( x,y){
 		this.x=x;
 		this.y=y;
@@ -56,8 +56,8 @@ LxExt.Dialog.dragRegion = function( obj ){
 		topleftPoint.y=LxDialog.getTopLeftY();
 	}
 	obj.bind("mousedown",function(e){
-		oldPoint.x=e.pageX;
-		oldPoint.y=e.pageY;
+		oldPoint.x=e.screenX;
+		oldPoint.y=e.screenY;
 		getWindowPos();
 		canMoveWindow=true;
 		if(window.captureEvents){
@@ -66,151 +66,154 @@ LxExt.Dialog.dragRegion = function( obj ){
 		else{ 
 			obj.setCapture(); 
 		}
-	});
-	$(document).bind("mousemove",function(e){
-		if(canMoveWindow){
-			currPoint.x=e.pageX;
-			currPoint.y=e.pageY;
-			LxDialog.move( topleftPoint.x+currPoint.x-oldPoint.x, topleftPoint.y+currPoint.y-oldPoint.y);
-			getWindowPos();
+
+		document.onmousemove = function(e){
+			if(canMoveWindow){
+				var oEvent = e || event;
+				currPoint.x=oEvent.screenX;
+				currPoint.y=oEvent.screenY;
+				LxDialog.move( topleftPoint.x+currPoint.x-oldPoint.x, topleftPoint.y+currPoint.y-oldPoint.y);
+			}
 		}
-	})
-	$(document).bind("mouseup",function(){
-		canMoveWindow=false;
-		if(window.captureEvents)window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);  
-		else obj.releaseCapture();  
+        document.onmouseup = function(){
+			canMoveWindow=false;
+			if(window.captureEvents)window.releaseEvents(Event.MOUSEMOVE|Event.MOUSEUP);  
+			else obj.releaseCapture();  
+			this.onmousemove = null;
+        	this.onmouseup = null;
+		}
 	});
 };
 
-//ÒÆ¶¯´°¿ÚÖÁx,y×ø±ê´¦
+//ç§»åŠ¨çª—å£è‡³x,yåæ ‡å¤„
 LxExt.Dialog.moveWnd = function(x,y){
 	LxDialog.move(x,y);
 };
 
-//×î´ó»¯´°¿Ú
+//æœ€å¤§åŒ–çª—å£
 LxExt.Dialog.showMaximized = function(){
 	LxDialog.showMaximized();
 };
 
-//×îĞ¡»¯´°¿Ú
+//æœ€å°åŒ–çª—å£
 LxExt.Dialog.showMinimized = function(){
 	LxDialog.showMinimized();
 };
 
-//¹Ø±Õµ±Ç°´°¿Ú
+//å…³é—­å½“å‰çª—å£
 LxExt.Dialog.closeWnd = function(){
 	LxDialog.close();
 };
 
-//ÏÔÊ¾´°¿Ú
+//æ˜¾ç¤ºçª—å£
 LxExt.Dialog.showNormal = function(){
 	LxDialog.showNormal();
 };
 
-//µ±Ç°´°¿ÚÊÇ·ñ×îĞ¡»¯
+//å½“å‰çª—å£æ˜¯å¦æœ€å°åŒ–
 LxExt.Dialog.isMinimized = function(){
 	return LxDialog.isMinimized();
 };
 
-//µ±Ç°´°¿ÚÊÇ·ñ×î´ó»¯
+//å½“å‰çª—å£æ˜¯å¦æœ€å¤§åŒ–
 LxExt.Dialog.isMaximized = function(){
 	return LxDialog.isMaximized();
 };
 
-//µ±Ç°´°¿ÚÊÇ·ñÈ«ÆÁ
+//å½“å‰çª—å£æ˜¯å¦å…¨å±
 LxExt.Dialog.isMaximized = function(){
 	return LxDialog.isMaximized();
 };
 
-//È¡µÃµ±Ç°´°¿ÚÏŞÖÆµÄ×îĞ¡¿í¶È
+//å–å¾—å½“å‰çª—å£é™åˆ¶çš„æœ€å°å®½åº¦
 LxExt.Dialog.getMinWidth = function(){
 	return LxDialog.minimumWidth();
 };
 
-//È¡µÃµ±Ç°´°¿ÚÏŞÖÆµÄ×î´ó¿í¶È
+//å–å¾—å½“å‰çª—å£é™åˆ¶çš„æœ€å¤§å®½åº¦
 LxExt.Dialog.getMaxWidth = function(){
 	return LxDialog.maximumWidth();
 };
 
-//È¡µÃµ±Ç°´°¿ÚÏŞÖÆµÄ×îĞ¡¸ß¶È
+//å–å¾—å½“å‰çª—å£é™åˆ¶çš„æœ€å°é«˜åº¦
 LxExt.Dialog.getMinHeight = function(){
 	return LxDialog.minimumHeight();
 };
 
-//È¡µÃµ±Ç°´°¿ÚÏŞÖÆµÄ×î´ó¸ß¶È
+//å–å¾—å½“å‰çª—å£é™åˆ¶çš„æœ€å¤§é«˜åº¦
 LxExt.Dialog.getMaxHeight = function(){
 	return LxDialog.maximumHeight();
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×îĞ¡¿í¶ÈºÍ×îĞ¡¸ß¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å°å®½åº¦å’Œæœ€å°é«˜åº¦
 LxExt.Dialog.setMinimumSize = function(w,h){
 	LxDialog.setMinimumSize(w,h);
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×î´ó¿í¶ÈºÍ×î´ó¸ß¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å¤§å®½åº¦å’Œæœ€å¤§é«˜åº¦
 LxExt.Dialog.setMaximumSize = function(w,h){
 	LxDialog.setMaximumSize(w,h);
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×îĞ¡¿í¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å°å®½åº¦
 LxExt.Dialog.setMinimumWidth = function(w){
 	LxDialog.setMinimumWidth(w);
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×îĞ¡¸ß¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å°é«˜åº¦
 LxExt.Dialog.setMinimumHeight= function(h){
 	LxDialog.setMinimumWidth(h);
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×î´ó¿í¶ÈºÍ×î´ó¸ß¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å¤§å®½åº¦å’Œæœ€å¤§é«˜åº¦
 LxExt.Dialog.setMaximumSize = function(h){
 	LxDialog.setMaximumSize(w,h);
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×î´ó¿í¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å¤§å®½åº¦
 LxExt.Dialog.setMaximumWidth = function(w){
 	LxDialog.setMaximumWidth(w);
 };
 
-//ÏŞÖÆµ±Ç°´°¿Ú×î´ó¸ß¶È
+//é™åˆ¶å½“å‰çª—å£æœ€å¤§é«˜åº¦
 LxExt.Dialog.setMaximumHeight = function(h){
 	LxDialog.setMaximumHeight(h);
 };
 
-//ÆÁÄ»¿í
+//å±å¹•å®½
 LxExt.Dialog.getScreenWidth = function(){
 	return window.screen.width;
 };
 
-//ÆÁÄ»¸ß
+//å±å¹•é«˜
 LxExt.Dialog.getScreenHeight = function(){
 	return window.screen.height;
 };
 
-//´°¿ÚÆÁÄ»¾ÓÖĞ
+//çª—å£å±å¹•å±…ä¸­
 LxExt.Dialog.centerWnd = function(){
 	LxExt.Dialog.moveWnd((LxExt.Dialog.getScreenWidth() - window.innerWidth)/2,(LxExt.Dialog.getScreenHeight() - window.innerHeight)/2);
 };
 
-//ÏÔÊ¾´°¿Ú
+//æ˜¾ç¤ºçª—å£
 LxExt.Dialog.showWnd = function(){
 	LxDialog.show();
 };
 
-//Òş²Ø´°¿Ú
+//éšè—çª—å£
 LxExt.Dialog.hideWnd = function(){
 	//
 };
 
-//ÖØĞÂ¼ÓÔØUI×ÊÔ´
+//é‡æ–°åŠ è½½UIèµ„æº
 LxExt.Dialog.Reload = function(){
 	LxDialog.reload();
 };
-//Ä¬ÈÏä¯ÀÀÆ÷´ò¿ªÍøÖ·
+//é»˜è®¤æµè§ˆå™¨æ‰“å¼€ç½‘å€
 LxExt.Dialog.openURL = function(addr){
 	LxDialog.openUrl(addr);
 };
-//Æô¶¯³ÌĞò
+//å¯åŠ¨ç¨‹åº
 LxExt.Dialog.exec = function(exeName){
 	LxDialog.openUrl(exeName);
 };
@@ -220,9 +223,9 @@ LxExt.Dialog.updateClientSize = function( objClient,offset ){
 } 
 
 /*
- ¹¦ÄÜ:Ä¬ÈÏ¶Ô×îÍâ²ãDivÊµÏÖ±ß¿òÍÏ×§¹¦ÄÜ
-  param:obj  		Ìí¼ÓÍÏ×§¹¦ÄÜµÄ¶ÔÏó
-  pargm:int size	ÍÏ¶¯¸ĞÓ¦ÇøÓò Ä¬ÈÏ5 px;
+ åŠŸèƒ½:é»˜è®¤å¯¹æœ€å¤–å±‚Divå®ç°è¾¹æ¡†æ‹–æ‹½åŠŸèƒ½
+  param:obj  		æ·»åŠ æ‹–æ‹½åŠŸèƒ½çš„å¯¹è±¡
+  pargm:int size	æ‹–åŠ¨æ„Ÿåº”åŒºåŸŸ é»˜è®¤5 px;
 */
 LxExt.Dialog.borderDrag=function(objBody,obj,size){
 	var size= typeof(size)=="undefined"?10:size;
@@ -234,25 +237,25 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 	function isMouseInBorder( obj,point ){
 		var offset=obj.offset();
 		if(point.x<=offset.left+size && point.y<=offset.top+size ){
-				//×óÉÏ½Ç
+				//å·¦ä¸Šè§’
 				return true;
 			}else if(point.x>=offset.left && point.x>offset.left+size && point.x<= obj.outerWidth(true)+offset.left-size && point.y<=offset.top+size){
-				//ÉÏ±ß
+				//ä¸Šè¾¹
 				return true;
 			}else if(point.x>=offset.left && point.x>obj.outerWidth(true)+offset.left-size && point.x<= obj.outerWidth(true)+offset.left && point.y<=offset.top+size ){
-				//ÓÒÉÏ½Ç
+				//å³ä¸Šè§’
 				return true;
 			}else if(point.x>obj.outerWidth(true)+offset.left-size && point.x<= obj.outerWidth(true)+offset.left && point.y>offset.top+size && point.y<= obj.outerHeight(true)+offset.top - size ){
-				//ÓÒ±ß
+				//å³è¾¹
 				return true;
 			}else if(point.x>obj.outerWidth(true)+offset.left-size && point.x<= obj.outerWidth(true)+offset.left && point.y>obj.outerHeight(true)+offset.top-size && point.y<= obj.outerHeight(true)+offset.top ){
-				//ÓÒÏÂ½Ç
+				//å³ä¸‹è§’
 				return true;
 			}else if( point.x>offset.left+size && point.x<= obj.outerWidth(true)+offset.left-size && point.y>obj.outerHeight(true)+offset.top-size && point.y<= obj.outerHeight(true)+offset.top ){
-				//ÏÂ½Ç
+				//ä¸‹è§’
 				return true;
 			}else if(point.x>=offset.left && point.x<=offset.left+size && point.y>obj.outerHeight(true)+offset.top-size && point.y<= obj.outerHeight(true)+offset.top ){
-				//×óÏÂ½Ç
+				//å·¦ä¸‹è§’
 				return true;
 			}else if(point.x>=offset.left && point.x<=offset.left+size && point.y>offset.top+size && point.y<= obj.outerHeight(true)+offset.top ){
 				return true;
@@ -263,9 +266,9 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 	var pointFlag=-1;
 	var windowWidth=0;
 	var windowHeight=0;
-	//°ó¶¨±ß¿òÍÏ¶¯µÄÊÂ¼ş
+	//ç»‘å®šè¾¹æ¡†æ‹–åŠ¨çš„äº‹ä»¶
 	if(obj){
-		//Êó±ê°´ÏÂ
+		//é¼ æ ‡æŒ‰ä¸‹
 		obj.bind("mousedown",function(e){
 			if(LxExt.Dialog.canDragBorder){
 				
@@ -281,65 +284,65 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 				obj.setCapture(); 
 			}
 		});
-		//Êó±êÒÆ¶¯
+		//é¼ æ ‡ç§»åŠ¨
 		$(document).bind("mousemove",function(e){
-			//Èç¹ûÆô¶¯±ß¿òÍÏ¶¯£¬¸Ä±ä´°Ìå´óĞ¡
+			//å¦‚æœå¯åŠ¨è¾¹æ¡†æ‹–åŠ¨ï¼Œæ”¹å˜çª—ä½“å¤§å°
 			if(LxExt.Dialog.canDragBorder){
-				//»ñÈ¡µ±Ç°´°Ìå×ø±ê
+				//è·å–å½“å‰çª—ä½“åæ ‡
 				var newPoint=new Point( e.pageX,e.pageY);
 				var offset = obj.offset();
 				
-				//ÉèÖÃÊó±êÔÚ¶ÔÓ¦ÇøÓòÖĞµÄÑùÊ½
-				//ÅĞ¶ÏÊó±êÎ»ÖÃ
+				//è®¾ç½®é¼ æ ‡åœ¨å¯¹åº”åŒºåŸŸä¸­çš„æ ·å¼
+				//åˆ¤æ–­é¼ æ ‡ä½ç½®
 				if(!canMoveWindow){
 					if(newPoint.x<=offset.left+size && newPoint.y<=offset.top+size ){
-						//×óÉÏ½Ç
+						//å·¦ä¸Šè§’
 						pointFlag=0;
 						obj.css("cursor","nw-resize");
 					}else if(newPoint.x>=offset.left && newPoint.x>offset.left+size && newPoint.x<= obj.outerWidth(true)+offset.left-size && newPoint.y<=offset.top+size){
-						//ÉÏ±ß
+						//ä¸Šè¾¹
 						pointFlag=1;
 						obj.css("cursor","n-resize");
 					}else if(newPoint.x>=offset.left && newPoint.x>obj.outerWidth(true)+offset.left-size && newPoint.x<= obj.outerWidth(true)+offset.left && newPoint.y<=offset.top+size ){
-						//ÓÒÉÏ½Ç
+						//å³ä¸Šè§’
 						pointFlag=2;
 						obj.css("cursor","ne-resize");
 					}else if(newPoint.x>obj.outerWidth(true)+offset.left-size && newPoint.x<= obj.outerWidth(true)+offset.left && newPoint.y>offset.top+size && newPoint.y<= obj.outerHeight(true)+offset.top - size ){
-						//ÓÒ±ß
+						//å³è¾¹
 						pointFlag=3;
 						obj.css("cursor","e-resize");
 					}else if(newPoint.x>obj.outerWidth(true)+offset.left-size && newPoint.x<= obj.outerWidth(true)+offset.left && newPoint.y>obj.outerHeight(true)+offset.top-size && newPoint.y<= obj.outerHeight(true)+offset.top ){
-						//ÓÒÏÂ½Ç
+						//å³ä¸‹è§’
 						pointFlag=4;
 						obj.css("cursor","se-resize");
 					}else if( newPoint.x>offset.left+size && newPoint.x<= obj.outerWidth(true)+offset.left-size && newPoint.y>obj.outerHeight(true)+offset.top-size && newPoint.y<= obj.outerHeight(true)+offset.top ){
-						//ÏÂ½Ç
+						//ä¸‹è§’
 						pointFlag=5;
 						obj.css("cursor","s-resize");
 					}else if(newPoint.x>=offset.left && newPoint.x<=offset.left+size && newPoint.y>obj.outerHeight(true)+offset.top-size && newPoint.y<= obj.outerHeight(true)+offset.top ){
-						//×óÏÂ½Ç
+						//å·¦ä¸‹è§’
 						pointFlag=6;
 						obj.css("cursor","sw-resize");
 					}else if(newPoint.x>=offset.left && newPoint.x<=offset.left+size && newPoint.y>offset.top+size && newPoint.y<= obj.outerHeight(true)+offset.top ){
-						//×ó±ß
+						//å·¦è¾¹
 						pointFlag=7;
 						obj.css("cursor","w-resize");
 					}
 					else{
-						//»Ö¸´Ä¬ÈÏ
+						//æ¢å¤é»˜è®¤
 						obj.css("cursor","default");
 					}
 				}
-				//1.×óÉÏ½Ç£¬ÓÒÏÂ½ÇÍ¼±ê
+				//1.å·¦ä¸Šè§’ï¼Œå³ä¸‹è§’å›¾æ ‡
 				
 
-				//µ÷Õû´°Ìå´óĞ¡
+				//è°ƒæ•´çª—ä½“å¤§å°
 				if(canMoveWindow){
-					//»ñÈ¡µ±Ç°´°Ìå´óĞ¡
+					//è·å–å½“å‰çª—ä½“å¤§å°
 					switch(pointFlag){
 						case 0:
-						//×óÉÏ½Ç
-							//ÉèÖÃTopLeftÎ»ÖÃµ½µ±Ç°
+						//å·¦ä¸Šè§’
+							//è®¾ç½®TopLeftä½ç½®åˆ°å½“å‰
 							var offsetX=newPoint.x - oldPoint.x;
 							var offsetY=newPoint.y - oldPoint.y;
 							windowWidth=windowWidth- offsetX;
@@ -348,7 +351,7 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 							LxDialog.move(LxDialog.getTopLeftX()+offsetX,LxDialog.getTopLeftY()+offsetY);
 							break;
 						case 1:
-						//ÉÏ±ß
+						//ä¸Šè¾¹
 							var offsetX=newPoint.x - oldPoint.x;
 							var offsetY=newPoint.y - oldPoint.y;
 							windowHeight=windowHeight - offsetY;
@@ -356,7 +359,7 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 							LxDialog.move(LxDialog.getTopLeftX(),LxDialog.getTopLeftY()+offsetY);
 							break;
 						case 2:
-						//ÓÒÉÏ½Ç
+						//å³ä¸Šè§’
 							var offsetX=newPoint.x - oldPoint.x;
 							var offsetY=newPoint.y - oldPoint.y;
 							windowHeight=windowHeight - offsetY;
@@ -364,19 +367,19 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 							LxDialog.move(LxDialog.getTopLeftX(),LxDialog.getTopLeftY()+offsetY);
 							break;
 						case 3:
-						//ÓÒ±ß
+						//å³è¾¹
 							LxExt.Dialog.initWndWH(windowWidth+ (newPoint.x - oldPoint.x) ,windowHeight );
 							break;
 						case 4:
-						//ÓÒÏÂ½Ç
+						//å³ä¸‹è§’
 							LxExt.Dialog.initWndWH(windowWidth+ (newPoint.x - oldPoint.x) ,windowHeight+ (newPoint.y - oldPoint.y) );
 							break;
 						case 5:
-						//ÏÂ±ß
+						//ä¸‹è¾¹
 							LxExt.Dialog.initWndWH(windowWidth,windowHeight+ (newPoint.y - oldPoint.y) );
 							break;
 						case 6:
-						//×óÏÂ½Ç
+						//å·¦ä¸‹è§’
 							var offsetX=newPoint.x - oldPoint.x;
 							var offsetY=newPoint.y - oldPoint.y;
 							windowWidth=windowWidth- offsetX;
@@ -384,7 +387,7 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 							LxDialog.move(LxDialog.getTopLeftX()+offsetX,LxDialog.getTopLeftY());
 							break;
 						case 7:
-						//×ó±ß
+						//å·¦è¾¹
 							var offsetX=newPoint.x - oldPoint.x;
 							var offsetY=newPoint.y - oldPoint.y;
 							windowWidth=windowWidth- offsetX;
@@ -399,7 +402,7 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 				
 			}
 		});
-		//Êó±êÌ§Æğ
+		//é¼ æ ‡æŠ¬èµ·
 		$(document).bind("mouseup",function(){
 			if(LxExt.Dialog.canDragBorder){
 				canMoveWindow=false;
@@ -418,67 +421,67 @@ LxExt.Dialog.borderDrag=function(objBody,obj,size){
 
 /*!
 	LxExt.Transition.Button
-	ÌØĞ§->¶¯»­°´Å¥Àà
+	ç‰¹æ•ˆ->åŠ¨ç”»æŒ‰é’®ç±»
 */
 /*
 	Class
-	°´Å¥Àà¹¹Ôìº¯Êı
-	param:JQueryObject objÒªÎ¬»¤µÄ¶ÔÏó
+	æŒ‰é’®ç±»æ„é€ å‡½æ•°
+	param:JQueryObject objè¦ç»´æŠ¤çš„å¯¹è±¡
 */
 
 /*	
 	Public:
-	¹¦ÄÜ:Í¼Æ¬°´Å¥µÄ¹ı¶É¶¯»­
+	åŠŸèƒ½:å›¾ç‰‡æŒ‰é’®çš„è¿‡æ¸¡åŠ¨ç”»
 	Config:{
-		string	eventName 			ÊÂ¼şÀàĞÍÃû³Æ Ä¬ÈÏÎª "mouseenter"
-		object	eventTarget 	*	ÊÂ¼ş´¥·¢¶ÔÏó ±ØĞëÖ¸¶¨
-		object	animTarget 			¶¯»­ÏÔÊ¾¶ÔÏó Ä¬ÈÏÎªeventTarget
-		string 	image	 		*	ÓÃ×÷¹ı¶ÉĞ§¹ûµÄÍ¼Æ¬Â·¾¶ ±ØĞëÖ¸¶¨ 
-		string  className			ÀàÑùÊ½Ãû³Æ
-		int 	width				Ê×¸öÍ¼Æ¬ÔªËØµÄ¿í Ä¬ÈÏÎª32
-		int 	height				Ê×¸öÍ¼Æ¬ÔªËØµÄ¸ß Ä¬ÈÏÎª32
-		int 	frames 				Í¼Æ¬ÔªËØÖ¡Êı	 Ä¬ÈÏÎª1Ö¡
-		int 	x 					Ê×¸öÍ¼Æ¬ÔªËØµÄx×ø±ê Ä¬ÈÏÎª0
-		int 	y 					Ê×¸öÍ¼Æ¬ÔªËØµÄy×ø±ê Ä¬ÈÏÎª0
-		bool 	pos 				¶¯»­ÕıÏò²¥·Å»òÄæÏò²¥·Å£¬Ä¬ÈÏÎªtrueÕıÏò²¥·Å  			pos[itive]¼òĞ´
-		bool 	hori 				°´Å¥Í¼Æ¬ÔªËØ¼¯Ë®Æ½»ò´¹Ö±·½Ïò [true|false] Ä¬ÈÏÎªtrue   	hori[zontale]¼òĞ´
-		bool 	stop 				Í¼¼¯²¥·Å½áÊøÊÇ·ñÍ£ÁôÔÚ×îºóÒ»Ö¡ [true|false] Ä¬ÈÏÎªtrue 
-		int     speed				¶¯»­ÑÓÊ±  Ä¬ÈÏÎª 50ºÁÃë
-		int     space    			Í¼¼¯ÔªËØ¼ä¸ô Ä¬ÈÏÎª0 
+		string	eventName 			äº‹ä»¶ç±»å‹åç§° é»˜è®¤ä¸º "mouseenter"
+		object	eventTarget 	*	äº‹ä»¶è§¦å‘å¯¹è±¡ å¿…é¡»æŒ‡å®š
+		object	animTarget 			åŠ¨ç”»æ˜¾ç¤ºå¯¹è±¡ é»˜è®¤ä¸ºeventTarget
+		string 	image	 		*	ç”¨ä½œè¿‡æ¸¡æ•ˆæœçš„å›¾ç‰‡è·¯å¾„ å¿…é¡»æŒ‡å®š 
+		string  className			ç±»æ ·å¼åç§°
+		int 	width				é¦–ä¸ªå›¾ç‰‡å…ƒç´ çš„å®½ é»˜è®¤ä¸º32
+		int 	height				é¦–ä¸ªå›¾ç‰‡å…ƒç´ çš„é«˜ é»˜è®¤ä¸º32
+		int 	frames 				å›¾ç‰‡å…ƒç´ å¸§æ•°	 é»˜è®¤ä¸º1å¸§
+		int 	x 					é¦–ä¸ªå›¾ç‰‡å…ƒç´ çš„xåæ ‡ é»˜è®¤ä¸º0
+		int 	y 					é¦–ä¸ªå›¾ç‰‡å…ƒç´ çš„yåæ ‡ é»˜è®¤ä¸º0
+		bool 	pos 				åŠ¨ç”»æ­£å‘æ’­æ”¾æˆ–é€†å‘æ’­æ”¾ï¼Œé»˜è®¤ä¸ºtrueæ­£å‘æ’­æ”¾  			pos[itive]ç®€å†™
+		bool 	hori 				æŒ‰é’®å›¾ç‰‡å…ƒç´ é›†æ°´å¹³æˆ–å‚ç›´æ–¹å‘ [true|false] é»˜è®¤ä¸ºtrue   	hori[zontale]ç®€å†™
+		bool 	stop 				å›¾é›†æ’­æ”¾ç»“æŸæ˜¯å¦åœç•™åœ¨æœ€åä¸€å¸§ [true|false] é»˜è®¤ä¸ºtrue 
+		int     speed				åŠ¨ç”»å»¶æ—¶  é»˜è®¤ä¸º 50æ¯«ç§’
+		int     space    			å›¾é›†å…ƒç´ é—´éš” é»˜è®¤ä¸º0 
 	}
-	×¢Òâ£ºÎªÁË·½±ãÊ¹ÓÃÒ»¸öButtonÀàµÄÊµÀı ÄÚ²¿Ö»Î¬»¤Ò»×éConfig,µ«Ö§³Ö¶à¸öÊÂ¼şÍ¬Ê±°ó¶¨ÔÚÕâ¸öÊµÀı£¬Èç¹ûĞèÒªÃ¿¸öÊÂ¼ş¶ÔÓ¦µÄConfigÅäÖÃ²»Í¬£¬ĞèÒªÊµÀı¶à¸ö¶ÔÏó
+	æ³¨æ„ï¼šä¸ºäº†æ–¹ä¾¿ä½¿ç”¨ä¸€ä¸ªButtonç±»çš„å®ä¾‹ å†…éƒ¨åªç»´æŠ¤ä¸€ç»„Config,ä½†æ”¯æŒå¤šä¸ªäº‹ä»¶åŒæ—¶ç»‘å®šåœ¨è¿™ä¸ªå®ä¾‹ï¼Œå¦‚æœéœ€è¦æ¯ä¸ªäº‹ä»¶å¯¹åº”çš„Configé…ç½®ä¸åŒï¼Œéœ€è¦å®ä¾‹å¤šä¸ªå¯¹è±¡
 */
 LxExt.Transition.Button=function(config){
-	//ÄÚÖÃButtonÅäÖÃ¶ÔÏó
+	//å†…ç½®Buttoné…ç½®å¯¹è±¡
 	function ButtonConfig(config){
 		this.eventName=setConfig(config.eventName,"mouseenter");
 		this.eventTarget=setConfig(config.eventTarget);
 		this.animTarget=setConfig(config.animTarget,config.eventTarget);
 		this.image=setConfig(config.image);
-		this.className=config.className;//Èç¹ûÃ»ÓĞthis.className=undefined;
+		this.className=config.className;//å¦‚æœæ²¡æœ‰this.className=undefined;
 		this.width=setConfig(config.width,32);
 		this.height=setConfig(config.height,32);
 		this.frames=setConfig(config.frames,1);
 		this.x = setConfig(config.x,0);
 		this.y = setConfig(config.y,0);
-		this.pos = setConfig(config.pos,true);		//¶¯»­²¥·Å·½Ïò
+		this.pos = setConfig(config.pos,true);		//åŠ¨ç”»æ’­æ”¾æ–¹å‘
 		this.hori = setConfig(config.hori,true);
 		this.stop=setConfig(config.stop,true);
 		this.speed = setConfig(config.speed,50);
 		this.space = setConfig(config.space,0);
 	}
-	//Ä¬ÈÏÅäÖÃÏî
+	//é»˜è®¤é…ç½®é¡¹
 	this.defaultConfig =new ButtonConfig( config );
-	//ÅäÖÃconfig
-	this.eventArray=[];	//ÓÃÓÚ´æ·Å¶ÔÓ¦µÄÊÂ¼şÅäÖÃ
+	//é…ç½®config
+	this.eventArray=[];	//ç”¨äºå­˜æ”¾å¯¹åº”çš„äº‹ä»¶é…ç½®
 	
-	var buttonscope=this;	//±£³Öµ±Ç°µÄ×÷ÓÃÓò
+	var buttonscope=this;	//ä¿æŒå½“å‰çš„ä½œç”¨åŸŸ
 	/*
 		Public:
-		¹¦ÄÜ:°´Å¥Ìí¼ÓĞÂµÄÊÂ¼şÖ§³Ö
-		ĞèÒªÅäÖÃ
+		åŠŸèƒ½:æŒ‰é’®æ·»åŠ æ–°çš„äº‹ä»¶æ”¯æŒ
+		éœ€è¦é…ç½®
 			config{
-				string configId ÊÂ¼ş±êÊ¾£¬Í¬Ò»¸ö¶ÔÏóÖĞconfigId²»ÄÜÖØ¸´
+				string configId äº‹ä»¶æ ‡ç¤ºï¼ŒåŒä¸€ä¸ªå¯¹è±¡ä¸­configIdä¸èƒ½é‡å¤
 			}
 	*/
 	this.addEvent=function( configAdd ){
@@ -488,28 +491,28 @@ LxExt.Transition.Button=function(config){
 		newConfig.eventTarget=setConfig(configAdd.eventTarget,buttonscope.defaultConfig.eventTarget);
 		newConfig.animTarget=setConfig(configAdd.animTarget,buttonscope.defaultConfig.animTarget);
 		newConfig.image=setConfig(configAdd.image,buttonscope.defaultConfig.image);
-		newConfig.className=configAdd.className;//Èç¹ûÃ»ÓĞthis.className=undefined;
+		newConfig.className=configAdd.className;//å¦‚æœæ²¡æœ‰this.className=undefined;
 		newConfig.width=setConfig(configAdd.width,buttonscope.defaultConfig.width);
 		newConfig.height=setConfig(configAdd.height,buttonscope.defaultConfig.height);
 		newConfig.frames=setConfig(configAdd.frames,buttonscope.defaultConfig.frames);
 		newConfig.x = setConfig(configAdd.x,buttonscope.defaultConfig.x);
 		newConfig.y = setConfig(configAdd.y,buttonscope.defaultConfig.y);
-		newConfig.pos = setConfig(configAdd.pos,buttonscope.defaultConfig.pos);		//¶¯»­²¥·Å·½Ïò
+		newConfig.pos = setConfig(configAdd.pos,buttonscope.defaultConfig.pos);		//åŠ¨ç”»æ’­æ”¾æ–¹å‘
 		newConfig.hori = setConfig(configAdd.hori,buttonscope.defaultConfig.hori);
 		newConfig.stop=setConfig(configAdd.stop,buttonscope.defaultConfig.stop);
 		newConfig.speed = setConfig(configAdd.speed,buttonscope.defaultConfig.speed);
 		newConfig.space = setConfig(configAdd.space,buttonscope.defaultConfig.space);
 		for( var i=0; i<buttonscope.eventArray.length;i++ ){
 			if(buttonscope.eventArray[i].configId==configAdd.configId){
-				return false; //Ìí¼ÓÊÂ¼şÊ§°Ü´æÔÚÖØ¸´µÄconfigId
+				return false; //æ·»åŠ äº‹ä»¶å¤±è´¥å­˜åœ¨é‡å¤çš„configId
 			}
 		}
 		//--------------------------------------------------------------------------
 		
 		buttonscope.eventArray.push( newConfig );  
-		var currFrame = 0;							//µ±Ç°ÏÔÊ¾µÄ¶¯»­Ö¡
+		var currFrame = 0;							//å½“å‰æ˜¾ç¤ºçš„åŠ¨ç”»å¸§
 		var oldStyle={};
-		//¸ù¾İ²¥·Å·½Ïòµ÷Õû²ÎÊı
+		//æ ¹æ®æ’­æ”¾æ–¹å‘è°ƒæ•´å‚æ•°
 		function InitParams(){
 			if(!newConfig.pos){
 				currFrame = newConfig.frames - 1;
@@ -517,27 +520,27 @@ LxExt.Transition.Button=function(config){
 				currFrame = 0;
 			}
 		}
-		//¼ÇÂ¼³åÍ»µÄÑùÊ½
+		//è®°å½•å†²çªçš„æ ·å¼
 		function recordStyle(){
 			oldStyle.backgroundImage=newConfig.animTarget.css("background-image");
 			oldStyle.backgroundRepeat=newConfig.animTarget.css("background-repeat");
 			oldStyle.backgroundPosition=newConfig.animTarget.css("background-position");
-			//Èç¹û´æÔÚclassNameÑùÊ½£¬Ìí¼Ó
+			//å¦‚æœå­˜åœ¨classNameæ ·å¼ï¼Œæ·»åŠ 
 			if(newConfig.className){
 				newConfig.animTarget.addClass( newConfig.className );
 			}
 		}
-		//»Ø¸´ÑùÊ½±í
+		//å›å¤æ ·å¼è¡¨
 		function resetStyle(){
 			newConfig.animTarget.css("background-image",oldStyle.backgroundImage);
 			newConfig.animTarget.css("background-repeat",oldStyle.backgroundRepeat);
 			newConfig.animTarget.css("background-position",oldStyle.backgroundPosition);
-			//ÒÆ³ıclassNameÑùÊ½
+			//ç§»é™¤classNameæ ·å¼
 			if(newConfig.className){
 				newConfig.animTarget.removeClass( newConfig.className );
 			}
 		}
-		//¸üĞÂÑùÊ½
+		//æ›´æ–°æ ·å¼
 		function updateStyle(){
 			newConfig.animTarget.css("background-image","url("+newConfig.image+")");
 			newConfig.animTarget.css("background-repeat","no-repeat");
@@ -550,16 +553,16 @@ LxExt.Transition.Button=function(config){
 			}
 			newConfig.animTarget.css("background-position",""+tmpX+"px "+tmpY+"px " );
 		}
-		//µ÷Õû²ÎÊı
+		//è°ƒæ•´å‚æ•°
 		InitParams();
-		//¼ÇÂ¼³åÍ»ÑùÊ½
+		//è®°å½•å†²çªæ ·å¼
 		recordStyle();
 		
 		if( newConfig.pos ){
 			newConfig.eventTarget.bind(newConfig.eventName,function(){
 				function playPos(){
 					updateStyle.apply(buttonscope);
-					//¼ÆËãÏÂÒ»´ÎµÄÑùÊ½
+					//è®¡ç®—ä¸‹ä¸€æ¬¡çš„æ ·å¼
 					if(currFrame<newConfig.frames){
 						currFrame++;
 						setTimeout(callPlayPos,newConfig.speed);
@@ -579,7 +582,7 @@ LxExt.Transition.Button=function(config){
 			newConfig.eventTarget.bind(newConfig.eventName,function(){
 				function playUnPos(){
 					updateStyle.apply(buttonscope);
-					//¼ÆËãÏÂÒ»´ÎµÄÑùÊ½
+					//è®¡ç®—ä¸‹ä¸€æ¬¡çš„æ ·å¼
 					if(currFrame>0){
 						currFrame--;
 						setTimeout(callPlayUnPos,newConfig.speed);
@@ -602,16 +605,16 @@ LxExt.Transition.Button=function(config){
 	}
 	/*
 		Public:
-		¹¦ÄÜ:ÒÆ³ıÊÂ¼şÖ§³Ö
-		string configId  ÊÂ¼şid
-		string eventName ÊÂ¼şÃû³Æ
-		return É¾³ıÊÇ·ñ³É¹¦
+		åŠŸèƒ½:ç§»é™¤äº‹ä»¶æ”¯æŒ
+		string configId  äº‹ä»¶id
+		string eventName äº‹ä»¶åç§°
+		return åˆ é™¤æ˜¯å¦æˆåŠŸ
 	*/
 	this.removeEvent=function( configId ){
 		for( var i=0; i<buttonscope.eventArray.length;i++ ){
 			if(buttonscope.eventArray[i].configId==configId){
 				buttonscope.eventArray[i].eventTarget.unbind( buttonscope.eventArray[i].eventName );
-				return buttonscope; //Ìí¼ÓÊÂ¼şÊ§°Ü´æÔÚÖØ¸´µÄconfigId
+				return buttonscope; //æ·»åŠ äº‹ä»¶å¤±è´¥å­˜åœ¨é‡å¤çš„configId
 			}
 		}
 		return false;

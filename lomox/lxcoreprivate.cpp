@@ -167,7 +167,8 @@ void LxCoreApplicationPrivate::runLomoxApp(int argc, char *argv[])
 
 		if (!strUrl.isEmpty())
 		{
-			if (-1 == strUrl.indexOf(':'))
+            //Mac版文件路径开始为/需要,排除 by Colin3dmax
+            if (-1 == strUrl.indexOf(':') && strUrl.indexOf("/")!=0)
 			{
 				strUrl = QString::fromLocal8Bit("http://") + strUrl;
 			}

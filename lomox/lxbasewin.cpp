@@ -101,8 +101,9 @@ bool LxBaseWin::_initWidget()
 		if (pOption->getChildWindowStaysOnTopHint())
 			winType |= Qt::WindowStaysOnTopHint;
 		this->setWindowFlags(winType);
+#ifdef Q_OS_WIN32 || Q_OS_WIN64
 		SetWindowLong((HWND)this->winId(), GWL_EXSTYLE, WS_EX_APPWINDOW);//add  by KeoJam 强制子窗口最小化显示在任务
-
+#endif
 		QWebPage* ptrWebPage = new LxWebPage(this);
 		this->setPage(ptrWebPage);//add  by KeoJam 启用自定义LxWebPage用于Permission处理
 		//QPointer<QWebPage> ptrWebPage = this->page();

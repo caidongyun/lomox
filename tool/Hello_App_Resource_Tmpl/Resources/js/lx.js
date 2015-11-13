@@ -1,16 +1,17 @@
 var WindowSettings = {
 	minWidth: 800,
 	minHeight: 600,
-	width: screen.width - 100,
+	width: 800,
 	height: 640,
 	center: true,
-	debug: true
+	debug: true,
+	drag:true,
 }
 
 $(function(){
 	//添加窗口Resize
-	//LxExt.Dialog.setBorderDrag(true);
-	//LxExt.Dialog.borderDrag($("#MyBody"),$("#MyWindow"),5);
+	LxExt.Dialog.setBorderDrag(WindowSettings.drag);
+	// LxExt.Dialog.borderDrag($("#lx"),$("#MyWindow"),5);
 	//设置最小大小
 	LxExt.Dialog.setMinimumSize(WindowSettings.minWidth, WindowSettings.minHeight);
 	//设置窗口的大小
@@ -19,7 +20,7 @@ $(function(){
 	WindowSettings.center && LxExt.Dialog.centerWnd();
 	//LxExt.Dialog.updateClientSize($("#MyBody"),30);
 	//设置窗口标题栏目可移动
-	LxExt.Dialog.dragRegion($('#lx-head>label'));
+	LxExt.Dialog.dragRegion($('#lx-head'));
 	//添加 最小化，关闭事件
 	var _max = function() {
 		if($("#lx-max").hasClass('lx-normal')) {
@@ -44,6 +45,7 @@ $(function(){
 //Debug 设置
 if(WindowSettings.debug) {
 	$(window).keydown(function(event) {
+		// F5刷新界面
 		if(event.keyCode == 116) {
 			location.reload();
 		}

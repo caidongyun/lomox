@@ -6,8 +6,12 @@ TEMPLATE = lib
 TARGET = lomox
 Release:DESTDIR = ../Release
 Debug:DESTDIR = ../Debug
-QT += core sql network xml script webkit widgets webkitwidgets
+QT += core sql network xml script webkit widgets webkitwidgets printsupport
 CONFIG += debug
+
+macx:QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.10.5
+macx:QMAKE_MAC_SDK=macosx10.11
+
 DEFINES += QT_LARGEFILE_SUPPORT QT_XML_LIB QT_SQL_LIB QT_NETWORK_LIB QT_WEBKIT_LIB QT_PHONON_LIB LOMOX_LIB
 Release:INCLUDEPATH += ./GeneratedFiles/Release 
 Debug:INCLUDEPATH += ./GeneratedFiles/Debug
@@ -15,12 +19,20 @@ INCLUDEPATH += ./GeneratedFiles \
     . \
     ./include \
     ./implement
-LIBS += -lphonon4
 DEPENDPATH += .
 Release:MOC_DIR += ./GeneratedFiles/Release
 Debug:MOC_DIR += ./GeneratedFiles/Debug
-Release:OBJECTS_DIR += release
+Release:OBJECTS_DIR += Release
 Debug:OBJECTS_DIR += Debug
 UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
 include(lomox.pri)
+
+mac {
+    target.path = /usr/lib
+    INSTALLS += target
+}
+unix {
+    target.path = /usr/lib
+    INSTALLS += target
+}

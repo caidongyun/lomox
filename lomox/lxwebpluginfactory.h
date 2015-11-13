@@ -37,7 +37,7 @@ public:
 	bool supportsExtension(QWebPluginFactory::Extension extension) const{return true;};
 private:
 	// 用于将载入的插件记录下来
-	mutable QList<QList<QWebPluginFactory::Plugin>> m_pluginslist;
+    mutable QList< QList<QWebPluginFactory::Plugin> > m_pluginslist;
 	mutable QList<LxWebKitPluginInterface *> m_interfaces;
 };
 

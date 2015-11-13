@@ -4,26 +4,26 @@
 * 文件名称	: Lx_api.h
 * 作    者	: 詹晨辉 (mailto:zch.fly@gmail.com)
 * 创建日期	: 2012/12/21
-* 功能描述	: 
-* 备    注	: 
+* 功能描述	:
+* 备    注	:
 ********************************************************************************/
 #ifndef LOMOX_API_H
 #define LOMOX_API_H
 
-#ifdef WIN32
+#include <QtCore/qglobal.h>
+
 #ifndef LOMOX_EXPORT
-#ifdef	LOMOX_LIB
-#define LOMOX_EXPORT __declspec(dllexport)
+#ifdef LOMOX_LIB
+# define LOMOX_EXPORT Q_DECL_EXPORT
 #else
-#define LOMOX_EXPORT __declspec(dllimport)
-#endif
+# define LOMOX_EXPORT Q_DECL_IMPORT
 #endif
 #endif
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-	LOMOX_EXPORT void LomoxAppRun(int argc, char *argv[]);
+    LOMOX_EXPORT void LomoxAppRun(int argc, char *argv[]);
 #ifdef __cplusplus
 };
 #endif // __cplusplus
