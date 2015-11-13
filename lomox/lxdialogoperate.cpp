@@ -111,18 +111,19 @@ void LxDialogBase::showNormal()
     VERIFY_IN_POINTER(m_ptrWebView);
 //    m_ptrWebView->showNormal();
  	WId id = m_ptrWebView->winId();
-#ifdef Q_OS_WIN32 || Q_OS_WIN64
+#ifdef Q_OS_WIN
  	ShowWindow((HWND)id, SW_RESTORE);
 #endif
     if (m_nWidth == 0 && m_nHeight == 0)
 	{
 		qDebug() << m_ptrWebView->minimumWidth();
-#ifdef Q_OS_WIN32 || Q_OS_WIN64
+#ifdef Q_OS_WIN
 		SetWindowPos((HWND)id, HWND_TOP, 0, 0, m_ptrWebView->minimumWidth(), m_ptrWebView->minimumHeight(), SWP_NOMOVE);
 #endif
 	}
     else{
-#ifdef Q_OS_WIN32 || Q_OS_WIN64
+#ifdef Q_OS_WIN
+
         SetWindowPos((HWND)id, HWND_TOP, 0, 0, m_nWidth, m_nHeight, SWP_NOMOVE);
 #endif
     }

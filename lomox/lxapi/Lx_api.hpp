@@ -10,15 +10,27 @@
 #ifndef LOMOX_API_H
 #define LOMOX_API_H
 
-#include <QtCore/qglobal.h>
-
-#ifndef LOMOX_EXPORT
-#ifdef LOMOX_LIB
-# define LOMOX_EXPORT Q_DECL_EXPORT
+#ifdef WIN32
+	#ifndef LOMOX_EXPORT
+	#ifdef	LOMOX_LIB
+	#define LOMOX_EXPORT __declspec(dllexport)
+	#else
+	#define LOMOX_EXPORT __declspec(dllimport)
+	#endif
+	#endif
 #else
-# define LOMOX_EXPORT Q_DECL_IMPORT
+	#include <QtCore/qglobal.h>
+	#ifndef LOMOX_EXPORT
+	#ifdef LOMOX_LIB
+	# define LOMOX_EXPORT Q_DECL_EXPORT
+	#else
+	# define LOMOX_EXPORT Q_DECL_IMPORT
+	#endif
+	#endif
 #endif
-#endif
+
+
+
 
 #ifdef __cplusplus
 extern "C" {
