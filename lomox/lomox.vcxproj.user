@@ -5,7 +5,7 @@
     <QTDIR>C:\Qt\Qt5.5.1_win32\5.5\msvc2013</QTDIR>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3bC:\Qt\Qt5.5.1\5.5\msvc2013_64\\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment>PATH=C:\Qt\Qt5.5.1\5.5\msvc2013_64\\bin%3b$(PATH)</LocalDebuggerEnvironment>
     <QTDIR>C:\Qt\Qt5.5.1\5.5\msvc2013_64\</QTDIR>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -13,7 +13,7 @@
     <QTDIR>C:\Qt\Qt5.5.1_win32\5.5\msvc2013</QTDIR>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3bC:\Qt\Qt5.5.1\5.5\msvc2013_64\\bin%3b$(PATH)</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment>PATH=C:\Qt\Qt5.5.1\5.5\msvc2013_64\\bin%3b$(PATH)</LocalDebuggerEnvironment>
     <QTDIR>C:\Qt\Qt5.5.1\5.5\msvc2013_64\</QTDIR>
   </PropertyGroup>
 </Project>

@@ -26,12 +26,14 @@ Global
 		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Debug|Win32.ActiveCfg = Debug|Win32
 		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Debug|Win32.Build.0 = Debug|Win32
 		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Debug|x64.ActiveCfg = Debug|x64
+		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Debug|x64.Build.0 = Debug|x64
 		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Release|Win32.ActiveCfg = Release|Win32
 		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Release|Win32.Build.0 = Release|Win32
 		{F0FD002C-15E6-4D85-A8CB-7A8D87338533}.Release|x64.ActiveCfg = Release|x64
 		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Debug|Win32.ActiveCfg = Debug|Win32
 		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Debug|Win32.Build.0 = Debug|Win32
 		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Debug|x64.ActiveCfg = Debug|x64
+		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Debug|x64.Build.0 = Debug|x64
 		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Release|Win32.ActiveCfg = Release|Win32
 		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Release|Win32.Build.0 = Release|Win32
 		{1D4FB209-7D70-4E2A-97BE-0F127AF8EAD3}.Release|x64.ActiveCfg = Release|x64
@@ -48,7 +50,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		Qt5Version = Qt5.5.1-Win32
 		QtVersion = 4.8.2
+		Qt5Version = Qt5.5.1
 	EndGlobalSection
 EndGlobal
