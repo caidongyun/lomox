@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'lxwebeditplugin.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.0)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'lxwebeditplugin.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.4.0. It"
+#error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,11 +20,11 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_LxWebEditPlugin_t {
     QByteArrayData data[1];
-    char stringdata[16];
+    char stringdata0[16];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_LxWebEditPlugin_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_LxWebEditPlugin_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_LxWebEditPlugin_t qt_meta_stringdata_LxWebEditPlugin = {
@@ -74,7 +74,7 @@ const QMetaObject *LxWebEditPlugin::metaObject() const
 void *LxWebEditPlugin::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_LxWebEditPlugin.stringdata))
+    if (!strcmp(_clname, qt_meta_stringdata_LxWebEditPlugin.stringdata0))
         return static_cast<void*>(const_cast< LxWebEditPlugin*>(this));
     if (!strcmp(_clname, "LxWebKitPluginInterface"))
         return static_cast< LxWebKitPluginInterface*>(const_cast< LxWebEditPlugin*>(this));
@@ -92,11 +92,11 @@ int LxWebEditPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 struct qt_meta_stringdata_MyAddEdit_t {
     QByteArrayData data[6];
-    char stringdata[24];
+    char stringdata0[24];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MyAddEdit_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_MyAddEdit_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
 static const qt_meta_stringdata_MyAddEdit_t qt_meta_stringdata_MyAddEdit = {
@@ -139,6 +139,7 @@ void MyAddEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         MyAddEdit *_t = static_cast<MyAddEdit *>(_o);
+        Q_UNUSED(_t)
         switch (_id) {
         case 0: { int _r = _t->AddNum((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
@@ -161,7 +162,7 @@ const QMetaObject *MyAddEdit::metaObject() const
 void *MyAddEdit::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_MyAddEdit.stringdata))
+    if (!strcmp(_clname, qt_meta_stringdata_MyAddEdit.stringdata0))
         return static_cast<void*>(const_cast< MyAddEdit*>(this));
     return QTextEdit::qt_metacast(_clname);
 }

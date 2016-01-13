@@ -14,6 +14,9 @@ build：
 changelog:
 
 ==========================
+lomox.dll 0.8.0.3 (曹良Colin3dmax)
+1.升级lxWebEditPlugin支持Qt5.5,测试Vs2013下x86和x64此模块兼容性问题
+
 lomox.dll 0.8.0.2 (曹良Colin3dmax)
 
 1.测试Mac环境下，liblomox.dylib和Test项目的运行
