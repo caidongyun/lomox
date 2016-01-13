@@ -24,12 +24,12 @@
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{e34fe94f-abab-428e-8689-6df326fa1f96}</UniqueIdentifier>
+      <UniqueIdentifier>{62eb3cc9-8782-45f6-b1fa-6c952a5a5b1c}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{e52ac3c1-9fc1-4d2c-9d23-acd95082e13f}</UniqueIdentifier>
+      <UniqueIdentifier>{e6b8b91b-fdbd-4e37-8014-0a7ae4f10883}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -40,9 +40,6 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_lxwebeditplugin.cpp">
       <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_lxwebeditplugin.cpp">
-      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
