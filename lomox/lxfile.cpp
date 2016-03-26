@@ -28,7 +28,7 @@ LxFile::~LxFile()
 
 }
 
-QVariant LxFile::readFileData( QVariant varFilename,QString encode )
+QVariant LxFile::readFileData(QVariant varFilename, QString readType,QString encode)
 {
     if (!varFilename.isNull() && QVariant::String == varFilename.type())
     {
@@ -39,7 +39,15 @@ QVariant LxFile::readFileData( QVariant varFilename,QString encode )
 		{
             return QVariant(false);
         }
-        return QVariant(file.readAll());
+		if (readType.compare(QString("txt"), Qt::CaseInsensitive) == 0)
+		{
+			return QVariant(QString(file.readAll()));
+		}
+		else
+		{
+			return QVariant(file.readAll());
+		}
+		
     }
     return QVariant(false);
 }
