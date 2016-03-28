@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lomoxstaticlink", "lomoxtest\lomoxtest.vcxproj", "{F0FD002C-15E6-4D85-A8CB-7A8D87338533}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lomoxtest", "lomoxtest\lomoxtest.vcxproj", "{F0FD002C-15E6-4D85-A8CB-7A8D87338533}"
 	ProjectSection(ProjectDependencies) = postProject
 		{171675CF-ACEE-4FD1-B40F-83167571C17D} = {171675CF-ACEE-4FD1-B40F-83167571C17D}
 	EndProjectSection
@@ -76,7 +76,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		QtVersion = 4.8.2
 		Qt5Version = Qt5.5.1
+		QtVersion = 4.8.2
 	EndGlobalSection
 EndGlobal
