@@ -1,10 +1,9 @@
-﻿#ifndef LXDIR_H
+#ifndef LXDIR_H
 #define LXDIR_H
 
 #include "lomox_global.h"
 #include "lxoperate.h"
 #include <QDir>
-
 
 class LxDir : public LxOperate
 {
@@ -20,7 +19,7 @@ public slots:
     virtual QVariant mkdir(QVariant dirName,QString encode="UTF-8");
     virtual QVariant mkpath(QVariant dirPath,QString encode="UTF-8");
     virtual QVariant entryList(QVariant dirPath,QVariant nameFilters,QVariant filters=QDir::NoFilter,QVariant sort =QDir::NoSort,QString encode="UTF-8");
-
+	virtual QVariant getType(QVariant varPath, QString encode = "UTF-8");
 };
 
 #endif // LXDIR_H

@@ -24,7 +24,7 @@ public:
 	virtual ~LxFile();
 
 public slots:
-    virtual QVariant readFileData(QVariant varFilename,QString encode);//base64 MIMERYPE
+	virtual QVariant readFileData(QVariant varFilename, QString readType = "binary"/*or txt*/, QString encode = "UTF-8");
     virtual QVariant isExits(QVariant varFilename);//
     virtual QVariant remove(QVariant varFilename);
     virtual QVariant rename(QVariant varOldName, QVariant varNewName);
@@ -33,10 +33,6 @@ public slots:
     virtual QVariant size(QVariant varFilename);
 	virtual QVariant permissions(QVariant varFilename);//
     virtual QVariant write(QVariant varFilename,QVariant text,QString encode="UTF-8");
-
-
-
-
 };
 
 #endif // end of __LXFILE_H__

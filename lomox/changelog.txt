@@ -1,5 +1,5 @@
 欢迎参与建设或者编码设计。
-site:http://www.lomox.org
+site:http://www.finlx.com
 
 lomox.dll 0.7.0.4 (詹晨辉KeoJam)
 =======================
