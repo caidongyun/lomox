@@ -1,10 +1,17 @@
 lomox
 =====
+
+License：MIT许可协议
+
+https://github.com/caidongyun/lomox/blob/master/License
+
+
+=====
     lomox is a desktop web ui framework 
     http://www.finlx.com官网及论坛~~~~近期开放
 build：
 ===========
-    vs 2013 or vs2012   
+    vs 2013(vs2013 下载 Update5版本) or vs2012   
     下载  qt-win-opensource-5.4-vs2012.exe or  qt-win-opensource-5.4-vs2013.exe安装
     再下载 qt-vs-addin-opensource.exe
 	默认为VS2013工程 若要变为VS2012 请自行调整，如何调整自行百度
@@ -14,12 +21,14 @@ build：
 changelog:
 ==========================
 lomox.dll 0.8.0.4 (詹晨辉KeoJam)
+
 1.LomoX.file.readFileData 支持文本读取
 2.LomoX.dir.entryList 返回结果为对象，封装了类型
 3.LomoX.dir.getType 加上路径类型判断接口
-	
+
 ==========================
 lomox.dll 0.8.0.3 (曹良Colin3dmax)
+
 1.升级lxWebEditPlugin支持Qt5.5,测试Vs2013下x86和x64此模块兼容性问题
 
 lomox.dll 0.8.0.2 (曹良Colin3dmax)
