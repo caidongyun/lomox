@@ -359,6 +359,14 @@ QVariant LxDialogBase::toHTML()
         return nullptr;
     }
 }
+//add by KeoJam 增加窗口标题设置
+void LxDialogBase::setTitle(QString strTitle)
+{
+	LogEx("LxDialogBase::setTitle()");
+	Q_CHECK_PTR(m_ptrWebView);
+	m_ptrWebView->setWindowTitle(strTitle);
+}
+
 //add by KeoJam 增加下载功能 
 void LxDialogBase::downloadRequested(const QNetworkRequest &request)
 {

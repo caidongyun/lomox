@@ -76,7 +76,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWebKit;$(QTDIR)\include\QtScript;$(QTDIR)\include\QtWebkitWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\include;.\lxapi;.\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(QTDIR)\GeneratedFiles;$(QTDIR);$(QTDIR)\$(QTDIR)\include;$(QTDIR)\GeneratedFiles\$(ConfigurationName);$(QTDIR)\$(QTDIR)\include\QtCore;$(QTDIR)\$(QTDIR)\include\QtGui;$(QTDIR)\$(QTDIR)\include\QtNetwork;$(QTDIR)\$(QTDIR)\include\QtSql;$(QTDIR)\$(QTDIR)\include\QtWebKit;$(QTDIR)\$(QTDIR)\include\QtScript;$(QTDIR)\$(QTDIR)\include\QtWebkitWidgets;$(QTDIR)\$(QTDIR)\include\QtWidgets;$(QTDIR)\$(QTDIR)\include\QtXml;$(QTDIR)\include;$(QTDIR)\lxapi;$(QTDIR)\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_WEBKIT_LIB;LOMOX_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
@@ -85,9 +85,9 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QTDIR)\lib\qtmain.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5WebKit.lib;$(QTDIR)\lib\Qt5WebKitWidgets.lib;$(QTDIR)\lib\Qt5Xml.lib;$(QTDIR)\lib\Qt5Sql.lib;$(QTDIR)\lib\Qt5Script.lib;$(QTDIR)\lib\Qt5PrintSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmain.lib;Qt5Widgets.lib;Qt5Network.lib;Qt5Core.lib;Qt5Gui.lib;Qt5WebKit.lib;Qt5WebKitWidgets.lib;Qt5Xml.lib;Qt5Sql.lib;Qt5Script.lib;Qt5PrintSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -101,7 +101,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWebKit;$(QTDIR)\include\QtScript;$(QTDIR)\include\QtWebkitWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\include;.\lxapi;.\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(QTDIR)\GeneratedFiles;$(QTDIR);$(QTDIR)\$(QTDIR)\include;$(QTDIR)\GeneratedFiles\$(ConfigurationName);$(QTDIR)\$(QTDIR)\include\QtCore;$(QTDIR)\$(QTDIR)\include\QtGui;$(QTDIR)\$(QTDIR)\include\QtNetwork;$(QTDIR)\$(QTDIR)\include\QtSql;$(QTDIR)\$(QTDIR)\include\QtWebKit;$(QTDIR)\$(QTDIR)\include\QtScript;$(QTDIR)\$(QTDIR)\include\QtWebkitWidgets;$(QTDIR)\$(QTDIR)\include\QtWidgets;$(QTDIR)\$(QTDIR)\include\QtXml;$(QTDIR)\include;$(QTDIR)\lxapi;$(QTDIR)\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LOMOX_LIB;NDEBUG;QT_CORE_LIB;QT_DLL;QT_GUI_LIB;QT_LARGEFILE_SUPPORT;QT_NETWORK_LIB;QT_NO_DEBUG;QT_SQL_LIB;QT_WEBKIT_LIB;QT_XML_LIB;UNICODE;WIN32;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
@@ -110,9 +110,9 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QTDIR)\lib\qtmain.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5WebKit.lib;$(QTDIR)\lib\Qt5WebKitWidgets.lib;$(QTDIR)\lib\Qt5Xml.lib;$(QTDIR)\lib\Qt5Sql.lib;$(QTDIR)\lib\Qt5Script.lib;$(QTDIR)\lib\Qt5PrintSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmain.lib;Qt5Widgets.lib;Qt5Network.lib;Qt5Core.lib;Qt5Gui.lib;Qt5WebKit.lib;Qt5WebKitWidgets.lib;Qt5Xml.lib;Qt5Sql.lib;Qt5Script.lib;Qt5PrintSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -128,7 +128,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)include\QtCore;$(QTDIR)include\QtGui;$(QTDIR)include\QtNetwork;$(QTDIR)include\QtSql;$(QTDIR)include\QtWebKit;$(QTDIR)include\QtScript;$(QTDIR)include\QtWebkitWidgets;$(QTDIR)include\QtWidgets;$(QTDIR)include\QtXml;.\include;.\lxapi;.\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(QTDIR)\GeneratedFiles;$(QTDIR);$(QTDIR)\include;$(QTDIR)\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtWebKit;$(QTDIR)\include\QtScript;$(QTDIR)\include\QtWebkitWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\include;.\lxapi;.\tool;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_WEBKIT_LIB;LOMOX_LIB;QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
@@ -137,7 +137,7 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QTDIR)\lib\qtmaind.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5WebKitd.lib;$(QTDIR)\lib\Qt5WebKitWidgetsd.lib;$(QTDIR)\lib\Qt5Xmld.lib;$(QTDIR)\lib\Qt5Sqld.lib;$(QTDIR)\lib\Qt5Scriptd.lib;$(QTDIR)\lib\Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5Widgetsd.lib;Qt5Networkd.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5WebKitd.lib;Qt5WebKitWidgetsd.lib;Qt5Xmld.lib;Qt5Sqld.lib;Qt5Scriptd.lib;Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -150,7 +150,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)include\QtCore;$(QTDIR)include\QtGui;$(QTDIR)include\QtNetwork;$(QTDIR)include\QtSql;$(QTDIR)include\QtWebKit;$(QTDIR)include\QtScript;$(QTDIR)include\QtWebkitWidgets;$(QTDIR)include\QtWidgets;$(QTDIR)include\QtXml;.\include;.\lxapi;.\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(QTDIR)\GeneratedFiles;$(QTDIR);$(QTDIR)\$(QTDIR)include;$(QTDIR)\GeneratedFiles\$(ConfigurationName);$(QTDIR)\$(QTDIR)include\QtCore;$(QTDIR)\$(QTDIR)include\QtGui;$(QTDIR)\$(QTDIR)include\QtNetwork;$(QTDIR)\$(QTDIR)include\QtSql;$(QTDIR)\$(QTDIR)include\QtWebKit;$(QTDIR)\$(QTDIR)include\QtScript;$(QTDIR)\$(QTDIR)include\QtWebkitWidgets;$(QTDIR)\$(QTDIR)include\QtWidgets;$(QTDIR)\$(QTDIR)include\QtXml;$(QTDIR)\include;$(QTDIR)\lxapi;$(QTDIR)\tool;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LOMOX_LIB;QT_CORE_LIB;QT_DLL;QT_GUI_LIB;QT_LARGEFILE_SUPPORT;QT_NETWORK_LIB;QT_SQL_LIB;QT_WEBKIT_LIB;QT_XML_LIB;UNICODE;WIN32;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
@@ -159,9 +159,9 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QTDIR)\lib\qtmaind.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5WebKitd.lib;$(QTDIR)\lib\Qt5WebKitWidgetsd.lib;$(QTDIR)\lib\Qt5Xmld.lib;$(QTDIR)\lib\Qt5Sqld.lib;$(QTDIR)\lib\Qt5Scriptd.lib;$(QTDIR)\lib\Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5Widgetsd.lib;Qt5Networkd.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5WebKitd.lib;Qt5WebKitWidgetsd.lib;Qt5Xmld.lib;Qt5Sqld.lib;Qt5Scriptd.lib;Qt5PrintSupportd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
@@ -1168,7 +1168,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOnBuild="0" MocOptions="" QtVersion_x0020_Win32="4.8.4" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOnBuild="0" Qt5Version_x0020_Win32="QT5.5.1" MocOptions="" QtVersion_x0020_Win32="4.8.4" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

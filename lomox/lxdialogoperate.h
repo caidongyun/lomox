@@ -62,6 +62,8 @@ public slots:
     virtual QVariant toHTML();
     virtual void setHTML( QVariant code);
     virtual QObject* getCoreDialog();
+
+	virtual void setTitle(QString strTitle);
 private slots:
 	void downloadRequested(const QNetworkRequest &request);
 	void loadStarted(){};
