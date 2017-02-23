@@ -14,7 +14,7 @@
 #include "lxdialogoperate.h"
 #include <QSystemTrayIcon>
 
-class LxSystemTray : public QWidget
+class LxSystemTray : public QObject
 {
 	Q_OBJECT
 

@@ -133,11 +133,11 @@ QString LxOption::getMainTitle()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat,0);
-		QVariant varUrl = qsetting.value(QString::fromLocal8Bit("/cfg/title"));
-		if (!varUrl.isNull() && varUrl.isValid())
+		QVariant varitle = qsetting.value(QString::fromUtf8("/cfg/title"));
+		if (!varitle.isNull() && varitle.isValid())
 		{
-			QString strUrl = QString::fromLocal8Bit(varUrl.toByteArray().data());
-			return strUrl;
+			QString strTitle = QString::fromUtf8(varitle.toByteArray().data());
+			return strTitle;
 		}
 	}
 	return QString();
@@ -149,7 +149,7 @@ bool LxOption::getNeedShowMainNcFrame()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat,0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/mainframe"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/mainframe"));
 
 		if (!varValue.isNull() && varValue.isValid() )
 		{
@@ -167,7 +167,7 @@ bool LxOption::getNeedShowChildNcFrame()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat,0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/childframe"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/childframe"));
 
 		if (!varValue.isNull() && varValue.isValid() )
 		{
@@ -185,7 +185,7 @@ bool LxOption::getMainWindowStaysOnTopHint()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat,0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/maintop"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/maintop"));
 
 		if (!varValue.isNull() && varValue.isValid())
 		{
@@ -204,7 +204,7 @@ bool LxOption::getChildWindowStaysOnTopHint()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat, 0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/childtop"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/childtop"));
 
 		if (!varValue.isNull() && varValue.isValid())
 		{
@@ -223,7 +223,7 @@ bool LxOption::getDialogsRelationShip()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat, 0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/dialogsrelation"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/dialogsrelation"));
 
 		if (!varValue.isNull() && varValue.isValid())
 		{
@@ -242,7 +242,7 @@ bool LxOption::getNeedSystemTray()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat, 0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/systemtray"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/systemtray"));
 
 		if (!varValue.isNull() && varValue.isValid())
 		{
@@ -260,10 +260,10 @@ QString LxOption::getSystemTrayIconName()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat, 0);
-		QVariant varUrl = qsetting.value(QString::fromLocal8Bit("/cfg/trayicon"));
+		QVariant varUrl = qsetting.value(QString::fromUtf8("/cfg/trayicon"));
 		if (!varUrl.isNull() && varUrl.isValid())
 		{
-			QString strUrl = QString::fromLocal8Bit(varUrl.toByteArray().data());
+			QString strUrl = QString::fromUtf8(varUrl.toByteArray().data());
 			return strUrl;
 		}
 	}
@@ -291,7 +291,7 @@ bool LxOption::getValueFromIni(QString strKey, bool &bValue)
 bool LxOption::getLoadHrefInCurrentMainDialog()
 {
 	bool bRes = false;//默认自己控制
-	if (getValueFromIni(QString::fromLocal8Bit("/maindialog/hrefincurrent"), bRes))//取成功则用成功的结果
+	if (getValueFromIni(QString::fromUtf8("/maindialog/hrefincurrent"), bRes))//取成功则用成功的结果
 	{
 		return bRes;
 	}
@@ -301,7 +301,7 @@ bool LxOption::getLoadHrefInCurrentMainDialog()
 bool LxOption::getLoadHrefInCurrentChildDialog()
 {
 	bool bRes = false;//默认自己控制
-	if (getValueFromIni(QString::fromLocal8Bit("/childdialog/hrefincurrent"), bRes))//取成功则用成功的结果
+	if (getValueFromIni(QString::fromUtf8("/childdialog/hrefincurrent"), bRes))//取成功则用成功的结果
 	{
 		return bRes;
 	}
@@ -316,7 +316,7 @@ bool LxOption::getNeedShowLoadingGif()
 	if (QFile::exists(strConfg))
 	{
 		QSettings qsetting(strConfg, QSettings::IniFormat, 0);
-		QVariant varValue = qsetting.value(QString::fromLocal8Bit("/cfg/showloadinggif"));
+		QVariant varValue = qsetting.value(QString::fromUtf8("/cfg/showloadinggif"));
 
 		if (!varValue.isNull() && varValue.isValid())
 		{
@@ -334,7 +334,7 @@ int LxOption::getLoadingGifWidth()
 	if (QFile::exists(strCfgPath))
 	{
 		QSettings qsetting(strCfgPath, QSettings::IniFormat,0);
-		QVariant varUrl = qsetting.value(QString::fromLocal8Bit("/cfg/loadinggifwidth"),QVariant(400));
+		QVariant varUrl = qsetting.value(QString::fromUtf8("/cfg/loadinggifwidth"), QVariant(400));
 		if (!varUrl.isNull() && varUrl.isValid())
 		{
 			return varUrl.toInt();
@@ -348,7 +348,7 @@ int LxOption::getLoadingGifHeight()
 	if (QFile::exists(strCfgPath))
 	{
 		QSettings qsetting(strCfgPath, QSettings::IniFormat, 0);
-		QVariant varUrl = qsetting.value(QString::fromLocal8Bit("/cfg/loadinggifheight"), QVariant(400));
+		QVariant varUrl = qsetting.value(QString::fromUtf8("/cfg/loadinggifheight"), QVariant(400));
 		if (!varUrl.isNull() && varUrl.isValid())
 		{
 			return varUrl.toInt();

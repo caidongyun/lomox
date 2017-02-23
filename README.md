@@ -22,10 +22,15 @@ changelog:
 ==========================
 lomox.dll 0.8.0.5 (詹晨辉KeoJam)
 
+1.修复了开启托盘时鼠标事件不响应问题
+2.修复了配置文件中titile为中文时乱码问题
+最新realse下载地址：http://pan.baidu.com/s/1kVc8rHl
+
+==========================
+lomox.dll 0.8.0.5 (詹晨辉KeoJam)
+
 1.增加了窗口设置接口
 2.修复了QT5.5.1下release编译报错问题
-最新realse下载地址：http://pan.baidu.com/s/1i4ZU3Ud
-==========================
 
 ==========================
 lomox.dll 0.8.0.4 (詹晨辉KeoJam)

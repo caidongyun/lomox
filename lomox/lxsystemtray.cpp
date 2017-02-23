@@ -28,7 +28,7 @@ bool LxSystemTray::__initSystemTray()
 	m_ptrTrayIcon = new QSystemTrayIcon(this);
 	m_ptrTrayIcon->setIcon(m_icon);
 	m_ptrTrayIcon->setToolTip(m_toolTipName);
-	m_ptrTrayMenu = new QMenu(this);
+	m_ptrTrayMenu = new QMenu((QWidget*)m_ptrLxDialogBase->getCoreDialog());
 
 	QAction *action = new QAction(QString::fromLocal8Bit("隐藏"), this);
 	action->setIcon(QIcon(QCoreApplication::applicationDirPath()+"/Resources/hide.ico"));
@@ -64,7 +64,7 @@ bool LxSystemTray::__initSystemTray()
 	m_ptrTrayIcon->setContextMenu(m_ptrTrayMenu);
 
 	//图标点击事件
-	connect(m_ptrTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+	//connect(m_ptrTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
 	m_ptrTrayIcon->show();
 	return true;
