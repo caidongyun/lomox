@@ -20,6 +20,14 @@ build：
    
 changelog:
 ==========================
+lomox.dll 0.8.0.5 (詹晨辉KeoJam)
+
+1.增加了窗口设置接口
+2.修复了QT5.5.1下release编译报错问题
+最新realse下载地址：http://pan.baidu.com/s/1i4ZU3Ud
+==========================
+
+==========================
 lomox.dll 0.8.0.4 (詹晨辉KeoJam)
 
 1.LomoX.file.readFileData 支持文本读取
