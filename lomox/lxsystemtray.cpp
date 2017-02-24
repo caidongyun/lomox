@@ -64,7 +64,7 @@ bool LxSystemTray::__initSystemTray()
 	m_ptrTrayIcon->setContextMenu(m_ptrTrayMenu);
 
 	//图标点击事件
-	//connect(m_ptrTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+	connect(m_ptrTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
 	m_ptrTrayIcon->show();
 	return true;
