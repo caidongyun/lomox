@@ -88,7 +88,7 @@ bool LxBaseWin::_initWidget()
 
 		if (pOption->getNeedShowChildNcFrame())
 		{
-			winType |= Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint;
+			winType |= Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint;
 		}
 		else
 		{
