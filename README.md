@@ -16,8 +16,12 @@ build：
     再下载 qt-vs-addin-opensource.exe
 	默认为VS2013工程 若要变为VS2012 请自行调整，如何调整自行百度
     其他自己调整 
-    
-   
+
+
+wiki
+=====================================
+https://github.com/caidongyun/lomox/wiki
+
 changelog:
 ==========================
 lomox.dll 0.8.0.6 (詹晨辉KeoJam)
