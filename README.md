@@ -8,7 +8,7 @@ https://github.com/caidongyun/lomox/blob/master/License
 
 =====
     lomox is a desktop web ui framework 
-    http://www.finlx.com官网及论坛~~~~近期开放
+ 
 build：
 ===========
     vs 2013(vs2013 下载 Update5版本) or vs2012   
